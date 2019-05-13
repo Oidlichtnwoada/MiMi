@@ -1,0 +1,470 @@
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.regfile_tb
+# vsim -gui work.regfile_tb 
+# Start time: 07:34:10 on May 14,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+add wave -position insertpoint sim:/regfile_tb/regfile_inst/*
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+add wave -position insertpoint sim:/regfile_tb/*
+add wave -position insertpoint sim:/regfile_tb/regfile_inst/*
+restart
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 1  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7 us  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7010 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7030 ns  Iteration: 2  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd failed with 5 errors.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 1 failed with 5 errors.
+# Compile of regfile.vhd failed with 5 errors.
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd failed with 2 errors.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+add wave -position insertpoint sim:/regfile_tb/regfile_inst/*
+restart
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile_tb/regfile_inst
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# Compile of regfile_tb.vhd failed with 104 errors.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 1 failed with 104 errors.
+# Compile of regfile_tb.vhd failed with 103 errors.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 1 failed with 103 errors.
+# Compile of regfile_tb.vhd failed with 23 errors.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 1 failed with 23 errors.
+# Compile of regfile_tb.vhd failed with 3 errors.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+restart
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+run
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# Compile of regfile_tb.vhd failed with 2 errors.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.core_pack
+# Loading work.regfile_tb(beh)
+# Loading work.regfile(rtl)
+run
+# GetModuleFileName: Das angegebene Modul wurde nicht gefunden.
+# 
+# 
+# Compile of regfile_tb.vhd was successful.
+# Compile of regfile.vhd was successful.
+# Compile of core_pack.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+# End time: 20:01:47 on May 14,2018, Elapsed time: 12:27:37
+# Errors: 0, Warnings: 110

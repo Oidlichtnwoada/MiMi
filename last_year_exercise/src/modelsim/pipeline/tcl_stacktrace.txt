@@ -1,0 +1,21 @@
+Mon May 21 07:53:32 CEST 2018
+Trace back: ** Fatal: (vish-9) Problem while writing mpf file "write".
+No space left on device. (errno = ENOSPC)
+
+    while executing
+".vcop Eval Project::compileAllFiles"
+    invoked from within
+".dockbar.tbf1.compile.tb.button_16 invoke"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 [list $w invoke]"
+    (procedure "tk::ButtonUp" line 22)
+    invoked from within
+"tk::ButtonUp .dockbar.tbf1.compile.tb.button_16"
+    (command bound to event)
+  <2:/home/mathias/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/tk8.5/bgerror.tcl:92: ::tkerror {** Fatal: (vish-9) Problem while writing mpf file "write".
+No space left on device. (errno = ENOSPC)
+}
+  <1:eval:1: ::tk::dialog::error::bgerror {** Fatal: (vish-9) Problem while writing mpf file "write".
+No space left on device. (errno = ENOSPC)
+}
