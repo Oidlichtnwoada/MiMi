@@ -15,6 +15,7 @@
 !*.png
 !LICENSE
 !*.md
+!*.mif
 !Makefile
 !*.s
 !*.S

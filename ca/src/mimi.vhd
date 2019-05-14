@@ -10,7 +10,7 @@ entity mimi is
 	port (
 		clk_pin   : in  std_logic;
 		reset_pin : in  std_logic;
-		tx  	  : out std_logic;
+		tx  	  	 : out std_logic;
 		rx        : in  std_logic;
 		intr_pin  : in  std_logic_vector(INTR_COUNT-1 downto 0));
 
@@ -18,14 +18,14 @@ end mimi;
 
 architecture rtl of mimi is
 
-	signal clk : std_logic;
-	signal reset : std_logic;
-	signal pll_locked : std_logic;
+	signal clk 							: std_logic;
+	signal reset 						: std_logic;
+	signal pll_locked 				: std_logic;
 	signal reset_reg0, reset_reg1 : std_logic;
 
-	signal intr : std_logic_vector(INTR_COUNT-1 downto 0);
-	signal intr_edge : std_logic_vector(INTR_COUNT-1 downto 0);
-	signal intr_reg0, intr_reg1 : std_logic_vector(INTR_COUNT-1 downto 0);	
+	signal intr 						: std_logic_vector(INTR_COUNT-1 downto 0);
+	signal intr_edge 					: std_logic_vector(INTR_COUNT-1 downto 0);
+	signal intr_reg0, intr_reg1 	: std_logic_vector(INTR_COUNT-1 downto 0);	
 	
 begin  -- rtl
 

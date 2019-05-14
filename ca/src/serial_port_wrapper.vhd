@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 use work.core_pack.all;
-use work.serial_port_pkg.all;
+--use work.serial_port_pkg.all;
 
 entity serial_port_wrapper is
 	
@@ -40,25 +40,25 @@ architecture behavior of serial_port_wrapper is
 	
 begin  -- behavior
 
-	sp : serial_port
-		generic map (
-			clk_freq	  => clk_freq,
-			baud_rate	  => baud_rate,
-			sync_stages	  => sync_stages,
-			tx_fifo_depth => tx_fifo_depth,
-			rx_fifo_depth => rx_fifo_depth)
-		port map (
-			clk			  => clk,
-			res_n		  => res_n,
-			tx_data		  => tx_data,
-			tx_wr		  => tx_wr,
-			tx_free       => tx_free,
-			rx_data		  => rx_data,
-			rx_rd		  => rx_rd,
-			rx_data_empty => rx_data_empty,
-			rx_data_full  => rx_data_full,
-			rx			  => rx,
-			tx			  => tx);
+--	sp : serial_port
+--		generic map (
+--			clk_freq	  => clk_freq,
+--			baud_rate	  => baud_rate,
+--			sync_stages	  => sync_stages,
+--			tx_fifo_depth => tx_fifo_depth,
+--			rx_fifo_depth => rx_fifo_depth)
+--		port map (
+--			clk			  => clk,
+--			res_n		  => res_n,
+--			tx_data		  => tx_data,
+--			tx_wr		  => tx_wr,
+--			tx_free       => tx_free,
+--			rx_data		  => rx_data,
+--			rx_rd		  => rx_rd,
+--			rx_data_empty => rx_data_empty,
+--			rx_data_full  => rx_data_full,
+--			rx			  => rx,
+--			tx			  => tx);
 
 	sync: process (clk, res_n)
 	begin  -- process sync
