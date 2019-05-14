@@ -13,7 +13,8 @@ entity regfile is
 		rddata1, rddata2 : out std_logic_vector(DATA_WIDTH-1 downto 0);
 		wraddr			 : in  std_logic_vector(REG_BITS-1 downto 0);
 		wrdata			 : in  std_logic_vector(DATA_WIDTH-1 downto 0);
-		regwrite         : in  std_logic);
+		regwrite         : in  std_logic
+	);
 
 end regfile;
 
