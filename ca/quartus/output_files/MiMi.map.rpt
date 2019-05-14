@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiMi
-Mon May 13 22:22:23 2019
+Tue May 14 11:38:40 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon May 13 22:22:23 2019           ;
+; Analysis & Synthesis Status        ; Failed - Tue May 14 11:38:40 2019           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; MiMi                                        ;
 ; Top-level Entity Name              ; mimi                                        ;
@@ -161,7 +161,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 13 22:22:11 2019
+    Info: Processing started: Tue May 14 11:38:17 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiMi -c MiMi
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -278,8 +278,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: alu File: C:/Users/hanne/Google Drive/TU/2019S_Semester/DDCA/MiMi/ca/src/alu.vhd Line: 8
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 26 errors, 1 warning
     Error: Peak virtual memory: 4801 megabytes
-    Error: Processing ended: Mon May 13 22:22:23 2019
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:27
+    Error: Processing ended: Tue May 14 11:38:41 2019
+    Error: Elapsed time: 00:00:24
+    Error: Total CPU time (on all processors): 00:00:49
 
 
