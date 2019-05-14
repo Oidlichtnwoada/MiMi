@@ -28,29 +28,32 @@ begin
     test: process
         file input_file : text;
         file output_file : text;
+        variable current_read_line : line;
+        variable current_write_line : line;
         variable inputs : lines_t;
     begin
         file_open(input_file, "input.txt", READ_MODE);
         file_open(output_file, "simulated.txt", WRITE_MODE);
-        --
+        clk <= '0';
         res <= '0';
         wait for RESET_FACTOR * CLK_PERIOD;
         res <= '1';
-        --
         while not endfile(input_file) loop
-            clk <= '0';
-            wait for CLK_PERIOD/4;
-            --
-            readline(input_file, current_line);
-            inputs := str_split(current_line, ",");
-            stall <= inputs(0).all;
+            readline(input_file, current_read_line);
+            inputs := str_split(current_read_line, ",");
+            stall <= str_to_slv(inputs(0).all)(0)
+            rdaddr1 <= str_to_slv(inputs(1).all);
+            rdaddr2 <= str_to_slv(inputs(2).all);
+            wraddr <= str_to_slv(inputs(3).all);
+            wrdata <= str_to_slv(inputs(4).all);
+            regwrite <= str_to_slv(inputs(5).all)(0);
             deallocate(inputs);
-            --
             clk <= '1';
             wait for CLK_PERIOD/2;
             clk <= '0';
-            wait for CLK_PERIOD/4;
-            --read outputs
+            wait for CLK_PERIOD/2;
+            write(current_write_line, to_string(rddata1) & "," & to_string(rddata2))
+            writeline(output_file, current_write_line);
         end loop;
         file_close(input_file);
         file_close(output_file);

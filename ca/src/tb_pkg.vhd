@@ -10,7 +10,7 @@ package tb_pkg is
     constant RESET_FACTOR : integer := 10;
     function count (constant s : string; constant substring : string; constant start : natural := 0; constant stop : natural := 0) return natural;
     impure function str_split (constant s : string; constant sep : string; constant max_split : integer := -1) return lines_t;
-    function str_to_sl(constant c: character) return std_logic; 
+    function char_to_sl(constant c: character) return std_logic; 
     function str_to_slv(constant s: string) return std_logic_vector; 
 end package;
 
@@ -96,7 +96,7 @@ package body tb_pkg is
         return ret_val;
     end str_split;
 
-    function str_to_sl(c: character) return std_logic is
+    function char_to_sl(c: character) return std_logic is
         variable sl : std_logic;
     begin
         case c is
@@ -122,7 +122,7 @@ package body tb_pkg is
                 sl:='X';
         end case;
         return sl;
-    end function str_to_sl;
+    end function char_to_sl;
 
     function str_to_slv(s: string) return std_logic_vector is 
         variable slv: std_logic_vector(s'high-s'low downto 0);
@@ -130,7 +130,7 @@ package body tb_pkg is
     begin
         k := s'high-s'low;
         for i in s'range loop
-            slv(k) := str_to_sl(s(i));
+            slv(k) := char_to_sl(s(i));
             k := k - 1;
         end loop;
         return slv;
