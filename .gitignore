@@ -10,12 +10,10 @@
 !*.sty
 !*.txt
 !*.do
-!*.vho
 !*.pdf
 !*.png
 !LICENSE
 !*.md
-!*.mif
 !Makefile
 !*.s
 !*.S

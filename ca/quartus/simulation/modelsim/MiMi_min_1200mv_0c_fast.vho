@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/14/2019 12:34:20"
+-- DATE "05/14/2019 13:02:22"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -78,20 +78,20 @@ ENTITY 	mimi IS
     PORT (
 	clk_pin : IN std_logic;
 	reset_pin : IN std_logic;
-	tx : OUT std_logic;
+	tx : BUFFER std_logic;
 	rx : IN std_logic;
 	intr_pin : IN std_logic_vector(2 DOWNTO 0)
 	);
 END mimi;
 
 -- Design Ports Information
--- clk_pin	=>  Location: PIN_AD14,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- reset_pin	=>  Location: PIN_K25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- tx	=>  Location: PIN_U2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- rx	=>  Location: PIN_AF20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- intr_pin[0]	=>  Location: PIN_L7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- intr_pin[1]	=>  Location: PIN_AF19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- intr_pin[2]	=>  Location: PIN_AE22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- clk_pin	=>  Location: PIN_Y2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- reset_pin	=>  Location: PIN_M23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- tx	=>  Location: PIN_G9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- rx	=>  Location: PIN_G12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- intr_pin[0]	=>  Location: PIN_AB22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- intr_pin[1]	=>  Location: PIN_AC15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- intr_pin[2]	=>  Location: PIN_AB21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF mimi IS
@@ -140,7 +140,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: IOOBUF_X0_Y30_N2
+-- Location: IOOBUF_X13_Y73_N23
 \tx~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -152,7 +152,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \tx~output_o\);
 
--- Location: IOIBUF_X56_Y0_N15
+-- Location: IOIBUF_X0_Y36_N15
 \clk_pin~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -163,7 +163,7 @@ PORT MAP (
 	i => ww_clk_pin,
 	o => \clk_pin~input_o\);
 
--- Location: IOIBUF_X115_Y55_N15
+-- Location: IOIBUF_X115_Y40_N8
 \reset_pin~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -174,7 +174,7 @@ PORT MAP (
 	i => ww_reset_pin,
 	o => \reset_pin~input_o\);
 
--- Location: IOIBUF_X85_Y0_N15
+-- Location: IOIBUF_X27_Y73_N8
 \rx~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -185,7 +185,7 @@ PORT MAP (
 	i => ww_rx,
 	o => \rx~input_o\);
 
--- Location: IOIBUF_X0_Y47_N15
+-- Location: IOIBUF_X107_Y0_N1
 \intr_pin[0]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -196,7 +196,7 @@ PORT MAP (
 	i => ww_intr_pin(0),
 	o => \intr_pin[0]~input_o\);
 
--- Location: IOIBUF_X83_Y0_N15
+-- Location: IOIBUF_X60_Y0_N22
 \intr_pin[1]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -207,7 +207,7 @@ PORT MAP (
 	i => ww_intr_pin(1),
 	o => \intr_pin[1]~input_o\);
 
--- Location: IOIBUF_X96_Y0_N8
+-- Location: IOIBUF_X109_Y0_N8
 \intr_pin[2]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
