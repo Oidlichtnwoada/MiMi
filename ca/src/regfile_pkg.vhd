@@ -11,5 +11,5 @@ package regfile_pkg is
             regwrite         : in  std_logic
         );
     end component;
-    
+
 end package;

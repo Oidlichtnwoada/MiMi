@@ -19,7 +19,5 @@ entity regfile is
 end regfile;
 
 architecture rtl of regfile is
-
-begin  -- rtl
-	
+begin
 end rtl;
