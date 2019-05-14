@@ -6,4 +6,6 @@
 !*.gitignore
 !*.sdc
 !*.tex
+!*.do
+!Makefile
 !*/
