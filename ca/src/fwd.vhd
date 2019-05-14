@@ -6,9 +6,9 @@ use work.core_pack.all;
 use work.op_pack.all;
 
 entity fwd is
-	port (
+	--port (
 		-- define input and output ports as needed
-);
+--);
 	
 end fwd;
 

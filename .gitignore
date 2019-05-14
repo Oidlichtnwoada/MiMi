@@ -10,6 +10,7 @@
 !*.sty
 !*.txt
 !*.do
+!*.vho
 !*.pdf
 !*.png
 !LICENSE
