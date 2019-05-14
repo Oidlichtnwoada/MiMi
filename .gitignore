@@ -8,6 +8,7 @@
 !*.sdc
 !*.tex
 !*.sty
+!*.py
 !*.txt
 !*.do
 !*.pdf
