@@ -42,7 +42,7 @@ begin
             wait for CLK_PERIOD/4;
             --
             readline(input_file, current_line);
-            inputs := split(current_line, ",");
+            inputs := str_split(current_line, ",");
             stall <= inputs(0).all;
             deallocate(inputs);
             --
