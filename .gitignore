@@ -1,0 +1,9 @@
+*
+!*.vhd
+!*.qpf
+!*.qsf
+!*.mpf
+!*.gitignore
+!*.sdc
+!*.tex
+!*/
