@@ -15,6 +15,64 @@ package tb_pkg is
 end package;
 
 package body tb_pkg is
+
+    function slice (
+        constant s      : string;
+        constant offset : natural;
+        constant length : natural)
+    return string is
+    begin
+        if s'ascending then
+            return s(s'left + offset to s'left + offset + length - 1);
+        else
+            return s(s'left - offset downto s'left -offset - length + 1);
+        end if;
+    end function slice;
+
+    function offset (
+        constant s     : string;
+        constant index : natural)
+    return natural is
+    begin
+        if s'ascending then
+            return index - s'left;
+        else
+            return s'left - index;
+        end if;
+    end function offset;
+
+    function left_of_range (
+        constant s     : string;
+        constant index : natural)
+    return boolean is
+    begin
+    if s'ascending then
+        return (index < s'left);
+    else
+        return (index > s'left);
+    end if;
+    end function left_of_range;
+
+    function right_of_range (
+        constant s     : string;
+        constant index : natural)
+    return boolean is
+    begin
+    if s'ascending then
+        return (index > s'right);
+    else
+        return (index < s'right);
+    end if;
+    end function right_of_range;
+
+    function in_range (
+        constant s     : string;
+        constant index : natural)
+    return boolean is
+    begin
+    return not left_of_range(s, index) and not right_of_range(s, index);
+    end function in_range;
+
     function count (
         constant s : string;
         constant substring : string;
@@ -135,4 +193,5 @@ package body tb_pkg is
         end loop;
         return slv;
     end str_to_slv;
+    
 end package body;
