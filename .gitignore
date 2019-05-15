@@ -11,6 +11,7 @@
 !*.py
 !*.txt
 !*.do
+!*.sh
 !*.pdf
 !*.csv
 !*.png
