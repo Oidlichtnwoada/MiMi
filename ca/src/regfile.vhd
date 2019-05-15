@@ -20,4 +20,6 @@ end regfile;
 
 architecture rtl of regfile is
 begin
+	rddata1 <= (others => '1');
+	rddata2 <= (others => '0');
 end rtl;

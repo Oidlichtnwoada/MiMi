@@ -6,7 +6,6 @@ use std.textio.all;
 
 use work.core_pack.all;
 use work.regfile_pkg.all;
-use work.string_ops.all;
 use work.tb_pkg.all;
 
 entity regfile_tb is 
