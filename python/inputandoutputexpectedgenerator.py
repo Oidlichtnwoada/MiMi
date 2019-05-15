@@ -1,4 +1,4 @@
-class InputAndOutputExpectedGeneration:
+class InputAndOutputExpectedGenerator:
     def __init__(self):
         pass
 
@@ -7,3 +7,4 @@ class InputAndOutputExpectedGeneration:
 
     def generateOutputExpected(self, param1, param2):
         return param1
+

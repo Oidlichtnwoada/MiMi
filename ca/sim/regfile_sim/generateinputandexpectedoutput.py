@@ -1,1 +1,15 @@
-# leave empty if input.csv and output_expected.csv are not created with this python file but were created manually
+import sys
+
+sys.path.append('../../../python/')
+
+from inputandoutputexpectedgenerator import InputAndOutputExpectedGenerator as IAOEGenerator
+
+generator = IAOEGenerator()
+
+input_file = open('input.csv', 'r+')
+output_expected = open('output_expected.csv', 'r+')
+
+# do manipulations to both files with the methods of the generator or change them manually
+
+input_file.close()
+output_expected.close()
