@@ -12,6 +12,7 @@
 !*.txt
 !*.do
 !*.pdf
+!*.csv
 !*.png
 !LICENSE
 !*.md
