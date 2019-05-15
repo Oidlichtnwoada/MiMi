@@ -9,7 +9,7 @@ class CSVComparator:
             file1 = f1.readlines()
             file2 = f2.readlines()
             file3 = f3.readlines()
-        with open('result.csv', 'w') as resultFile:
+        with open('result.txt', 'w') as resultFile:
             for i in range(len(file2)):
                 current_error_column_list = []
                 expected = file2[i].replace('\n', '').split(',')
@@ -25,7 +25,7 @@ class CSVComparator:
         if test_successful:
             print('\nTest was SUCCESSFUL!')
         else:
-            with open('result.csv', 'r') as resultFile:
+            with open('result.txt', 'r') as resultFile:
                 print('\n' + resultFile.read())
             print('ERROR count: ' + str(error_count))
             print('\nTest was NOT successful!')

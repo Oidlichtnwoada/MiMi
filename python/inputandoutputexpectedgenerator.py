@@ -7,4 +7,3 @@ class InputAndOutputExpectedGenerator:
 
     def generateOutputExpected(self, param1, param2):
         return param1
-

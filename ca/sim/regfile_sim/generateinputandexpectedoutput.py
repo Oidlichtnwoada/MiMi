@@ -6,10 +6,6 @@ from inputandoutputexpectedgenerator import InputAndOutputExpectedGenerator as I
 
 generator = IAOEGenerator()
 
-input_file = open('input.csv', 'r+')
-output_expected = open('output_expected.csv', 'r+')
-
-# do manipulations to both files with the methods of the generator or change them manually
-
-input_file.close()
-output_expected.close()
+with open('input.csv', 'r+') as input_file, open('output_expected.csv', 'r+') as output_file:
+    # do manipulations to both files with the methods of the generator or change them manually
+    pass
