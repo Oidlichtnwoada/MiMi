@@ -32,8 +32,8 @@ begin
         variable current_write_line : line;
         variable inputs : lines_t;
     begin
-        file_open(input_file, "input.txt", READ_MODE);
-        file_open(output_file, "simulated.txt", WRITE_MODE);
+        file_open(input_file, "input.csv", READ_MODE);
+        file_open(output_file, "output_simulated.csv", WRITE_MODE);
         clk <= '0';
         res <= '0';
         wait for RESET_FACTOR * CLK_PERIOD;
