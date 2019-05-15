@@ -6,7 +6,6 @@ use std.textio.all;
 
 use work.core_pack.all;
 use work.regfile_pkg.all;
-use work.string_ops.all;
 use work.tb_pkg.all;
 
 entity regfile_tb is 
@@ -35,13 +34,13 @@ begin
         file_open(input_file, "input.csv", READ_MODE);
         file_open(output_file, "output_simulated.csv", WRITE_MODE);
         clk <= '0';
-        res <= '0';
+        reset <= '0';
         wait for RESET_FACTOR * CLK_PERIOD;
-        res <= '1';
+        reset <= '1';
         while not endfile(input_file) loop
             readline(input_file, current_read_line);
-            inputs := str_split(current_read_line, ",");
-            stall <= str_to_slv(inputs(0).all)(0)
+            inputs := str_split(current_read_line.all, ",");
+            stall <= str_to_slv(inputs(0).all)(0);
             rdaddr1 <= str_to_slv(inputs(1).all);
             rdaddr2 <= str_to_slv(inputs(2).all);
             wraddr <= str_to_slv(inputs(3).all);
@@ -52,7 +51,7 @@ begin
             wait for CLK_PERIOD/2;
             clk <= '0';
             wait for CLK_PERIOD/2;
-            write(current_write_line, to_string(rddata1) & "," & to_string(rddata2))
+            write(current_write_line, to_string(rddata1) & "," & to_string(rddata2));
             writeline(output_file, current_write_line);
         end loop;
         file_close(input_file);
