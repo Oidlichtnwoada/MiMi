@@ -91,6 +91,7 @@ case A(1 downto 0) is
 			M.rd <= '0';
 			M.wr <= '0';
 		end if;
+		--computation of store exception
 		if op.memwrite='1' and A(ADDR_WIDTH-1 downto 2)=ADDRZERO then
 			XS <= '1';
 			M.rd <= '0';
@@ -131,6 +132,7 @@ case A(1 downto 0) is
 				M.wr <= '0';
 			end if;
 		end if;
+		--computation of store exception
 		if op.memwrite='1' then
 			if op.memtype=MEM_H or op.memtype=MEM_HU or op.memtype=MEM_W then
 				XS <= '1';
@@ -171,6 +173,7 @@ case A(1 downto 0) is
 			M.rd <= '0';
 			M.wr <= '0';
 		end if;
+		--computation of store exception
 		if op.memwrite='1' and op.memtype=MEM_W then
 			XS <= '1';
 			M.rd <= '0';
@@ -203,6 +206,7 @@ case A(1 downto 0) is
 			R <= DD & DC & DB & DA;
 		end if;
 		
+		--computation of load exception
 		if op.memread='1' then
 			if op.memtype=MEM_H or op.memtype=MEM_HU or op.memtype=MEM_W then
 				XL <= '1';
@@ -210,6 +214,7 @@ case A(1 downto 0) is
 				M.wr <= '0';
 			end if;
 		end if;
+		--computation of store exception
 		if op.memwrite='1' then
 			if op.memtype=MEM_H or op.memtype=MEM_HU or op.memtype=MEM_W then
 				XS <= '1';
