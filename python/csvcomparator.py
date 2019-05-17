@@ -20,10 +20,13 @@ class CSVComparator:
                         error_count = error_count + 1
                         current_error_column_list.append(m)
                 if len(current_error_column_list) > 0:
-                    output_line = 'Mismatching column(s) in line ' + str(i+1) + ': ' + str(list(map(lambda x: x+1, current_error_column_list))).replace('[','').replace(']','').replace(' ','') + ' => input was ' + file1[i]
-                    output_line = output_line + 'Expected:  '  + file2[i]
-                    output_line = output_line + 'Simulated: ' + file3[i]
-                    resultFile.write(output_line)
+                    output = '\nMISMATCHING COLUMN(S) in line ' + str(i+1) + ': ' + str(list(map(lambda x: x+1, current_error_column_list))).replace('[','').replace(']','').replace(' ','') + '\n' 
+                    output = output + 'Input-Header:  ' + file1[0]
+                    output = output + 'Input:         ' + file1[i]
+                    output = output + 'Output-Header: ' + file2[0]
+                    output = output + 'Expected:      ' + file2[i]
+                    output = output + 'Simulated:     ' + file3[i]
+                    resultFile.write(output)
         if test_successful:
             print('\nTest was SUCCESSFUL!')
         else:
