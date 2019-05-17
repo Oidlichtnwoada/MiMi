@@ -21,6 +21,8 @@ class CSVComparator:
                         current_error_column_list.append(m)
                 if len(current_error_column_list) > 0:
                     output_line = 'Mismatching column(s) in line ' + str(i+1) + ': ' + str(list(map(lambda x: x+1, current_error_column_list))).replace('[','').replace(']','').replace(' ','') + ' => input was ' + file1[i]
+                    output_line = output_line + 'Expected:  '  + file2[i]
+                    output_line = output_line + 'Simulated: ' + file3[i]
                     resultFile.write(output_line)
         if test_successful:
             print('\nTest was SUCCESSFUL!')
