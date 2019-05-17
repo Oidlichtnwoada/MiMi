@@ -20,7 +20,7 @@ class CSVComparator:
                         error_count = error_count + 1
                         current_error_column_list.append(m)
                 if len(current_error_column_list) > 0:
-                    output = '\nMISMATCHING COLUMN(S) in line ' + str(i+1) + ': ' + str(list(map(lambda x: x+1, current_error_column_list))).replace('[','').replace(']','').replace(' ','') + '\n' 
+                    output = '\nMISMATCHING COLUMN(S) in line ' + str(i+1) + ': ' + str(list(map(lambda x: file2[0].replace('\n', '').split(',')[x], current_error_column_list))).replace('[','').replace(']','').replace(' ','').replace('\'', '') + '\n' 
                     output = output + 'Input-Header:  ' + file1[0]
                     output = output + 'Input:         ' + file1[i]
                     output = output + 'Output-Header: ' + file2[0]
