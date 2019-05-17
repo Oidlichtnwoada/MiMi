@@ -34,10 +34,17 @@ begin
         file_open(input_file, "input.csv", READ_MODE);
         file_open(output_file, "output_simulated.csv", WRITE_MODE);
         clk <= '0';
+        --reset
         reset <= '0';
         wait for RESET_FACTOR * CLK_PERIOD;
         reset <= '1';
+        --creating header for output_simulated.csv
+        write(current_write_line, string'("rddata1,rddata2"));
+        writeline(output_file, current_write_line);
+        --skip header for input.csv
+        readline(input_file, current_read_line);
         while not endfile(input_file) loop
+            --assigning the inputs from the file
             readline(input_file, current_read_line);
             inputs := str_split(current_read_line.all, ",");
             stall <= str_to_slv(inputs(0).all)(0);
@@ -51,6 +58,7 @@ begin
             wait for CLK_PERIOD/2;
             clk <= '0';
             wait for CLK_PERIOD/2;
+            --read the output pins and write to file
             write(current_write_line, to_string(rddata1) & "," & to_string(rddata2));
             writeline(output_file, current_write_line);
         end loop;
