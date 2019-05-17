@@ -3,6 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 use work.core_pack.all;
+use work.regfile_pkg.all;
 
 entity regfile is
 	
@@ -19,7 +20,37 @@ entity regfile is
 end regfile;
 
 architecture rtl of regfile is
+	signal registers : register_array(REG_COUNT-1 downto 0);
 begin
-	rddata1 <= (others => '1');
-	rddata2 <= (others => '0');
+	process(all)
+	begin
+		if reset = '0' then
+			rddata1 <= (others => '0');
+			rddata2 <= (others => '0');
+		elsif rising_edge(clk) then
+			if stall = '1' then
+				null;
+			else
+				--reading
+				if unsigned(rdaddr1) = 0 then
+					rddata1 <= (others => '0');
+				elsif rdaddr1 = wraddr and regwrite = '1' then
+					rddata1 <= wrdata;
+				else 
+					rddata1 <= registers(to_integer(unsigned(rdaddr1)));
+				end if;
+				if unsigned(rdaddr2) = 0 then
+					rddata2 <= (others => '0');
+				elsif rdaddr2 = wraddr and regwrite = '1' then
+					rddata2 <= wrdata;
+				else 
+					rddata2 <= registers(to_integer(unsigned(rdaddr2)));
+				end if;
+				--writing
+				if regwrite = '1' then
+					registers(to_integer(unsigned(wraddr))) <= wrdata;
+				end if;
+			end if;
+		end if;
+	end process;
 end rtl;
