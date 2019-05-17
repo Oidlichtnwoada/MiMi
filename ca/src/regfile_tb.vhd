@@ -41,7 +41,7 @@ begin
         --creating header for output_simulated.csv
         write(current_write_line, string'("rddata1,rddata2"));
         writeline(output_file, current_write_line);
-        --skip header for input.csv
+        --skip header from input.csv
         readline(input_file, current_read_line);
         while not endfile(input_file) loop
             --assigning the inputs from the file
@@ -58,7 +58,7 @@ begin
             wait for CLK_PERIOD/2;
             clk <= '0';
             wait for CLK_PERIOD/2;
-            --read the output pins and write to file
+            --read the output pins and write to output_simulated.csv
             write(current_write_line, to_string(rddata1) & "," & to_string(rddata2));
             writeline(output_file, current_write_line);
         end loop;
