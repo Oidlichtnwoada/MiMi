@@ -31,6 +31,8 @@ begin
     begin
         file_open(input_file, "input.csv", READ_MODE);
         file_open(output_file, "output_simulated.csv", WRITE_MODE);
+        --skip header from input.csv
+        readline(input_file, current_read_line);
         while not endfile(input_file) loop
             readline(input_file, current_read_line);
             inputs := str_split(current_read_line.all, ",");
