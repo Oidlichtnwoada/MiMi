@@ -20,7 +20,7 @@ entity regfile is
 end regfile;
 
 architecture rtl of regfile is
-	signal registers : register_array(REG_COUNT-1 downto 0);
+	signal registers : register_array;
 begin
 	process(all)
 	begin

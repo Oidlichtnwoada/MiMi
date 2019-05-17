@@ -6,7 +6,7 @@ use work.core_pack.all;
 
 package regfile_pkg is 
 
-    type register_array is array (natural range <>) of std_logic_vector(DATA_WIDTH-1 downto 0);
+    type register_array is array (REG_COUNT-1 downto 0) of std_logic_vector(DATA_WIDTH-1 downto 0);
 
     component regfile is
         port (
