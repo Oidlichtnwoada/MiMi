@@ -3,7 +3,6 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 use work.core_pack.all;
-use work.regfile_pkg.all;
 
 entity regfile is
 	
@@ -20,6 +19,7 @@ entity regfile is
 end regfile;
 
 architecture rtl of regfile is
+	type register_array is array (REG_COUNT-1 downto 0) of std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal registers : register_array;
 begin
 	process(all)
