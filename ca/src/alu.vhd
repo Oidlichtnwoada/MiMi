@@ -83,11 +83,11 @@ begin  -- rtl
 					R <= std_logic_vector(to_unsigned(0,DATA_WIDTH));
 				end if;
 			when ALU_SLL =>
-				R <= std_logic_vector(shift_left(unsigned(B),to_integer(unsigned(A))));
+				R <= std_logic_vector(shift_left(unsigned(B),to_integer(unsigned(A(DATA_WIDTH_BITS-1 downto 0)))));
 			when ALU_SRL =>
-				R <= std_logic_vector(shift_right(unsigned(B),to_integer(unsigned(A))));
+				R <= std_logic_vector(shift_right(unsigned(B),to_integer(unsigned(A(DATA_WIDTH_BITS-1 downto 0)))));
 			when ALU_SRA =>
-				R <= std_logic_vector(shift_right(signed(B),to_integer(unsigned(A))));
+				R <= std_logic_vector(shift_right(signed(B),to_integer(unsigned(A(DATA_WIDTH_BITS-1 downto 0)))));
 			when ALU_ADD =>
 				R <= std_logic_vector(signed(A) + signed(B));
 			when ALU_SUB =>
@@ -130,15 +130,15 @@ begin  -- rtl
 	
 		case op is
 			when ALU_ADD =>
-				if(signed(A) >= 0) and (signed(B) >= 0) and (signed(R) < 0) then
+				if(signed(A) >= to_signed(0,A'length)) and (signed(B) >= to_signed(0,B'length)) and (signed(R) < to_signed(0,R'length)) then
 					V <= '1';
-				elsif (signed(A) < 0) and (signed(B) < 0) and (signed(R) >= 0) then
+				elsif (signed(A) < to_signed(0,A'length)) and (signed(B) < to_signed(0,B'length)) and (signed(R) >= to_signed(0,R'length)) then
 					V <= '1';
 				end if;
 			when ALU_SUB =>
-				if(signed(A) >= 0) and (signed(B) < 0) and (signed(R) < 0) then
+				if(signed(A) >= to_signed(0,A'length)) and (signed(B) < to_signed(0,B'length)) and (signed(R) < to_signed(0,R'length)) then
 					V <= '1';
-				elsif (signed(A) < 0) and (signed(B) >= 0) and (signed(R) >= 0) then
+				elsif (signed(A) < to_signed(0,A'length)) and (signed(B) >= to_signed(0,B'length)) and (signed(R) >= to_signed(0,R'length)) then
 					V <= '1';
 				end if;
 			when others =>
