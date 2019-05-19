@@ -8,34 +8,24 @@ Failed test: op=alu_sub A=00000000000000000000000000000001 B=0000000000000000000
 Failed test: op=alu_sub A=00000000000000000000000000000000 B=11111111111111111111111111111111, result R=00000000000000000000000000000001 Z=0 V=1, expected R=00000000000000000000000000000001 Z=0 V=0
 Failed test: op=alu_sub A=11111111111111111111111111111111 B=00000000000000000000000000000000, result R=11111111111111111111111111111111 Z=0 V=1, expected R=11111111111111111111111111111111 Z=0 V=0
 Failed test: op=alu_sub A=11111111111111111111111111111111 B=11111111111111111111111111111111, result R=00000000000000000000000000000000 Z=1 V=1, expected R=00000000000000000000000000000000 Z=1 V=0
-Failed test: op=alu_sll A=00000000000000000000000000100100 B=10000111011001010100001100100001, result R=00000000000000000000000000000000 Z=0 V=0, expected R=01110110010101000011001000010000 Z=0 V=0
-Failed test: op=alu_srl A=00000000000000000000000000100100 B=10000111011001010100001100100001, result R=00000000000000000000000000000000 Z=0 V=0, expected R=00001000011101100101010000110010 Z=0 V=0
-Failed test: op=alu_sra A=00000000000000000000000000100100 B=10000111011001010100001100100001, result R=11111111111111111111111111111111 Z=0 V=0, expected R=11111000011101100101010000110010 Z=0 V=0
-Failed 10/62 tests.
-# End time: 14:12:11 on May 18,2019, Elapsed time: 0:00:01
+Failed 7/62 tests.
+# End time: 08:20:12 on May 19,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on alu
 Starting tests on jmpu
 Failed 0/33 tests.
-# End time: 14:12:14 on May 18,2019, Elapsed time: 0:00:01
+# End time: 08:20:15 on May 19,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on jmpu
 Starting tests on memu
-** Warning: /tmp/tmp.4YoLV5bbm4/src/memu.vhd(77): (vcom-1272) Length of expected is 32; length of actual is 8.
-** Warning: /tmp/tmp.4YoLV5bbm4/src/memu.vhd(81): (vcom-1272) Length of expected is 32; length of actual is 16.
-** Warning: /tmp/tmp.4YoLV5bbm4/src/memu.vhd(116): (vcom-1272) Length of expected is 32; length of actual is 8.
-** Warning: /tmp/tmp.4YoLV5bbm4/src/memu.vhd(120): (vcom-1272) Length of expected is 32; length of actual is 16.
-** Warning: /tmp/tmp.4YoLV5bbm4/src/memu.vhd(159): (vcom-1272) Length of expected is 32; length of actual is 8.
-** Warning: /tmp/tmp.4YoLV5bbm4/src/memu.vhd(163): (vcom-1272) Length of expected is 32; length of actual is 16.
-** Warning: /tmp/tmp.4YoLV5bbm4/src/memu.vhd(198): (vcom-1272) Length of expected is 32; length of actual is 8.
-** Warning: /tmp/tmp.4YoLV5bbm4/src/memu.vhd(202): (vcom-1272) Length of expected is 32; length of actual is 16.
-# End time: 14:12:18 on May 18,2019, Elapsed time: 0:00:01
-# Errors: 3, Warnings: 0
+Failed 0/63 tests.
+# End time: 08:20:18 on May 19,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
 Finished tests on memu
 Starting tests on regfile
 Failed test: stall=0 rdaddr1=11100 rdaddr2=00000 wraddr=11100 wrdata=10001001101010111100110111101111 regwrite=1, result rddata1=UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU rddata2=00000000000000000000000000000000, expected rddata1=10001001101010111100110111101111 rddata2=00000000000000000000000000000000 (write values applied in cycle after read addresses)
 Failed test: stall=0 rdaddr1=00000 rdaddr2=11101 wraddr=11101 wrdata=01110110010101000011001000010000 regwrite=1, result rddata1=00000000000000000000000000000000 rddata2=11111110110111001011101010011000, expected rddata1=00000000000000000000000000000000 rddata2=01110110010101000011001000010000 (write values applied in cycle after read addresses)
 Failed 2/29 tests.
-# End time: 14:12:21 on May 18,2019, Elapsed time: 0:00:01
+# End time: 08:20:21 on May 19,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on regfile
