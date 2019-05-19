@@ -27,24 +27,28 @@ architecture rtl of regfile is
 begin
 	process (all)
 	begin
-		--writing
-		if regwrite = '1' then
-			registers(to_integer(unsigned(latched_wraddr))) <= wrdata;
-		end if;
-		--reading
-		if unsigned(latched_rdaddr1) = 0 then
-			rddata1 <= (others => '0');
-		elsif latched_rdaddr1 = latched_wraddr and regwrite = '1' then
-			rddata1 <= wrdata;
+		if stall = '1' then
+			null;
 		else 
-			rddata1 <= registers(to_integer(unsigned(latched_rdaddr1)));
-		end if;
-		if unsigned(latched_rdaddr2) = 0 then
-			rddata2 <= (others => '0');
-		elsif latched_rdaddr2 = latched_wraddr and regwrite = '1' then
-			rddata2 <= wrdata;
-		else 
-			rddata2 <= registers(to_integer(unsigned(latched_rdaddr2)));
+			--writing
+			if regwrite = '1' then
+				registers(to_integer(unsigned(latched_wraddr))) <= wrdata;
+			end if;
+			--reading
+			if unsigned(latched_rdaddr1) = 0 then
+				rddata1 <= (others => '0');
+			elsif unsigned(latched_rdaddr1) = unsigned(latched_wraddr) and regwrite = '1' then
+				rddata1 <= wrdata;
+			else 
+				rddata1 <= registers(to_integer(unsigned(latched_rdaddr1)));
+			end if;
+			if unsigned(latched_rdaddr2) = 0 then
+				rddata2 <= (others => '0');
+			elsif unsigned(latched_rdaddr2) = unsigned(latched_wraddr) and regwrite = '1' then
+				rddata2 <= wrdata;
+			else 
+				rddata2 <= registers(to_integer(unsigned(latched_rdaddr2)));
+			end if;
 		end if;
 	end process;
 	
