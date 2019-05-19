@@ -74,11 +74,11 @@ case A(1 downto 0) is
 		
 		--computation of R
 		if op.memtype=MEM_B then
-			R <= std_logic_vector(signed(DD));
+			R <= std_logic_vector(resize(signed(DD),R'length));
 		elsif op.memtype=MEM_BU then
 			R <= EMPTY & EMPTY & EMPTY & DD;
 		elsif op.memtype=MEM_H then
-			R <= std_logic_vector(signed(DD & DC));
+			R <= std_logic_vector(resize(signed(DD & DC),R'length));
 		elsif op.memtype=MEM_HU then
 			R <= EMPTY & EMPTY & DD & DC;
 		elsif op.memtype=MEM_W then
@@ -113,11 +113,11 @@ case A(1 downto 0) is
 		
 		--computation of R
 		if op.memtype=MEM_B then
-			R <= std_logic_vector(signed(DC));
+			R <= std_logic_vector(resize(signed(DC),R'length));
 		elsif op.memtype=MEM_BU then
 			R <= EMPTY & EMPTY & EMPTY & DC;
 		elsif op.memtype=MEM_H then
-			R <= std_logic_vector(signed(DD & DC));
+			R <= std_logic_vector(resize(signed(DD & DC),R'length));
 		elsif op.memtype=MEM_HU then
 			R <= EMPTY & EMPTY & DD & DC;
 		elsif op.memtype=MEM_W then
@@ -156,11 +156,11 @@ case A(1 downto 0) is
 		
 		--computation of R
 		if op.memtype=MEM_B then
-			R <= std_logic_vector(signed(DB));
+			R <= std_logic_vector(resize(signed(DB),R'length));
 		elsif op.memtype=MEM_BU then
 			R <= EMPTY & EMPTY & EMPTY & DB;
 		elsif op.memtype=MEM_H then
-			R <= std_logic_vector(signed(DB & DA));
+			R <= std_logic_vector(resize(signed(DB & DA), R'length));
 		elsif op.memtype=MEM_HU then
 			R <= EMPTY & EMPTY & DB & DA;
 		elsif op.memtype=MEM_W then
@@ -195,11 +195,11 @@ case A(1 downto 0) is
 		
 		--computation of R
 		if op.memtype=MEM_B then
-			R <= std_logic_vector(signed(DA));
+			R <= std_logic_vector(resize(signed(DA),R'length));
 		elsif op.memtype=MEM_BU then
 			R <= EMPTY & EMPTY & EMPTY & DA;
 		elsif op.memtype=MEM_H then
-			R <= std_logic_vector(signed(DB & DA));
+			R <= std_logic_vector(resize(signed(DB & DA),R'length));
 		elsif op.memtype=MEM_HU then
 			R <= EMPTY & EMPTY & DB & DA;
 		elsif op.memtype=MEM_W then

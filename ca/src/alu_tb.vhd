@@ -28,19 +28,19 @@ begin
 		V => V
 	);
 	
-	test: process
-		file input_file : text;
-		file output_file : text;
-		variable current_read_line : line;
-		variable current_write_line : line;
-		variable inputs : lines_t;
-   begin
-	 
-		file_open(input_file, "input.csv", READ_MODE);
-      file_open(output_file, "output_simulated.csv", WRITE_MODE);
-		
-		
-	 
-	end process;
+--	test: process
+--		file input_file : text;
+--		file output_file : text;
+--		variable current_read_line : line;
+--		variable current_write_line : line;
+--		variable inputs : lines_t;
+--   begin
+--	 
+--		file_open(input_file, "input.csv", READ_MODE);
+--      file_open(output_file, "output_simulated.csv", WRITE_MODE);
+--		
+--		
+--	 
+--	end process;
 
 end architecture;
