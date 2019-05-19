@@ -134,12 +134,16 @@ begin  -- rtl
 					V <= '1';
 				elsif (signed(A) < to_signed(0,A'length)) and (signed(B) < to_signed(0,B'length)) and (signed(R) >= to_signed(0,R'length)) then
 					V <= '1';
+				else
+					V <= '0';
 				end if;
 			when ALU_SUB =>
 				if(signed(A) >= to_signed(0,A'length)) and (signed(B) < to_signed(0,B'length)) and (signed(R) < to_signed(0,R'length)) then
 					V <= '1';
 				elsif (signed(A) < to_signed(0,A'length)) and (signed(B) >= to_signed(0,B'length)) and (signed(R) >= to_signed(0,R'length)) then
 					V <= '1';
+				else
+					V <= '0';
 				end if;
 			when others =>
 				V <= '0';
