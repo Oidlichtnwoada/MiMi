@@ -27,7 +27,7 @@ begin
 		variable rdaddr2_var : std_logic_vector(REG_BITS-1 downto 0);
 	begin
 		--writing
-		if rising_edge(clk) and regwrite = '1' and stall = '0' then
+		if rising_edge(clk) and regwrite = '1' and stall = '0' and reset = '1' then
 			registers(to_integer(unsigned(wraddr))) <= wrdata;
 		end if;
 		--updating read addresses
