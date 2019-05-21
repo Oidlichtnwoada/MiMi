@@ -25,9 +25,11 @@ begin
 	process (all)
 		variable rdaddr1_var : std_logic_vector(REG_BITS-1 downto 0);
 		variable rdaddr2_var : std_logic_vector(REG_BITS-1 downto 0);
+		variable writing : boolean;
 	begin
 		--writing
-		if rising_edge(clk) and regwrite = '1' and stall = '0' and reset = '1' then
+		writing := regwrite = '1' and stall = '0' and reset = '1';
+		if rising_edge(clk) and writing then
 			registers(to_integer(unsigned(wraddr))) <= wrdata;
 		end if;
 		--updating read addresses
@@ -41,7 +43,7 @@ begin
 		--reading address 1
 		if unsigned(rdaddr1_var) = 0 then
 			rddata1 <= (others => '0');
-		elsif rdaddr1_var = wraddr and regwrite = '1' then
+		elsif rdaddr1_var = wraddr and writing then
 			rddata1 <= wrdata;
 		else 
 			rddata1 <= registers(to_integer(unsigned(rdaddr1_var)));
@@ -49,7 +51,7 @@ begin
 		--reading address 2
 		if unsigned(rdaddr2_var) = 0 then
 			rddata2 <= (others => '0');
-		elsif rdaddr2_var = wraddr and regwrite = '1' then
+		elsif rdaddr2_var = wraddr and writing then
 			rddata2 <= wrdata;
 		else 
 			rddata2 <= registers(to_integer(unsigned(rdaddr2_var)));
