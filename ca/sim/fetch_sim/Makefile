@@ -9,7 +9,7 @@ VHDL_FILES = \
 TB_FILES = \
 	../../src/fetch_tb.vhd
 TIME_RESOLUTION = 1ps
-TB = regfile_tb
+TB = fetch_tb
 SIM_TIME = 1 sec
 WAVE = ./wave.do
 compile: 
