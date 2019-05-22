@@ -45,15 +45,16 @@ begin
 		end if;
 	end process;
 
-	next: process (all)
+	nxt: process (all)
 	begin
-		pc_nxt <= pc;
 		if stall = '0' and reset = '1' then
 			if pcsrc = '1' then
 				pc_nxt <= pc_in;
 			else 
 				pc_nxt <= std_logic_vector(unsigned(pc) + 4);
 			end if;
+		else 
+			pc_nxt <= pc;
 		end if;
 	end process;
 

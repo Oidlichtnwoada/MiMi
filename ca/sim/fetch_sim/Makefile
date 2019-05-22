@@ -5,7 +5,7 @@ VHDL_FILES = \
 	../../src/tb_pkg.vhd\
 	../../src/imem_altera.vhd\
 	../../src/fetch.vhd\
-	../../src/fetch:pkg.vhd
+	../../src/fetch_pkg.vhd
 TB_FILES = \
 	../../src/fetch_tb.vhd
 TIME_RESOLUTION = 1ps
