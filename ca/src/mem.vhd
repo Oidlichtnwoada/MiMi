@@ -54,7 +54,20 @@ port(
 		XL   : out std_logic;
 		XS   : out std_logic);
 end component;
+
+signal op_jmpu : jmp_op_type;
+signal op_memu : mem_op_type;
+signal N, Z : std_logic;
+signal J : std_logic;
 begin  -- rtl
 
+	
+jmpu_inst : jmpu
+	port map(
+		op => op_jmpu,
+		N => N,
+		Z => Z,
+		J => J
+	);
 	
 end rtl;
