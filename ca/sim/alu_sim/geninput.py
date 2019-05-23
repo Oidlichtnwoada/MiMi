@@ -16,15 +16,21 @@ with open('input.csv', 'r') as input:
 			V = 0
 			Z = 0
 			
-			"""
+			
 			if op == "ALU_NOP":
 				R = A
 			elif op == "ALU_LUI":
 				R = B << 16
 			elif op == "ALU_SLT":
-				
+				if A < B":
+					R = 1
+				else
+					R = 0
 			elif op == "ALU_SLTU":
-			
+				if A < B":
+					R = 1
+				else
+					R = 0
 			elif op == "ALU_SLL":
 			
 			elif op == "ALU_SRL":
@@ -42,7 +48,7 @@ with open('input.csv', 'r') as input:
 			elif op == "ALU_XOR":
 			
 			elif op == "ALU_NOR":
-			"""
+			
 			
 			Rout = "{0:032b}".format(R)
 			Rout = Rout.slice(-32,None)
