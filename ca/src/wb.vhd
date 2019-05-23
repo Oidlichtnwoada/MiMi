@@ -11,7 +11,7 @@ entity wb is
 		clk, reset : in  std_logic;
 		stall      : in  std_logic;
 		flush      : in  std_logic;
-		op	   	  : in  wb_op_type;
+		op         : in  wb_op_type;
 		rd_in      : in  std_logic_vector(REG_BITS-1 downto 0);
 		aluresult  : in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		memresult  : in  std_logic_vector(DATA_WIDTH-1 downto 0);
