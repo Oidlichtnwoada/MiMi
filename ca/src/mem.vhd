@@ -59,15 +59,63 @@ signal op_jmpu : jmp_op_type;
 signal op_memu : mem_op_type;
 signal N, Z : std_logic;
 signal J : std_logic;
+signal A : std_logic_vector(ADDR_WIDTH-1 downto 0);
+signal W : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal D : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal M : mem_out_type;
+signal R : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal XL : std_logic;
+signal XS : std_logic;
+signal exc_load
+
 begin  -- rtl
 
+op_memu.memread <= mem_op.memread when stall='0' else '0';
+op_memu.memwrite <= mem_op.memwrite when stall='0' else '0';
+
+sync : process(all)
+begin
+
+
+end process;
+
+inst : process(all)
+begin
+
+if stall='1' then
 	
+else
+
+end if;
+
+if reset='1' then
+
+elsif rising_edge(clk) then
+	new_pc_out <= new_pc_in;
+	pc_out <= pc_in;
+	rd_out <= rd_in;
+	aluresult_out <= aluresult_in;
+	wbop_out <= wbop_in;
+end if;
+end process;	
 jmpu_inst : jmpu
 	port map(
 		op => op_jmpu,
 		N => N,
 		Z => Z,
 		J => J
+	);
+	
+memu_inst : memu
+	port map(
+		op => op_mem,
+		A => A,
+		W => W,
+		D => D,
+		M => M,
+		R => R,
+		XL => XL,
+		XS => XS
 	);
 	
 end rtl;

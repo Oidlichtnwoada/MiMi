@@ -11,7 +11,7 @@ TIME_RESOLUTION = 1ps
 TB = regfile_tb
 SIM_TIME = 1 sec
 WAVE = ./wave.do
-compile: 
+compile:
 	rm -f log
 	vlib work | tee log
 	for i in $(VHDL_FILES); do \
