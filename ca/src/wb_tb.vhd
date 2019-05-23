@@ -17,12 +17,12 @@ architecture rtl of wb_tb is
     signal stall : std_logic;
     signal flush : std_logic;
     signal op : wb_op_type;
-    rd_in : std_logic_vector(REG_BITS-1 downto 0);
-    aluresult : std_logic_vector(DATA_WIDTH-1 downto 0);
-    memresult : std_logic_vector(DATA_WIDTH-1 downto 0);
-    rd_out : std_logic_vector(REG_BITS-1 downto 0);
-    result : std_logic_vector(DATA_WIDTH-1 downto 0);
-    regwrite : std_logic;
+    signal rd_in : std_logic_vector(REG_BITS-1 downto 0);
+    signal aluresult : std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal memresult : std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal rd_out : std_logic_vector(REG_BITS-1 downto 0);
+    signal result : std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal regwrite : std_logic;
 begin
 
     UUT: wb
