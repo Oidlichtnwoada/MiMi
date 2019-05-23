@@ -36,6 +36,15 @@ end exec;
 
 architecture rtl of exec is
 
+	component alu is
+		port (
+			op   : in  alu_op_type;
+			A, B : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+			R    : out std_logic_vector(DATA_WIDTH-1 downto 0);
+			Z    : out std_logic;
+			V    : out std_logic);
+	end component;
+
 begin  -- rtl
 
 end rtl;

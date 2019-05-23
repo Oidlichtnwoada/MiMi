@@ -33,34 +33,6 @@ architecture rtl of alu is
 	
 begin  -- rtl
 
---	NOP_result <= A;
---	LUI_result <= std_logic_vector(shift_left(unsigned(B),16));
---	SLT_result <= std_logic_vector(to_unsigned(1,DATA_WIDTH)) when signed(A) < signed(B) else std_logic_vector(to_unsigned(0,DATA_WIDTH));
---	SLTU_result <= std_logic_vector(to_unsigned(1,DATA_WIDTH)) when unsigned(A) < unsigned(B) else std_logic_vector(to_unsigned(0,DATA_WIDTH));
---	SLL_result <= std_logic_vector(shift_left(unsigned(B),to_integer(unsigned(A))));
---	SRL_result <= std_logic_vector(shift_right(unsigned(B),to_integer(unsigned(A))));
---	SRA_result <= std_logic_vector(shift_right(signed(B),to_integer(unsigned(A))));
---	ADD_result <= std_logic_vector(signed(A) + signed(B));
---	SUB_result <= std_logic_vector(signed(A) - signed(B));
---	AND_result <= A and B;
---	OR_result <= A or B;
---	XOR_result <= A xor B;
---	NOR_result <= not or_result;
---
---	with op select
---	R <= NOP_result when ALU_NOP,
---		LUI_result when ALU_LUI,
---		SLT_result when ALU_SLT,
---		SLTU_result when ALU_SLTU,
---		SLL_result when ALU_SLL,
---		SRL_result when ALU_SRL,
---		SRA_result when ALU_SRA,
---		ADD_result when ALU_ADD,
---		SUB_result when ALU_SUB,
---		AND_result when ALU_AND,
---		OR_result when ALU_OR,
---		XOR_result when ALU_XOR,
---		NOR_result when ALU_NOR;
 	
 	result : process (A,B,op)
 	begin
