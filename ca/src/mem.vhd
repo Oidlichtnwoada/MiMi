@@ -89,20 +89,31 @@ else
 end if;
 
 if reset='1' then
+	new_pc_out <= (others=>'0');
+	pc_out <= (others=>'0');
+	rd_out <= (others=>'0');
+	aluresult_out <= (others=>'0');
+	wbop_out <= WB_NOP;
+	exc_load <= '0';
+	exc_store <= '0';
+	
 
 elsif rising_edge(clk) then
-	new_pc_out <= new_pc_in;
-	pc_out <= pc_in;
-	rd_out <= rd_in;
-	aluresult_out <= aluresult_in;
-	wbop_out <= wbop_in;
+	if flush='1' then
+	
+	elsif stall!='1'then
+		pc_out <= pc_in;
+		rd_out <= rd_in;
+		aluresult_out <= aluresult_in;
+		wbop_out <= wbop_in;
+	end if;
 end if;
 end process;	
 jmpu_inst : jmpu
 	port map(
 		op => op_jmpu,
-		N => N,
-		Z => Z,
+		N => zero,
+		Z => neg,
 		J => J
 	);
 	
@@ -111,7 +122,7 @@ memu_inst : memu
 		op => op_mem,
 		A => A,
 		W => W,
-		D => D,
+		D => mem_data,
 		M => M,
 		R => R,
 		XL => XL,

@@ -25,7 +25,7 @@ architecture rtl of wb is
 
 begin  -- rtl
 
-process(all)
+process(clk, reset, stall, flush, op, rd_in, aluresult, memresult)
 begin
 
 	if reset='0' then
