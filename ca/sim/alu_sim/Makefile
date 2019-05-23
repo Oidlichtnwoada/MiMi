@@ -3,12 +3,12 @@ VSIM_ARGS=-msgmode both
 VHDL_FILES = \
 	../../src/core_pack.vhd\
 	../../src/tb_pkg.vhd\
-	../../src/regfile.vhd\
-	../../src/regfile_pkg.vhd
+	../../src/alu.vhd\
+	../../src/alu_pkg.vhd
 TB_FILES = \
-	../../src/regfile_tb.vhd
+	../../src/alu_tb.vhd
 TIME_RESOLUTION = 1ps
-TB = regfile_tb
+TB = alu_tb
 SIM_TIME = 1 sec
 WAVE = ./wave.do
 compile: 
