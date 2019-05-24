@@ -163,7 +163,7 @@ architecture rtl of pipeline is
 	signal wb_dec_regwrite	:std_logic;
 	signal wb_dec_rd	:std_logic_vector(REG_BITS-1 downto 0);
 	
-begin  -- rtl
+begin 
 
 	flush <= '0';
 	stall <= mem_in.busy;
