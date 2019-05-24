@@ -6,7 +6,6 @@ use work.core_pack.all;
 use work.op_pack.all;
 
 entity decode is
-	
 	port (
 		clk, reset : in  std_logic;
 		stall      : in  std_logic;
@@ -24,7 +23,6 @@ entity decode is
 		wb_op      : out wb_op_type;
 		exc_dec    : out std_logic
 	);
-
 end decode;
 
 architecture rtl of decode is
@@ -72,7 +70,7 @@ begin
 		exec_op <= EXEC_NOP;
 		cop0_op <= COP0_NOP;
 		jmp_op <= JMP_NOP;
-		sig_mem_op <= MEM_NOP;
+		mem_op <= MEM_NOP;
 		wb_op <= WB_NOP;
 		exc_dec <= '0';
 	elsif rising_edge(clk) then
@@ -81,10 +79,10 @@ begin
 			exec_op <= EXEC_NOP;
 			cop0_op <= COP0_NOP;
 			jmp_op <= JMP_NOP;
-			sig_mem_op <= MEM_NOP;
+			mem_op <= MEM_NOP;
 			wb_op <= WB_NOP;
 			exc_dec <= '0';
-		elsif stall = '0'
+		elsif stall = '0' then
 			pc_out <= pc_nxt;
 			exec_op <= exec_op_nxt;
 			cop0_op <= cop0_op_nxt;
@@ -123,42 +121,42 @@ begin
 							exec_op_nxt.aluop <= ALU_SLL;
 							exec_op_nxt.rd <= r_rd;
 							exec_op_nxt.rt <= r_rt_or_i_rd;
-							exec_op_nxt.imm <= (others => '0') & shamt;
+							exec_op_nxt.imm <= std_logic_vector(resize(unsigned(shamt),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useamt <= '1';
 							wb_op_nxt.regwrite <= '1';
 						when "000010" => --SRL
 							exec_op_nxt.aluop <= ALU_SRL;
 							exec_op_nxt.rd <= r_rd;
 							exec_op_nxt.rt <= r_rt_or_i_rd;
-							exec_op_nxt.imm <= (others => '0') & shamt;
+							exec_op_nxt.imm <= std_logic_vector(resize(unsigned(shamt),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useamt <= '1';
 							wb_op_nxt.regwrite <= '1';
 						when "000011" => --SRA
 							exec_op_nxt.aluop <= ALU_SRA;
 							exec_op_nxt.rd <= r_rd;
 							exec_op_nxt.rt <= r_rt_or_i_rd;
-							exec_op_nxt.imm <= (others => '0') & shamt;
+							exec_op_nxt.imm <= std_logic_vector(resize(unsigned(shamt),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useamt <= '1';
 							wb_op_nxt.regwrite <= '1';
 						when "000100" => --SLLV
 							exec_op_nxt.aluop <= ALU_SLL;
 							exec_op_nxt.rd <= r_rd;
 							exec_op_nxt.rt <= r_rt_or_i_rd;
-							exec_op_nxt.imm <= (others => '0') & rddata1(4 downto 0);
+							exec_op_nxt.imm <= std_logic_vector(resize(unsigned(rddata1(4 downto 0)),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useamt <= '1';
 							wb_op_nxt.regwrite <= '1';
 						when "000110" => --SRLV
 							exec_op_nxt.aluop <= ALU_SRL;
 							exec_op_nxt.rd <= r_rd;
 							exec_op_nxt.rt <= r_rt_or_i_rd;
-							exec_op_nxt.imm <= (others => '0') & rddata1(4 downto 0);
+							exec_op_nxt.imm <= std_logic_vector(resize(unsigned(rddata1(4 downto 0)),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useamt <= '1';
 							wb_op_nxt.regwrite <= '1';
 						when "000111" => --SRAV
 							exec_op_nxt.aluop <= ALU_SRA;
 							exec_op_nxt.rd <= r_rd;
 							exec_op_nxt.rt <= r_rt_or_i_rd;
-							exec_op_nxt.imm <= (others => '0') & rddata1(4 downto 0);
+							exec_op_nxt.imm <= std_logic_vector(resize(unsigned(rddata1(4 downto 0)),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useamt <= '1';
 							wb_op_nxt.regwrite <= '1';
 						when "001000" => --JR
@@ -230,7 +228,7 @@ begin
 							exec_op_nxt.rs <= rs;
 							wb_op_nxt.regwrite <= '1';
 						when others =>
-							exc_dec_nxt => '1';
+							exc_dec_nxt <= '1';
 					end case;
 				when "000001" =>
 					case r_rt_or_i_rd is 
@@ -240,7 +238,7 @@ begin
 							exec_op_nxt.branch <= '1';
 							exec_op_nxt.rs <= rs;
 							exec_op_nxt.readdata2 <= (others => '0');
-							exec_op_nxt.imm <= std_logic_vector(signed(address_or_immediate));
+							exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useimm <= '1';
 						when "00001" => --BGEZ
 							jmp_op_nxt <= JMP_BGEZ;
@@ -248,7 +246,7 @@ begin
 							exec_op_nxt.branch <= '1';
 							exec_op_nxt.rs <= rs;
 							exec_op_nxt.readdata2 <= (others => '0');
-							exec_op_nxt.imm <= std_logic_vector(signed(address_or_immediate));
+							exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useimm <= '1';
 						when "10000" => --BLTZAL
 							jmp_op_nxt <= JMP_BLTZ;
@@ -256,43 +254,43 @@ begin
 							exec_op_nxt.branch <= '1';
 							exec_op_nxt.rs <= rs;
 							exec_op_nxt.readdata2 <= (others => '0');
-							exec_op_nxt.imm <= std_logic_vector(signed(address_or_immediate));
+							exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useimm <= '1';
 							exec_op_nxt.link <= '1';
 							exec_op_nxt.rd <= (others => '1');
-							wb_op_nxt <= '1';
+							wb_op_nxt.regwrite <= '1';
 						when "10001" => --BGEZAL
 							jmp_op_nxt <= JMP_BGEZ;
 							exec_op_nxt.aluop <= ALU_SUB;
 							exec_op_nxt.branch <= '1';
 							exec_op_nxt.rs <= rs;
 							exec_op_nxt.readdata2 <= (others => '0');
-							exec_op_nxt.imm <= std_logic_vector(signed(address_or_immediate));
+							exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 							exec_op_nxt.useimm <= '1';
 							exec_op_nxt.link <= '1';
 							exec_op_nxt.rd <= (others => '1');
-							wb_op_nxt <= '1';
+							wb_op_nxt.regwrite <= '1';
 						when others =>
-							exc_dec_nxt => '1';
+							exc_dec_nxt <= '1';
 					end case;
 				when "000010" => --J
 					jmp_op_nxt <= JMP_JMP;
-					exec_op_nxt.imm <= (others => '0') & target_address;
+					exec_op_nxt.imm <= std_logic_vector(resize(unsigned(target_address),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 				when "000011" => --JAL
 					jmp_op_nxt <= JMP_JMP;
-					exec_op_nxt.imm <= (others => '0') & target_address;
+					exec_op_nxt.imm <= std_logic_vector(resize(unsigned(target_address),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					exec_op_nxt.link <= '1';
 					exec_op_nxt.rd <= (others => '1');
-					wb_op_nxt <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "000100" => --BEQ
 					jmp_op_nxt <= JMP_BEQ;
 					exec_op_nxt.aluop <= ALU_SUB;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
 					exec_op_nxt.branch <= '1';
-					exec_op_nxt.imm <= std_logic_vector(signed(address_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 				when "000101" => --BNE
 					jmp_op_nxt <= JMP_BNE;
@@ -300,7 +298,7 @@ begin
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
 					exec_op_nxt.branch <= '1';
-					exec_op_nxt.imm <= std_logic_vector(signed(address_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 				when "000110" => --BLEZ
 					jmp_op_nxt <= JMP_BLEZ;
@@ -309,7 +307,7 @@ begin
 					exec_op_nxt.rs <= rs;
 					exec_op_nxt.readdata2 <= (others => '0');
 					exec_op_nxt.branch <= '1';
-					exec_op_nxt.imm <= std_logic_vector(signed(address_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 				when "000111" => --BGTZ
 					jmp_op_nxt <= JMP_BGTZ;
@@ -318,64 +316,64 @@ begin
 					exec_op_nxt.rs <= rs;
 					exec_op_nxt.readdata2 <= (others => '0');
 					exec_op_nxt.branch <= '1';
-					exec_op_nxt.imm <= std_logic_vector(signed(address_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 				when "001000" => --ADDI
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
-					exec_op_next.rs <= rs;
-					exec_op_next.imm <= std_logic_vector(signed(adress_or_immediate));
-					exec_op_next.useimm <= '1';
-					exec_op_next.ovf <= '1';
-					wb_op_next.regwrite <= '1';
+					exec_op_nxt.rs <= rs;
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
+					exec_op_nxt.useimm <= '1';
+					exec_op_nxt.ovf <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "001001" => --ADDIU
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
-					exec_op_next.rs <= rs;
-					exec_op_next.imm <= std_logic_vector(signed(adress_or_immediate));
-					exec_op_next.useimm <= '1';
-					wb_op_next.regwrite <= '1';
+					exec_op_nxt.rs <= rs;
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
+					exec_op_nxt.useimm <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "001010" => --SLTI
 					exec_op_nxt.aluop <= ALU_SLT;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
-					exec_op_next.rs <= rs;
-					exec_op_next.imm <= std_logic_vector(signed(adress_or_immediate));
-					exec_op_next.useimm <= '1';
-					wb_op_next.regwrite <= '1';
+					exec_op_nxt.rs <= rs;
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
+					exec_op_nxt.useimm <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "001011" => --SLTIU
 					exec_op_nxt.aluop <= ALU_SLTU;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
-					exec_op_next.rs <= rs;
-					exec_op_next.imm <= std_logic_vector(unsigned(adress_or_immediate));
-					exec_op_next.useimm <= '1';
-					wb_op_next.regwrite <= '1';
+					exec_op_nxt.rs <= rs;
+					exec_op_nxt.imm <= std_logic_vector(resize(unsigned(address_or_immediate),exec_op_nxt.imm'LENGTH));
+					exec_op_nxt.useimm <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "001100" => --ANDI
 					exec_op_nxt.aluop <= ALU_AND;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
-					exec_op_next.rs <= rs;
-					exec_op_next.imm <= std_logic_vector(unsigned(adress_or_immediate));
-					exec_op_next.useimm <= '1';
-					wb_op_next.regwrite <= '1';
+					exec_op_nxt.rs <= rs;
+					exec_op_nxt.imm <= std_logic_vector(resize(unsigned(address_or_immediate),exec_op_nxt.imm'LENGTH));
+					exec_op_nxt.useimm <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "001101" => --ORI
 					exec_op_nxt.aluop <= ALU_OR;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
-					exec_op_next.rs <= rs;
-					exec_op_next.imm <= std_logic_vector(unsigned(adress_or_immediate));
-					exec_op_next.useimm <= '1';
-					wb_op_next.regwrite <= '1';
+					exec_op_nxt.rs <= rs;
+					exec_op_nxt.imm <= std_logic_vector(resize(unsigned(address_or_immediate),exec_op_nxt.imm'LENGTH));
+					exec_op_nxt.useimm <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "001110" => --XORI
 					exec_op_nxt.aluop <= ALU_XOR;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
-					exec_op_next.rs <= rs;
-					exec_op_next.imm <= std_logic_vector(unsigned(adress_or_immediate));
-					exec_op_next.useimm <= '1';
-					wb_op_next.regwrite <= '1';
+					exec_op_nxt.rs <= rs;
+					exec_op_nxt.imm <= std_logic_vector(resize(unsigned(address_or_immediate),exec_op_nxt.imm'LENGTH));
+					exec_op_nxt.useimm <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "001111" => --LUI
 					exec_op_nxt.aluop <= ALU_AND;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
-					exec_op_next.imm <= std_logic_vector(unsigned(adress_or_immediate));
-					exec_op_next.useimm <= '1';
-					wb_op_next.regwrite <= '1';
+					exec_op_nxt.imm <= std_logic_vector(resize(unsigned(address_or_immediate),exec_op_nxt.imm'LENGTH));
+					exec_op_nxt.useimm <= '1';
+					wb_op_nxt.regwrite <= '1';
 				when "010000" =>
 					case rs is 
 						when "00000" => --MFC0
@@ -383,13 +381,13 @@ begin
 						when "00100" => --MTC0
 							null;
 						when others =>
-							exc_dec_nxt => '1';
+							exc_dec_nxt <= '1';
 					end case;
 				when "100000" => --LB
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
-					exec_op_nxt.imm <= std_logic_vector(signed(adress_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					mem_op_nxt.memtype <= MEM_B;
 					mem_op_nxt.memread <= '1';
@@ -399,7 +397,7 @@ begin
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
-					exec_op_nxt.imm <= std_logic_vector(signed(adress_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					mem_op_nxt.memtype <= MEM_H;
 					mem_op_nxt.memread <= '1';
@@ -409,7 +407,7 @@ begin
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
-					exec_op_nxt.imm <= std_logic_vector(signed(adress_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					mem_op_nxt.memtype <= MEM_W;
 					mem_op_nxt.memread <= '1';
@@ -419,7 +417,7 @@ begin
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
-					exec_op_nxt.imm <= std_logic_vector(signed(adress_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					mem_op_nxt.memtype <= MEM_BU;
 					mem_op_nxt.memread <= '1';
@@ -429,7 +427,7 @@ begin
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
-					exec_op_nxt.imm <= std_logic_vector(signed(adress_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					mem_op_nxt.memtype <= MEM_HU;
 					mem_op_nxt.memread <= '1';
@@ -439,7 +437,7 @@ begin
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
-					exec_op_nxt.imm <= std_logic_vector(signed(adress_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					mem_op_nxt.memtype <= MEM_B;
 					mem_op_nxt.memwrite <= '1';
@@ -447,7 +445,7 @@ begin
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
-					exec_op_nxt.imm <= std_logic_vector(signed(adress_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					mem_op_nxt.memtype <= MEM_H;
 					mem_op_nxt.memwrite <= '1';
@@ -455,11 +453,11 @@ begin
 					exec_op_nxt.aluop <= ALU_ADD;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.rs <= rs;
-					exec_op_nxt.imm <= std_logic_vector(signed(adress_or_immediate));
+					exec_op_nxt.imm <= std_logic_vector(resize(signed(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';
 					mem_op_nxt.memtype <= MEM_W;
 					mem_op_nxt.memwrite <= '1';
-				when others
+				when others =>
 					exc_dec_nxt <= '1';
 			end case;
 		end if;
