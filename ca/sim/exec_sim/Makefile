@@ -5,7 +5,9 @@ VHDL_FILES = \
 	../../src/op_pack.vhd\
 	../../src/tb_pkg.vhd\
 	../../src/alu.vhd\
-	../../src/alu_pkg.vhd
+	../../src/alu_pkg.vhd\
+	../../src/exec.vhd\
+	../../src/exec_pkg.vhd
 TB_FILES = \
 	../../src/exec_tb.vhd
 TIME_RESOLUTION = 1ps

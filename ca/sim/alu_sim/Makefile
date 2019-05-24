@@ -2,6 +2,7 @@ VCOM_ARGS=-2008 -work work -suppress 1236 -novopt
 VSIM_ARGS=-msgmode both
 VHDL_FILES = \
 	../../src/core_pack.vhd\
+	../../src/op_pack.vhd\
 	../../src/tb_pkg.vhd\
 	../../src/alu.vhd\
 	../../src/alu_pkg.vhd
