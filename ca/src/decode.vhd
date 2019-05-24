@@ -51,7 +51,6 @@ architecture rtl of decode is
 	signal rdaddr1, rdaddr2 : std_logic_vector(REG_BITS-1 downto 0);
 	signal rddata1, rddata2	: std_logic_vector(DATA_WIDTH-1 downto 0);
 
-	signal pc_nxt : std_logic_vector(PC_WIDTH-1 downto 0);
 	signal exec_op_nxt : exec_op_type;
 	signal cop0_op_nxt : cop0_op_type;
 	signal jmp_op_nxt : jmp_op_type;
@@ -83,7 +82,7 @@ begin
 			wb_op <= WB_NOP;
 			exc_dec <= '0';
 		elsif stall = '0' then
-			pc_out <= pc_nxt;
+			pc_out <= pc_in;
 			exec_op <= exec_op_nxt;
 			cop0_op <= cop0_op_nxt;
 			jmp_op <= jmp_op_nxt;
@@ -105,7 +104,6 @@ begin
 		exec_op_nxt.readdata2 <= rddata2;
 
 		--setting default values 
-		pc_nxt <= pc_in;
 		exec_op_nxt <= EXEC_NOP;
 		cop0_op_nxt <= COP0_NOP;
 		jmp_op_nxt <= JMP_NOP;

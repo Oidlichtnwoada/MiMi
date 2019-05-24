@@ -1,2 +1,2 @@
 pc_out,exec_op,cop0_op,jmp_op,mem_op,wb_op,exc_dec
-UUUUUUUUUUUUUU,alu_nop,00000,jmp_nop,mem_w,0,0
+00000000000000,alu_nop,00000,jmp_nop,mem_w,0,0
