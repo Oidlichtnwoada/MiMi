@@ -157,18 +157,38 @@ begin
 	stall <= mem_in.busy;
 
 	fetch_inst: fetch
-	port map(clk => clk, reset => reset, stall => stall, pcsrc => mem_fetch_pcsrc, pc_in => mem_fetch_new_pc, pc_out => fetch_decode_pc, instr => fetch_decode_instr);
+	port map(clk => clk, reset => reset, stall => stall, pcsrc => mem_fetch_pcsrc, 
+				pc_in => mem_fetch_new_pc, pc_out => fetch_decode_pc, instr => fetch_decode_instr);
 
 	decode_inst: decode
-	port map(clk => clk, reset => reset, stall => stall, flush => flush, pc_in => fetch_decode_pc, instr => fetch_decode_instr, wraddr => wb_decode_wraddr, wrdata => wb_decode_wrdata, regwrite => wb_decode_regwrite, pc_out => decode_exec_pc, exec_op => decode_exec_exec_op, cop0_op => open, jmp_op => decode_exec_jmp_op, mem_op => decode_exec_mem_op, wb_op => decode_exec_wb_op, exc_dec => open);
+	port map(clk => clk, reset => reset, stall => stall, flush => flush, pc_in => fetch_decode_pc, 
+				instr => fetch_decode_instr, wraddr => wb_decode_wraddr, wrdata => wb_decode_wrdata, 
+				regwrite => wb_decode_regwrite, pc_out => decode_exec_pc, exec_op => decode_exec_exec_op, 
+				cop0_op => open, jmp_op => decode_exec_jmp_op, mem_op => decode_exec_mem_op, 
+				wb_op => decode_exec_wb_op, exc_dec => open);
 
 	exec_inst: exec
-	port map(clk => clk, reset => reset, stall => stall, flush => flush, pc_in => decode_exec_pc, op => decode_exec_exec_op, pc_out => exec_mem_pc, rd => exec_mem_rd, rs => exec_mem_rs, rt => exec_mem_rt, aluresult => exec_mem_aluresult, wrdata => exec_mem_wrdata, zero => exec_mem_zero, neg => exec_mem_neg, new_pc => exec_mem_new_pc, memop_in => decode_exec_mem_op, memop_out => exec_mem_mem_op, jmpop_in => decode_exec_jmp_op, jmpop_out => exec_mem_jmp_op, wbop_in => decode_exec_wb_op, wbop_out => exec_mem_wb_op, forwardA => FWD_NONE, forwardB => FWD_NONE, cop0_rddata => (others => '0'), mem_aluresult => mem_wb_aluresult, wb_result => (others => '0'), exc_ovf => open);
+	port map(clk => clk, reset => reset, stall => stall, flush => flush, pc_in => decode_exec_pc, 
+				op => decode_exec_exec_op, pc_out => exec_mem_pc, rd => exec_mem_rd, rs => exec_mem_rs, 
+				rt => exec_mem_rt, aluresult => exec_mem_aluresult, wrdata => exec_mem_wrdata, 
+				zero => exec_mem_zero, neg => exec_mem_neg, new_pc => exec_mem_new_pc, 
+				memop_in => decode_exec_mem_op, memop_out => exec_mem_mem_op, jmpop_in => decode_exec_jmp_op, 
+				jmpop_out => exec_mem_jmp_op, wbop_in => decode_exec_wb_op, wbop_out => exec_mem_wb_op, 
+				forwardA => FWD_NONE, forwardB => FWD_NONE, cop0_rddata => (others => '0'), 
+				mem_aluresult => mem_wb_aluresult, wb_result => (others => '0'), exc_ovf => open);
 
 	mem_inst: mem
-	port map(clk => clk, reset => reset, stall => stall, flush => flush, mem_op => exec_mem_mem_op, jmp_op => exec_mem_jmp_op, pc_in => exec_mem_pc, rd_in => exec_mem_rd, aluresult_in => exec_mem_aluresult, wrdata => exec_mem_wrdata, zero => exec_mem_zero, neg => exec_mem_neg, new_pc_in => exec_mem_new_pc, pc_out => open, pcsrc => mem_fetch_pcsrc, rd_out => mem_wb_rd, aluresult_out => mem_wb_aluresult, memresult => mem_wb_memresult, new_pc_out => mem_fetch_new_pc, wbop_in => exec_mem_wb_op, wbop_out => mem_wb_wb_op, mem_out => mem_out, mem_data => mem_in.rddata, exc_load => open, exc_store => open);
+	port map(clk => clk, reset => reset, stall => stall, flush => flush, 
+				mem_op => exec_mem_mem_op, jmp_op => exec_mem_jmp_op, pc_in => exec_mem_pc, rd_in => exec_mem_rd, 
+				aluresult_in => exec_mem_aluresult, wrdata => exec_mem_wrdata, zero => exec_mem_zero, 
+				neg => exec_mem_neg, new_pc_in => exec_mem_new_pc, pc_out => open, pcsrc => mem_fetch_pcsrc, 
+				rd_out => mem_wb_rd, aluresult_out => mem_wb_aluresult, memresult => mem_wb_memresult, 
+				new_pc_out => mem_fetch_new_pc, wbop_in => exec_mem_wb_op, wbop_out => mem_wb_wb_op, 
+				mem_out => mem_out, mem_data => mem_in.rddata, exc_load => open, exc_store => open);
 
 	wb_inst: wb
-	port map(clk => clk, reset => reset, stall => stall, flush => flush, op => mem_wb_wb_op, rd_in => mem_wb_rd, aluresult => mem_wb_aluresult, memresult => mem_wb_memresult, rd_out => wb_decode_wraddr, result => wb_decode_wrdata, regwrite => wb_decode_regwrite);
+	port map(clk => clk, reset => reset, stall => stall, flush => flush, op => mem_wb_wb_op, 
+				rd_in => mem_wb_rd, aluresult => mem_wb_aluresult, memresult => mem_wb_memresult, 
+				rd_out => wb_decode_wraddr, result => wb_decode_wrdata, regwrite => wb_decode_regwrite);
 	
 end rtl;
