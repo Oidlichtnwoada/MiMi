@@ -4,6 +4,7 @@ VHDL_FILES = \
 	../../src/core_pack.vhd\
 	../../src/op_pack.vhd\
 	../../src/tb_pkg.vhd\
+	../../src/imem_altera.vhd\
 	../../src/regfile.vhd\
 	../../src/alu.vhd\
 	../../src/jmpu.vhd\
