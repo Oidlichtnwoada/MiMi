@@ -4,7 +4,8 @@ VHDL_FILES = \
 	../../src/core_pack.vhd\
 	../../src/tb_pkg.vhd\
 	../../src/memu.vhd\
-	../../src/memu_pkg.vhd
+	../../src/memu_pkg.vhd\
+	../../src/op_pack.vhd
 TB_FILES = \
 	../../src/memu_tb.vhd
 TIME_RESOLUTION = 1ps

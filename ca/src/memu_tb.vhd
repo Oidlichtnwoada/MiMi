@@ -7,6 +7,7 @@ use std.textio.all;
 use work.core_pack.all;
 use work.memu_pkg.all;
 use work.tb_pkg.all;
+use work.op_pack.all;
 
 entity memu_tb is 
 end memu_tb;
@@ -36,15 +37,15 @@ begin
         while not endfile(input_file) loop
             readline(input_file, current_read_line);
             inputs := str_split(current_read_line.all, ",");
-            op.memread <= str_to_slv(inputs(0).all);
-            op.memwrite <= str_to_slv(inputs(1).all);
-            op.memtype <= str_to_slv(inputs(2).all);
+            op.memread <= str_to_slv(inputs(0).all)(0);
+            op.memwrite <= str_to_slv(inputs(1).all)(0);
+            --op.memtype <= str_to_slv(inputs(2).all);
             A <= str_to_slv(inputs(3).all);
             W <= str_to_slv(inputs(4).all);
             D <= str_to_slv(inputs(5).all);
             deallocate(inputs);
-            wait for 10ns;
-            write(current_write_line, to_string(M.address) & "," & to_string(M.rd) & "," & to_string(M.wr) & "," & to_string(M.byteena) & "," & to_String(M.wrdata) & "," & to_string(R), & "," & to_string(XL) & "," & to_string(XS)); --M, R, XL, XS
+            wait for 10 ns;
+            write(current_write_line, to_string(M.address) & "," & to_string(M.rd) & "," & to_string(M.wr) & "," & to_string(M.byteena) & "," & to_String(M.wrdata) & "," & to_string(R) & "," & to_string(XL) & "," & to_string(XS)); --M, R, XL, XS
             writeline(output_file, current_write_line);
         end loop;
         file_close(input_file);
