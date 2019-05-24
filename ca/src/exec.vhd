@@ -173,7 +173,7 @@ begin  -- rtl
 						signal_new_pc_nxt <= std_logic_vector(resize(unsigned(op.readdata1), signal_new_pc_nxt'length));
 						
 						if (op.link = '1') then --JALR
-							signal_aluresult_nxt <= std_logic_vector(resize(signed(shift_left(signed(op.imm),2)), signal_new_pc_nxt'length));
+							signal_aluresult_nxt <= std_logic_vector(resize(unsigned(pc_in), signal_aluresult_nxt'length));
 						end if;
 						
 					else --J,JALR
