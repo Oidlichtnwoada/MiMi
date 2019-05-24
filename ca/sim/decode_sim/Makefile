@@ -4,6 +4,7 @@ VHDL_FILES = \
 	../../src/core_pack.vhd\
 	../../src/tb_pkg.vhd\
 	../../src/op_pack.vhd\
+	../../src/regfile.vhd\
 	../../src/decode.vhd\
 	../../src/decode_pkg.vhd
 TB_FILES = \
