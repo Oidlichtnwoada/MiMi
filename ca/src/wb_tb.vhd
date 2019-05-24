@@ -52,7 +52,7 @@ begin
             readline(input_file, current_read_line);
             inputs := str_split(current_read_line.all, ",");
             stall <= str_to_slv(inputs(0).all)(0);
-            flush <= str_to_slv(inputs(1).all);
+            flush <= str_to_slv(inputs(1).all)(0);
             rd_in <= str_to_slv(inputs(2).all);
             aluresult <= str_to_slv(inputs(3).all);
             memresult <= str_to_slv(inputs(4).all);
