@@ -59,7 +59,7 @@ end component;
 signal op_mem : mem_op_type;
 signal N, Z : std_logic;
 signal J : std_logic;
-signal A : std_logic_vector(ADDR_WIDTH-1 downto 0);
+signal A : std_logic_vector(DATA_WIDTH-1 downto 0);
 signal W : std_logic_vector(DATA_WIDTH-1 downto 0);
 signal D : std_logic_vector(DATA_WIDTH-1 downto 0);
 signal M : mem_out_type;
