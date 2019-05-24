@@ -524,7 +524,7 @@ begin
 					---------- MiMi cop0 instructions ----------
 					case( RI_rs ) is
 					
-						when "00000" =>
+						when "00000" => 
 							
 						when "00100" =>
 								
