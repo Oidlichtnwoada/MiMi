@@ -27,25 +27,29 @@ begin  -- rtl
 
 process(clk, reset, stall, flush, op, rd_in, aluresult, memresult)
 begin
-	report "wb";
-	if reset='0' then
-		rd_out <= (others=>'0');
-		result <= (others=>'0');
+	--report "wb";
+	if reset = '0' then
+		report "wb 1";
+		rd_out <= (others => '0');
+		result <= (others => '0');
 		regwrite <= '0';
-	elsif flush='1' then
+	elsif flush = '1' then
+		report "wb 2";
 		result <= (others=>'0');
 		regwrite <= '0';
 	elsif stall='1' then
-	
+		report "wb 3";
+		null;
 	else
 		rd_out <= rd_in;
 		regwrite <= op.regwrite;
 		if op.memtoreg='1' then
+			report "wb 4";
 			result <= memresult;
 		else
+			report "wb 5";
 			result <= aluresult;
 		end if;
-	
 	end if;
 end process;
 end rtl;
