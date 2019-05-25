@@ -27,7 +27,7 @@ begin  -- rtl
 
 process(clk, reset, stall, flush, op, rd_in, aluresult, memresult)
 begin
-
+	report "wb";
 	if reset='0' then
 		rd_out <= (others=>'0');
 		result <= (others=>'0');
