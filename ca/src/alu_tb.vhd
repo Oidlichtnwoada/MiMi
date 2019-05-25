@@ -6,6 +6,7 @@ use std.textio.all;
 
 use work.core_pack.all;
 use work.op_pack.all;
+use work.tb_pkg.all;
 
 use work.alu_pkg.all;
 
@@ -52,7 +53,7 @@ begin
 			--assigning the inputs from the file
 			readline(input_file, current_read_line);
 			inputs := str_split(current_read_line.all, ",");
-			op <= str_to_slv(inputs(0).all);
+			--op <= str_to_slv(inputs(0).all);
 			A <= str_to_slv(inputs(1).all);
 			B <= str_to_slv(inputs(2).all);
 			deallocate(inputs);
@@ -60,7 +61,7 @@ begin
 			wait for CLK_PERIOD/2;
 
 			--read the output pins and write to output_simulated.csv
-			write(current_write_line, to_string(rddata1) & "," & to_string(rddata2));
+			write(current_write_line, to_string(R));
 			writeline(output_file, current_write_line);
 			
 			wait for CLK_PERIOD/2;
