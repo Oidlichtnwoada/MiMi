@@ -15,6 +15,7 @@ VHDL_FILES = \
 	../../src/mem.vhd\
 	../../src/wb.vhd\
 	../../src/pipeline.vhd\
+	../../src/ocram_altera.vhd\
 	../../src/pipeline_pkg.vhd
 TB_FILES = \
 	../../src/pipeline_tb.vhd

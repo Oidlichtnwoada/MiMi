@@ -10,7 +10,7 @@ entity mimi is
 	port (
 		clk_pin   : in  std_logic;
 		reset_pin : in  std_logic;
-		tx  	  	 : out std_logic;
+		tx  	  : out std_logic;
 		rx        : in  std_logic;
 		intr_pin  : in  std_logic_vector(INTR_COUNT-1 downto 0));
 

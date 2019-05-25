@@ -21,6 +21,12 @@ begin
     UUT: pipeline
     port map (clk => clk, reset => reset, mem_in => mem_in, mem_out => mem_out, intr => intr);
 
+    ocram : entity work.ocram_altera
+    port map (address => mem_out.address(11 downto 2), byteena => mem_out.byteena,
+                clock => clk, data => mem_out.wrdata, wren => mem_out.wr, q => mem_in.rddata);
+                
+    mem_in.busy <= mem_out.rd;
+
     test: process
         file input_file : text;
         file output_file : text;
@@ -44,8 +50,6 @@ begin
             --assigning the inputs from the file
             readline(input_file, current_read_line);
             inputs := str_split(current_read_line.all, ",");
-            mem_in.busy <= str_to_slv(inputs(0).all)(0);
-		    mem_in.rddata <= str_to_slv(inputs(1).all);
             deallocate(inputs);
             clk <= '1';
             wait for CLK_PERIOD/2;
