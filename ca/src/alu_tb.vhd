@@ -39,13 +39,13 @@ begin
    begin
 	 
 		file_open(input_file, "input.csv", READ_MODE);
-      file_open(output_file, "output_simulated.csv", WRITE_MODE);
-		
-		--creating header for output_simulated.csv
-      write(current_write_line, string'("R,Z,V"));
-      writeline(output_file, current_write_line);
-      --skip header from input.csv
-      readline(input_file, current_read_line);
+		file_open(output_file, "output_simulated.csv", WRITE_MODE);
+			
+			--creating header for output_simulated.csv
+		write(current_write_line, string'("R,Z,V"));
+		writeline(output_file, current_write_line);
+		--skip header from input.csv
+		readline(input_file, current_read_line);
 		
 		
 		while not endfile(input_file) loop
