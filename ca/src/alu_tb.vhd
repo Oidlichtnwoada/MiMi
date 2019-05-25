@@ -53,7 +53,7 @@ begin
 			--assigning the inputs from the file
 			readline(input_file, current_read_line);
 			inputs := str_split(current_read_line.all, ",");
-			--op <= str_to_slv(inputs(0).all);
+			op <= alu_op_type'VAL(to_integer(unsigned(str_to_slv(inputs(0).all))));
 			A <= str_to_slv(inputs(1).all);
 			B <= str_to_slv(inputs(2).all);
 			deallocate(inputs);
