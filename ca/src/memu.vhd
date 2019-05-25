@@ -40,6 +40,8 @@ begin  -- rtl
 process(op, A, W, D)
 begin
 
+report "\n\n\nMEMU-Process\n\n\n";
+
 --setting address to the memory module & re-setting the exceptions(otherwise<=0)
 M.address <= A;
 XL <= '0';

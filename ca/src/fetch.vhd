@@ -47,7 +47,7 @@ begin
 
 	nxt: process (all)
 	begin
-		--report "fetch stall " & to_string(stall) & " reset " & to_string(reset) & " pcsrc " & to_string(pcsrc) & " pc_in " & to_string(pc_in) & " pc " & to_string(pc);
+		report "fetch stall " & to_string(stall); --& " reset " & to_string(reset) & " pcsrc " & to_string(pcsrc) & " pc_in " & to_string(pc_in) & " pc " & to_string(pc);
 		if stall = '0' and reset = '1' then
 			if pcsrc = '1' then
 				report "fetch 1";
@@ -57,7 +57,7 @@ begin
 				report "fetch 2";
 			end if;
 		else 
-				report "fetch 3";
+			report "fetch 3";
 			pc_nxt <= pc;
 		end if;
 	end process;
