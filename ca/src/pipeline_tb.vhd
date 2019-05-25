@@ -36,7 +36,7 @@ begin
         wait for RESET_FACTOR * CLK_PERIOD;
         reset <= '1';
         --creating header for output_simulated.csv
-        write(current_write_line, string'("mem_out"));
+        write(current_write_line, string'("address,rd,wr,byteena,wrdata"));
         writeline(output_file, current_write_line);
         --skip header from input.csv
         readline(input_file, current_read_line);
@@ -52,7 +52,7 @@ begin
             clk <= '0';
             wait for CLK_PERIOD/2;
             --read the output pins and write to output_simulated.csv
-            write(current_write_line, to_string(mem_out.wrdata));
+            write(current_write_line, to_string(mem_out.address) & "," & to_string(mem_out.rd) & "," & to_string(mem_out.wr) & "," & to_string(mem_out.byteena) & "," & to_string(mem_out.wrdata));
             writeline(output_file, current_write_line);
         end loop;
         file_close(input_file);
