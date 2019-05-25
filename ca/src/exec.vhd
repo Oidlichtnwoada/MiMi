@@ -131,8 +131,12 @@ begin  -- rtl
 				pc_out 		<= pc_in;
 				memop_out	<= memop_in;
 				jmpop_out	<= jmpop_in;
-				wbop_out		<= wbop_in;
+				wbop_out	<= wbop_in;
 			
+			elsif (stall = '1') then
+			
+				memop_out	<= MEM_NOP;
+				
 			end if;
 				
 		end if;
