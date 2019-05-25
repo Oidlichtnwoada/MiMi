@@ -77,10 +77,8 @@ begin  -- rtl
 
 --mem_op to memu
 op_mem.memtype <= sig_mem_op.memtype;
-op_mem.memread <= sig_mem_op.memread when stall='0' else '0';
-op_mem.memwrite <= sig_mem_op.memwrite when stall='0' else '0';
 
-sync : process(all)
+concurrent : process(all)
 begin
 	exc_load <= XL;
 	exc_store <= XS;
@@ -131,7 +129,15 @@ begin
 			W <= wrdata;
 		else
 			report "mem 6";
+			sig_mem_op <= MEM_NOP;
 			null;
+		end if;
+		if stall = '0' then
+			op_mem.memread <= sig_mem_op.memread;
+			op_mem.memwrite <= sig_mem_op.memwrite;
+		else 
+			op_mem.memread <= '0';
+			op_mem.memwrite <= '0';
 		end if;
 	end if;
 end process;

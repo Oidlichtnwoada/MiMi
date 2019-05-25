@@ -40,7 +40,7 @@ begin  -- rtl
 process(op, A, W, D)
 begin
 
-report "\n\n\nMEMU-Process\n\n\n";
+report "\n\n\nMEMU-Process\n\n\n op " & to_string(op.memtype) & " memread " & to_string(op.memread) & " memwrite " & to_string(op.memwrite) & " A " & to_string(A) & " W " & to_string(W) & " D " & to_string(D);
 
 --setting address to the memory module & re-setting the exceptions(otherwise<=0)
 M.address <= A;

@@ -17,8 +17,8 @@ entity wb is
 		memresult  : in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		rd_out     : out std_logic_vector(REG_BITS-1 downto 0);
 		result     : out std_logic_vector(DATA_WIDTH-1 downto 0);
-		regwrite   : out std_logic);
-
+		regwrite   : out std_logic
+	);
 end wb;
 
 architecture rtl of wb is
