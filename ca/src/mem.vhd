@@ -104,7 +104,7 @@ end process;
 
 inst : process(all)
 begin
-
+	report "mem";
 	pcsrc <= sig_J_next;
 	new_pc_out <= sig_new_pc_out;
 

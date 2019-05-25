@@ -47,6 +47,7 @@ begin
 
 	nxt: process (all)
 	begin
+		report "fetch";
 		if stall = '0' and reset = '1' then
 			if pcsrc = '1' then
 				pc_nxt <= pc_in;
