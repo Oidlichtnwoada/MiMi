@@ -1,0 +1,1 @@
+load the contents of the .mif files in this folder into ../imem.mif to simulate this program in the start_test.sh script of the pipeline_sim folder
