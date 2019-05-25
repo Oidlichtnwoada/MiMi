@@ -30,7 +30,8 @@ entity mem is
 		mem_out       : out mem_out_type;
 		mem_data      : in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		exc_load      : out std_logic;
-		exc_store     : out std_logic);
+		exc_store     : out std_logic
+	);
 
 end mem;
 
@@ -69,14 +70,6 @@ signal XS : std_logic;
 
 --internal signals
 signal sig_mem_op : mem_op_type;
-signal sig_XL : std_logic;
-signal sig_XL_next : std_logic;
-signal sig_XS : std_logic;
-signal sig_XS_next : std_logic;
-signal sig_R : std_logic_vector(DATA_WIDTH-1 downto 0);
-signal sig_R_next : std_logic_vector(DATA_WIDTH-1 downto 0);
-signal sig_M : mem_out_type;
-signal sig_M_next : mem_out_type;
 signal sig_J_next : std_logic;
 signal sig_new_pc_out : std_logic_vector(PC_WIDTH-1 downto 0);
 
@@ -87,40 +80,35 @@ op_mem.memtype <= sig_mem_op.memtype;
 op_mem.memread <= sig_mem_op.memread when stall='0' else '0';
 op_mem.memwrite <= sig_mem_op.memwrite when stall='0' else '0';
 
-
-exc_load <= sig_XL_next;
-exc_store <= sig_XS_next;
-memresult <= sig_R_next;
-mem_out <= sig_M_next;
-
 sync : process(all)
 begin
-	sig_XL_next <= XL;
-	sig_XS_next <= XS;
-	sig_R_next <= R;
-	sig_M_next <= M;
-
+	exc_load <= XL;
+	exc_store <= XS;
+	memresult <= R;
+	mem_out <= M;
 end process;
 
 inst : process(all)
 begin
-	report "mem";
+	--report "mem";
 	pcsrc <= sig_J_next;
 	new_pc_out <= sig_new_pc_out;
 
 	if stall='1' then
+		report "mem 1";
 		--store values
 		sig_J_next <= pcsrc;
 		sig_new_pc_out <= new_pc_out;
 	else
+		report "mem 2";
 		pcsrc <= J;
 		sig_J_next <= J;
-		
 		new_pc_out <= new_pc_in;
 		sig_new_pc_out <= new_pc_in;	
 	end if;
 
 	if reset='0' then
+		report "mem 3";
 		pcsrc <= '0';
 		new_pc_out <= (others=>'0');
 		pc_out <= (others=>'0');
@@ -128,12 +116,12 @@ begin
 		aluresult_out <= (others=>'0');
 		wbop_out <= WB_NOP;
 		sig_mem_op <= MEM_NOP;
-		
-
 	elsif rising_edge(clk) then
 		if flush='1' then
-		
+			report "mem 4";
+			null;
 		elsif stall='0' then
+			report "mem 5";
 			pc_out <= pc_in;
 			rd_out <= rd_in;
 			aluresult_out <= aluresult_in;
@@ -142,7 +130,8 @@ begin
 			sig_mem_op <= mem_op;
 			W <= wrdata;
 		else
-		
+			report "mem 6";
+			null;
 		end if;
 	end if;
 end process;
