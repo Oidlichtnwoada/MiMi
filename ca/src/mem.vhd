@@ -126,8 +126,8 @@ begin
 			null;
 		end if;
 		if stall = '0' then
-			op_mem.memread <= sig_mem_op.memread;
-			op_mem.memwrite <= sig_mem_op.memwrite;
+			op_mem.memread <= mem_op.memread;
+			op_mem.memwrite <= mem_op.memwrite;
 		else 
 			op_mem.memread <= '0';
 			op_mem.memwrite <= '0';
