@@ -28,11 +28,12 @@ architecture rtl of fetch is
 	end component imem_altera;
 
 	signal pc, pc_nxt	: std_logic_vector(PC_WIDTH-1 downto 0);
+	signal instr_nxt : std_logic_vector(INSTR_WIDTH-1 downto 0);
 
 begin
 
 	imem: imem_altera
-	port map (address => pc_nxt(PC_WIDTH-1 downto 2), clock => clk, q => instr);
+	port map (address => pc_nxt(PC_WIDTH-1 downto 2), clock => clk, q => instr_nxt);
 
 	pc_out <= pc_nxt;
 
@@ -40,8 +41,12 @@ begin
 	begin
 		if reset = '0' then 
 			pc <= (others => '0');
+			instr <= (others => '0');
 		elsif rising_edge(clk) then
 			pc <= pc_nxt;
+			if stall = '0' then
+				instr <= instr_nxt;
+			end if;
 		end if;
 	end process;
 

@@ -139,7 +139,7 @@ begin  -- rtl
 				pc_out 		<= pc_in;
 				
 				--signal_memop_out	<= memop_in;
-				memop_out	<= memop_in
+				memop_out	<= memop_in;
 				
 				jmpop_out	<= jmpop_in;
 				wbop_out	<= wbop_in;
