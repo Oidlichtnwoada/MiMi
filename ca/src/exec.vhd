@@ -142,9 +142,8 @@ begin  -- rtl
 		end if;
 	end process;
 	
-	ecec:process(all)
+	ecec: process(all)
 	begin
-		report "exec";
 		signal_rd_nxt <= op.rd;
 		signal_rs_nxt <= op.rs;
 		signal_rt_nxt <= op.rt;

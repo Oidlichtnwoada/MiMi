@@ -95,7 +95,6 @@ begin
 	
 	decode : process (all)
 	begin
-		report "decode";
 		--read from regfile
 		rdaddr1 <= rs;
 		rdaddr2 <= r_rt_or_i_rd;

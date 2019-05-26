@@ -48,7 +48,6 @@ begin
         --skip header from input.csv
         readline(input_file, current_read_line);
         while not endfile(input_file) loop
-            report "Starting loop iteration at test case " & integer'image(test_case_nr);
             --assigning the inputs from the file
             readline(input_file, current_read_line);
             inputs := str_split(current_read_line.all, ",");
@@ -60,7 +59,6 @@ begin
             --read the output pins and write to output_simulated.csv
             write(current_write_line, to_string(mem_out.address) & "," & to_string(mem_out.rd) & "," & to_string(mem_out.wr) & "," & to_string(mem_out.byteena) & "," & to_string(mem_out.wrdata));
             writeline(output_file, current_write_line);
-            report "Ending loop iteration at test case " & integer'image(test_case_nr);
             test_case_nr := test_case_nr + 1;
         end loop;
         file_close(input_file);

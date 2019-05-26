@@ -88,17 +88,14 @@ end process;
 
 inst : process(all)
 begin
-	--report "mem";
 	pcsrc <= sig_J_next;
 	new_pc_out <= sig_new_pc_out;
 
 	if stall='1' then
-		report "mem 1";
 		--store values
 		sig_J_next <= pcsrc;
 		sig_new_pc_out <= new_pc_out;
 	else
-		report "mem 2";
 		pcsrc <= J;
 		sig_J_next <= J;
 		new_pc_out <= new_pc_in;
@@ -106,7 +103,6 @@ begin
 	end if;
 
 	if reset='0' then
-		report "mem 3";
 		pcsrc <= '0';
 		new_pc_out <= (others=>'0');
 		pc_out <= (others=>'0');
@@ -116,10 +112,8 @@ begin
 		sig_mem_op <= MEM_NOP;
 	elsif rising_edge(clk) then
 		if flush='1' then
-			report "mem 4";
 			null;
 		elsif stall='0' then
-			report "mem 5";
 			pc_out <= pc_in;
 			rd_out <= rd_in;
 			aluresult_out <= aluresult_in;
@@ -128,7 +122,6 @@ begin
 			sig_mem_op <= mem_op;
 			W <= wrdata;
 		else
-			report "mem 6";
 			sig_mem_op <= MEM_NOP;
 			null;
 		end if;
