@@ -54,7 +54,7 @@ architecture rtl of exec is
 	signal alu_A, alu_B, alu_R	: std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal alu_Z, alu_V			: std_logic;
 	
-	signal signal_memop_out		: mem_op_type;
+	--signal signal_memop_out		: mem_op_type;
 
 	component alu is
 		port (
@@ -95,7 +95,10 @@ begin  -- rtl
 			signal_exc_ovf		<= '0';
 			
 			pc_out 		<= (others=>'0');
-			signal_memop_out	<= MEM_NOP;
+			
+			--signal_memop_out	<= MEM_NOP;
+			memop_out	<= MEM_NOP;
+			
 			jmpop_out	<= JMP_NOP;
 			wbop_out		<= WB_NOP;
 			
@@ -114,7 +117,10 @@ begin  -- rtl
 				signal_exc_ovf		<= '0';
 			
 				pc_out 		<= (others=>'0');
-				signal_memop_out	<= MEM_NOP;
+				
+				--signal_memop_out	<= MEM_NOP;
+				memop_out	<= MEM_NOP;
+				
 				jmpop_out	<= JMP_NOP;
 				wbop_out		<= WB_NOP;
 				
@@ -131,17 +137,24 @@ begin  -- rtl
 				signal_exc_ovf		<= signal_exc_ovf_nxt;
 			
 				pc_out 		<= pc_in;
-				signal_memop_out	<= memop_in;
+				
+				--signal_memop_out	<= memop_in;
+				memop_out	<= memop_in
+				
 				jmpop_out	<= jmpop_in;
 				wbop_out	<= wbop_in;
+				
+			elsif (stall = '1') then
+			
+				memop_out	<= MEM_NOP;
 				
 			end if;
 				
 		end if;
 	end process;
 	
-	memop_out	<=	MEM_NOP when stall = '1' else
-					signal_memop_out;
+--	memop_out	<=	MEM_NOP when stall = '1' else
+--					signal_memop_out;
 	
 	ecec: process(all)
 	begin
