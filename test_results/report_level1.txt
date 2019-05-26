@@ -4,9 +4,9 @@ Starting pipeline compilation
 Finished pipeline compilation
 Starting tests on minimal
 Failed 0/10 tests.
-# End time: 16:32:35 on May 26,2019, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on minimal
+# End time: 18:48:33 on May 26,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on arith
 Failed test: mem_out.wrdata wrong at test 8, expected 00010010001101000000000000000000
 Failed test: mem_out.wrdata wrong at test 14, expected 00010010001101000101011001111000
@@ -45,7 +45,7 @@ Failed test: mem_out.wrdata wrong at test 84, expected 0000000000000000010101100
 Failed test: mem_out.wrdata wrong at test 85, expected 00010010001101001111111111111111
 Failed test: mem_out.wrdata wrong at test 86, expected 00010010001101001010100110000111
 Failed 31/88 tests.
-# End time: 16:32:38 on May 26,2019, Elapsed time: 0:00:02
+# End time: 18:48:36 on May 26,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on arith
 Starting tests on memory
@@ -140,7 +140,7 @@ Failed test: mem_out.wrdata wrong at test 155, expected 000000000000000000000000
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 157
 Failed test: mem_out.wrdata wrong at test 157, expected 00000000000000000000000010101011
 Failed 58/161 tests.
-# End time: 16:32:41 on May 26,2019, Elapsed time: 0:00:02
+# End time: 18:48:40 on May 26,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on memory
 Starting tests on jump
@@ -230,6 +230,6 @@ Failed test: mem_out.address wrong at test 199, expected 000000000000001000000
 Failed test: mem_out.wr asserted when expecting silence at test 203
 Failed test: mem_out.address wrong at test 204, expected 000000000000001000000
 Failed 61/208 tests.
-# End time: 16:32:45 on May 26,2019, Elapsed time: 0:00:02
+# End time: 18:48:43 on May 26,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on jump
