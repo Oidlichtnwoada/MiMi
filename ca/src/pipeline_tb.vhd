@@ -25,7 +25,7 @@ begin
     port map (address => mem_out.address(11 downto 2), byteena => mem_out.byteena,
                 clock => clk, data => mem_out.wrdata, wren => mem_out.wr, q => mem_in.rddata);
                 
-    mem_in.busy <= mem_out.rd;
+    mem_in.busy <= '0'; --mem_out.rd;
 
     test: process
         file input_file : text;

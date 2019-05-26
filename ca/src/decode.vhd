@@ -99,9 +99,14 @@ begin
 		rdaddr1 <= rs;
 		rdaddr2 <= r_rt_or_i_rd;
 
+		if exec_op_nxt.readdata2 = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" then
+			report to_string(r_rt_or_i_rd);
+		end if;
+
 		--assigning the values from the register
 		exec_op_nxt.readdata1 <= rddata1;
 		exec_op_nxt.readdata2 <= rddata2;
+		
 
 		--setting default values 
 		exec_op_nxt <= EXEC_NOP;
@@ -367,7 +372,7 @@ begin
 					exec_op_nxt.useimm <= '1';
 					wb_op_nxt.regwrite <= '1';
 				when "001111" => --LUI
-					exec_op_nxt.aluop <= ALU_AND;
+					exec_op_nxt.aluop <= ALU_LUI;
 					exec_op_nxt.rd <= r_rt_or_i_rd;
 					exec_op_nxt.imm <= std_logic_vector(resize(unsigned(address_or_immediate),exec_op_nxt.imm'LENGTH));
 					exec_op_nxt.useimm <= '1';

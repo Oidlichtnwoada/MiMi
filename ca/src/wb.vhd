@@ -29,18 +29,21 @@ begin
 		rd_out <= (others => '0');
 		result <= (others => '0');
 		regwrite <= '0';
-	elsif flush = '1' then
-		result <= (others=>'0');
-		regwrite <= '0';
-	elsif stall='1' then
-		null;
-	else
-		rd_out <= rd_in;
-		regwrite <= op.regwrite;
-		if op.memtoreg='1' then
-			result <= memresult;
+	elsif rising_edge(clk) then 
+		if flush = '1' then
+			rd_out <= (others => '0');
+			result <= (others=>'0');
+			regwrite <= '0';
+		elsif stall = '1' then
+			null;
 		else
-			result <= aluresult;
+			rd_out <= rd_in;
+			regwrite <= op.regwrite;
+			if op.memtoreg = '1' then
+				result <= memresult;
+			else
+				result <= aluresult;
+			end if;
 		end if;
 	end if;
 end process;
