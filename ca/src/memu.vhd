@@ -60,6 +60,7 @@ end if;
 case A(1 downto 0) is
 
 	when "00" =>
+		
 		--computation of M.byteena and M.wrdata
 		if op.memtype=MEM_B or op.memtype=MEM_BU then
 			M.byteena <= "1000";

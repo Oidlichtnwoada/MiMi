@@ -1,0 +1,1483 @@
+vsim -do "vsim pipeline_tb -t 1ps -msgmode both; run 1 sec; do ./wave.do" 
+Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+# vsim pipeline_tb -t 1ps -msgmode both
+# vsim pipeline_tb -t 1ps -msgmode both 
+# Start time: 11:33:25 on May 27,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.core_pack
+# Loading work.op_pack
+# Loading work.pipeline_pkg
+# Loading work.tb_pkg(body)
+# Loading work.pipeline_tb(rtl)
+# Loading work.pipeline(rtl)
+# Loading work.fetch(rtl)
+# Loading work.imem_altera(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.decode(rtl)
+# Loading work.regfile(rtl)
+# Loading work.exec(rtl)
+# Loading work.alu(rtl)
+# Loading work.mem(rtl)
+# Loading work.jmpu(rtl)
+# Loading work.memu(rtl)
+# Loading work.wb(rtl)
+# Loading work.ocram_altera(syn)
+#  run 1 sec
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: hanne  Hostname: DESKTOP-N21VR4H  ProcessID: 2060
+#           Attempting to use alternate WLF file "./wlftwdattf".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwdattf
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/exec_inst/alu_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 133330 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 133330 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 133330 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 133330 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 133330 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 133330 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 139996 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 139996 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 139996 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 139996 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 139996 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 139996 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 139996 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 139996 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Note: rdaddr2 register address
+#    Time: 159994 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 159994 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 166660 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 166660 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 173326 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 173326 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 199990 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 199990 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 206656 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 206656 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 213322 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 213322 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 239986 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 239986 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 239986 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 239986 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 246652 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 246652 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 246652 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 246652 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 253318 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 253318 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 253318 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 253318 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 279982 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 279982 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 286648 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 286648 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 293314 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00010010001101000000000000000000
+#    Time: 293314 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 319978 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 319978 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 326644 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 326644 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 333310 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 333310 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 333310 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 333310 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 359974 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 359974 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 366640 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 366640 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 373306 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 373306 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 399970 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 399970 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 399970 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 399970 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 406636 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 406636 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 406636 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 406636 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 413302 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 413302 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 413302 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 413302 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 413302 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 413302 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 413302 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 413302 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 439966 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 439966 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 446632 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 446632 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 453298 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111110110111000000000000000000
+#    Time: 453298 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 479962 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 479962 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 479962 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 479962 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 486628 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 486628 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 486628 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 486628 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 493294 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 493294 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 493294 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 493294 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 493294 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 493294 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 493294 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 493294 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 499960 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 499960 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 499960 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 499960 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 506626 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 506626 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 506626 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 506626 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 506626 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 506626 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 506626 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 506626 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 506626 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 506626 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 506626 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 506626 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 513292 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 513292 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 513292 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 513292 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 519958 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 519958 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 519958 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 519958 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 526624 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 526624 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 526624 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 526624 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 533290 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 533290 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 533290 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 533290 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 533290 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 533290 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 533290 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 533290 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 539956 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 539956 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 539956 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 539956 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 546622 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 546622 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 546622 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 546622 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 546622 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 546622 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 546622 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 546622 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 553288 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 553288 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 553288 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 553288 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 559954 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 559954 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 559954 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 559954 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 559954 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 559954 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 559954 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 559954 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 566620 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 566620 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 566620 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 566620 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 573286 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 573286 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 573286 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 573286 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 573286 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 573286 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 573286 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 573286 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 579952 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 579952 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 579952 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 579952 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 586618 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 586618 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 586618 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 586618 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 586618 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 586618 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 586618 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 586618 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 593284 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 593284 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 593284 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 593284 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 599950 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 599950 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 599950 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 599950 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 599950 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 599950 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 599950 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 599950 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 606616 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 606616 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 606616 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 606616 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 613282 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 613282 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 613282 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 613282 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 613282 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 613282 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 613282 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 613282 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 619948 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 619948 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 619948 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 619948 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 626614 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 626614 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 626614 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 626614 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 626614 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 626614 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 626614 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 626614 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 633280 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 633280 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 633280 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 633280 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 639946 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 639946 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 639946 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 639946 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 639946 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 639946 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 639946 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 639946 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 646612 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 646612 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 646612 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 646612 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 653278 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 653278 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 653278 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 653278 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 653278 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 653278 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 653278 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 653278 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 659944 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 659944 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 659944 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 659944 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 666610 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 666610 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 666610 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 666610 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 666610 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 666610 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 666610 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 666610 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 666610 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 666610 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 673276 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 673276 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 679942 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 679942 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 679942 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 679942 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 686608 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 686608 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 693274 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 693274 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 693274 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 693274 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 699940 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 699940 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 706606 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 706606 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 706606 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 706606 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 706606 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 706606 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 706606 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 706606 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 713272 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 713272 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 713272 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 713272 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 719938 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 719938 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 719938 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 719938 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 719938 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 719938 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 719938 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 719938 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 726604 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 726604 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 726604 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 726604 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 733270 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 733270 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 733270 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 733270 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 733270 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 733270 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 733270 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 733270 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 739936 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 739936 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 739936 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 739936 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 746602 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 746602 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 746602 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 746602 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 746602 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 746602 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 746602 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 746602 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 746602 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 746602 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 746602 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 746602 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 753268 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 753268 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 753268 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 753268 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 759934 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 759934 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 759934 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 759934 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 759934 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 759934 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 759934 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 759934 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 759934 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 759934 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 759934 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 759934 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 766600 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 766600 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 766600 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 766600 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 773266 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 773266 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 773266 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 773266 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 773266 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 773266 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 773266 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 773266 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 773266 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 773266 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 773266 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 773266 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 779932 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 779932 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 779932 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 779932 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 786598 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 786598 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 786598 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 786598 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 786598 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 786598 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 786598 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 786598 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 786598 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 786598 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 786598 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 786598 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 793264 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 793264 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 793264 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 793264 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 799930 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 799930 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 799930 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 799930 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 799930 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 799930 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 799930 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 799930 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 799930 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 799930 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 799930 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 799930 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 806596 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 806596 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 806596 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 806596 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 813262 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 813262 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 813262 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 813262 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 813262 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 813262 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 813262 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 813262 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 813262 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 813262 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 813262 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 813262 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 819928 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 819928 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 819928 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 819928 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 826594 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 826594 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 826594 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 826594 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 826594 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 826594 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 826594 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 826594 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 826594 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 826594 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 826594 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 826594 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 833260 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 833260 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 833260 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 833260 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 839926 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 839926 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 839926 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 839926 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 839926 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 839926 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 839926 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 839926 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 839926 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 839926 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 839926 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 839926 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 846592 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 846592 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 846592 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 846592 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 853258 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 853258 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 853258 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 853258 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 853258 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001011101010011000
+#    Time: 853258 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 853258 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 853258 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 853258 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 853258 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 853258 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 853258 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 859924 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 859924 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 859924 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 859924 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 866590 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 866590 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 866590 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 866590 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 866590 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 866590 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 866590 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 866590 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 866590 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 866590 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 866590 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 866590 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 873256 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 873256 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 873256 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 873256 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 879922 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 879922 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 879922 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 879922 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 879922 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 879922 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 879922 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 879922 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 879922 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 879922 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 879922 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 879922 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 886588 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 886588 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 886588 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 886588 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 893254 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 893254 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 893254 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 893254 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr1 register address
+#    Time: 893254 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000101011001111000
+#    Time: 893254 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 893254 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+#    Time: 893254 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 893254 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 893254 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 899920 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 899920 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 906586 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 906586 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 906586 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 906586 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 906586 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 906586 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 913252 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 913252 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 919918 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 919918 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 919918 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 919918 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 919918 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 919918 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 926584 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 926584 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 933250 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 933250 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 933250 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 933250 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 933250 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 933250 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 939916 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 939916 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 946582 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 946582 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 946582 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 946582 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 946582 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 946582 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 953248 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 953248 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 959914 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 959914 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 959914 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 959914 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 959914 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 959914 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 966580 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 966580 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 973246 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 973246 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 973246 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 973246 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 973246 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 973246 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 979912 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 979912 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 986578 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 986578 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 986578 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 986578 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 986578 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 986578 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 993244 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 993244 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 999910 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 999910 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 999910 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 999910 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 999910 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 999910 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1006576 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1006576 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1013242 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1013242 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1013242 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1013242 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1013242 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1013242 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1019908 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1019908 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1026574 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1026574 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1026574 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1026574 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1026574 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1026574 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1033240 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1033240 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1039906 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1039906 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1039906 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1039906 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1039906 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1039906 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1046572 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1046572 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1053238 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1053238 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1053238 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1053238 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1053238 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1053238 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1059904 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1059904 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1066570 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1066570 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1066570 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1066570 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1066570 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1066570 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1073236 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1073236 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1079902 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1079902 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1079902 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1079902 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1079902 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1079902 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1086568 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1086568 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1093234 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1093234 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1093234 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1093234 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1093234 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1093234 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1099900 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1099900 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1106566 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1106566 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1106566 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1106566 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1106566 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1106566 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1113232 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1113232 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1119898 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1119898 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1119898 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1119898 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1119898 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1119898 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1126564 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1126564 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1133230 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1133230 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1133230 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1133230 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1133230 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 1133230 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1139896 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 1139896 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1146562 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 1146562 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1146562 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 1146562 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1146562 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 1146562 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1153228 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 1153228 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1159894 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 1159894 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1159894 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 11111111111111111111111111111111
+#    Time: 1159894 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1159894 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1159894 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1166560 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1166560 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1173226 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1173226 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1173226 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1173226 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1173226 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1173226 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1179892 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1179892 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1186558 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1186558 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1186558 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1186558 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1186558 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1186558 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1193224 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1193224 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1199890 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1199890 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1199890 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1199890 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1199890 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1199890 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1206556 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1206556 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1213222 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1213222 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1213222 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000001
+#    Time: 1213222 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1213222 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1213222 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1219888 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1219888 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1226554 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1226554 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1226554 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000000000000000000000
+#    Time: 1226554 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1226554 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001111111111111111
+#    Time: 1226554 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1233220 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001111111111111111
+#    Time: 1233220 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1239886 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001111111111111111
+#    Time: 1239886 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1239886 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001111111111111111
+#    Time: 1239886 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1239886 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001111111111111111
+#    Time: 1239886 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1246552 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001111111111111111
+#    Time: 1246552 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1253218 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001111111111111111
+#    Time: 1253218 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: rdaddr2 register address
+#    Time: 1253218 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Note: 00000000000000001111111111111111
+#    Time: 1253218 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+#  do ./wave.do
+# End time: 11:33:26 on May 27,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 24

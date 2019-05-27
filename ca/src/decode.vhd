@@ -95,19 +95,11 @@ begin
 	
 	decode : process (all)
 	begin
+		
 		--read from regfile
 		rdaddr1 <= rs;
 		rdaddr2 <= r_rt_or_i_rd;
-
-		if exec_op_nxt.readdata2 = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" then
-			report to_string(r_rt_or_i_rd);
-		end if;
-
-		--assigning the values from the register
-		exec_op_nxt.readdata1 <= rddata1;
-		exec_op_nxt.readdata2 <= rddata2;
 		
-
 		--setting default values 
 		exec_op_nxt <= EXEC_NOP;
 		cop0_op_nxt <= COP0_NOP;
@@ -115,6 +107,10 @@ begin
 		mem_op_nxt <= MEM_NOP;
 		wb_op_nxt <= WB_NOP;
 		exc_dec_nxt <= '0';
+
+		--assigning the values from the register
+		exec_op_nxt.readdata1 <= rddata1;
+		exec_op_nxt.readdata2 <= rddata2;
 
 		if unsigned(instr) > 0 then
 			case opcode is 

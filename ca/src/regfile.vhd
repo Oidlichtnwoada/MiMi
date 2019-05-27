@@ -21,13 +21,11 @@ end regfile;
 architecture rtl of regfile is
 	type register_array is array (natural range REG_COUNT-1 downto 0) of std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal registers : register_array;
-	signal writing : boolean;
 begin
 
 	process (all)
 		variable rdaddr1_var : std_logic_vector(REG_BITS-1 downto 0);
 		variable rdaddr2_var : std_logic_vector(REG_BITS-1 downto 0);
-		variable writing : boolean;
 	begin
 		--writing 
 		if rising_edge(clk) and regwrite = '1' and stall = '0' and reset = '1' then
@@ -43,19 +41,27 @@ begin
 		end if;
 		--reading address 1
 		if unsigned(rdaddr1_var) = 0 then
+			--report "rdaddr1 zero address";
 			rddata1 <= (others => '0');
 		elsif rdaddr1_var = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
+			--report "rdaddr1 write address";
 			rddata1 <= wrdata;
 		else 
+			report "rdaddr1 register address";
 			rddata1 <= registers(to_integer(unsigned(rdaddr1_var)));
+			report to_string(registers(to_integer(unsigned(rdaddr1_var))));
 		end if;
 		--reading address 2
 		if unsigned(rdaddr2_var) = 0 then
+			--report "rdaddr2 zero address";
 			rddata2 <= (others => '0');
 		elsif rdaddr2_var = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
+			--report "rdaddr2 write address";
 			rddata2 <= wrdata;
 		else 
+			report "rdaddr2 register address";
 			rddata2 <= registers(to_integer(unsigned(rdaddr2_var)));
+			report to_string(registers(to_integer(unsigned(rdaddr2_var))));
 		end if;
 	end process;
 end rtl;
