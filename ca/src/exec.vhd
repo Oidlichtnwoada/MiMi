@@ -54,7 +54,7 @@ architecture rtl of exec is
 	signal alu_A, alu_B, alu_R	: std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal alu_Z, alu_V			: std_logic;
 	
-	--signal signal_memop_out		: mem_op_type;
+	signal signal_memop_out		: mem_op_type;
 
 	component alu is
 		port (
@@ -96,7 +96,7 @@ begin  -- rtl
 			
 			pc_out 		<= (others=>'0');
 			
-			--signal_memop_out	<= MEM_NOP;
+			signal_memop_out	<= MEM_NOP;
 			memop_out	<= MEM_NOP;
 			
 			jmpop_out	<= JMP_NOP;
@@ -118,7 +118,7 @@ begin  -- rtl
 			
 				pc_out 		<= (others=>'0');
 				
-				--signal_memop_out	<= MEM_NOP;
+				signal_memop_out	<= MEM_NOP;
 				memop_out	<= MEM_NOP;
 				
 				jmpop_out	<= JMP_NOP;
@@ -138,7 +138,7 @@ begin  -- rtl
 			
 				pc_out 		<= pc_in;
 				
-				--signal_memop_out	<= memop_in;
+				signal_memop_out	<= memop_in;
 				memop_out	<= memop_in;
 				
 				jmpop_out	<= jmpop_in;
@@ -146,7 +146,7 @@ begin  -- rtl
 				
 			elsif (stall = '1') then
 			
-				memop_out	<= MEM_NOP;
+				memop_out	<= signal_memop_out;
 				
 			end if;
 				
