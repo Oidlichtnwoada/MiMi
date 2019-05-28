@@ -121,7 +121,7 @@ begin
 	memresult <= R;
 	mem_out <= M;
 	pcsrc <= J;
-	new_pc_out <= new_pc_in;
+	new_pc_out <= sig_new_pc_in;
 	pc_out <= sig_pc_in;
 	rd_out <= sig_rd_in;
 	aluresult_out <= sig_aluresult_in;
@@ -139,9 +139,9 @@ end process;
 
 jmpu_inst : jmpu
 	port map(
-		op => jmp_op, --in
-		N => zero, --in
-		Z => neg, --in
+		op => sig_jmp_op, --in
+		N => sig_zero, --in
+		Z => sig_neg, --in
 		J => J --out pcsrc
 	);
 
@@ -150,7 +150,7 @@ memu_inst : memu
 		op => op_mem, --in
 		A => A(ADDR_WIDTH-1 downto 0), --in aluresult
 		W => W, --in write_data
-		D => mem_data, --in
+		D => sig_mem_data, --in
 		M => M, --out mem_out
 		R => R, --out memresult
 		XL => XL, --out exc_load
