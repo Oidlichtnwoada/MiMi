@@ -96,26 +96,32 @@ begin
 		sig_new_pc_in <= (others => '0');
 		sig_wbop_in <= WB_NOP;
 		sig_mem_data <= (others => '0');
-	elsif rising_edge(clk) and stall = '0' then
-		sig_mem_op <= mem_op;
-		sig_jmp_op <= jmp_op;
-		sig_pc_in <= pc_in;
-		sig_rd_in <= rd_in;
-		sig_aluresult_in <= aluresult_in;
-		sig_wrdata <= wrdata;
-		sig_zero <= zero;
-		sig_neg <= neg;
-		sig_new_pc_in <= new_pc_in;
-		sig_wbop_in <= wbop_in;
-		sig_mem_data <= mem_data;
+	elsif rising_edge(clk) then
+		if stall = '0' then
+			sig_mem_op <= mem_op;
+			sig_jmp_op <= jmp_op;
+			sig_pc_in <= pc_in;
+			sig_rd_in <= rd_in;
+			sig_aluresult_in <= aluresult_in;
+			sig_wrdata <= wrdata;
+			sig_zero <= zero;
+			sig_neg <= neg;
+			sig_new_pc_in <= new_pc_in;
+			sig_wbop_in <= wbop_in;
+			sig_mem_data <= mem_data;
+		else 
+			sig_mem_op.memread <= '0';
+			sig_mem_op.memwrite <= '0';
+		end if;
 	end if;
 	if flush = '1' then
 		sig_mem_op <= MEM_OP;
 	end if;
 end process;
 
-process(all)
+process (all)
 begin
+	report to_string(stall);
 	exc_load <= XL;
 	exc_store <= XS;
 	memresult <= R;
@@ -131,10 +137,7 @@ begin
 	W <= sig_wrdata;
 	op_mem.memread <= sig_mem_op.memread;
 	op_mem.memwrite <= sig_mem_op.memwrite;
-	if stall = '1' then
-		op_mem.memread <= '0';
-		op_mem.memwrite <= '0';
-	end if;
+	
 end process;
 
 jmpu_inst : jmpu
