@@ -365,10 +365,10 @@ begin
 				when "010000" =>
 					case rs is 
 						when "00000" => --MFC0
-							cop0_op.wr = '0';
+							cop0_op.wr <= '0';
 							cop0_op.addr <= r_rt_or_i_rd;
 						when "00100" => --MTC0
-							cop0_op.wr = '1';
+							cop0_op.wr <= '1';
 							cop0_op.addr <= r_rt_or_i_rd;
 						when others =>
 							exc_dec <= '1';

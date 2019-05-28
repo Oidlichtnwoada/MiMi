@@ -33,38 +33,3 @@ signal_memop_out.memtype.MEM_H 0 0 0 1 1
 signal_memop_out.memtype.MEM_HU 0 0 1 0 1 
 signal_memop_out.memtype.MEM_B 0 1 0 0 1 
 signal_memop_out.memtype.MEM_BU 1 0 0 0 1 
-
-State Machine - |mimi|core:core|pipeline:pipeline|decode:decode_inst|mem_op.memtype
-Name mem_op.memtype.MEM_BU~reg0 mem_op.memtype.MEM_B~reg0 mem_op.memtype.MEM_HU~reg0 mem_op.memtype.MEM_H~reg0 mem_op.memtype.MEM_W~reg0 
-mem_op.memtype.MEM_W~reg0 0 0 0 0 0 
-mem_op.memtype.MEM_H~reg0 0 0 0 1 1 
-mem_op.memtype.MEM_HU~reg0 0 0 1 0 1 
-mem_op.memtype.MEM_B~reg0 0 1 0 0 1 
-mem_op.memtype.MEM_BU~reg0 1 0 0 0 1 
-
-State Machine - |mimi|core:core|pipeline:pipeline|decode:decode_inst|jmp_op
-Name jmp_op.JMP_BGEZ~reg0 jmp_op.JMP_BLTZ~reg0 jmp_op.JMP_BGTZ~reg0 jmp_op.JMP_BLEZ~reg0 jmp_op.JMP_BNE~reg0 jmp_op.JMP_BEQ~reg0 jmp_op.JMP_JMP~reg0 jmp_op.JMP_NOP~reg0 
-jmp_op.JMP_NOP~reg0 0 0 0 0 0 0 0 0 
-jmp_op.JMP_JMP~reg0 0 0 0 0 0 0 1 1 
-jmp_op.JMP_BEQ~reg0 0 0 0 0 0 1 0 1 
-jmp_op.JMP_BNE~reg0 0 0 0 0 1 0 0 1 
-jmp_op.JMP_BLEZ~reg0 0 0 0 1 0 0 0 1 
-jmp_op.JMP_BGTZ~reg0 0 0 1 0 0 0 0 1 
-jmp_op.JMP_BLTZ~reg0 0 1 0 0 0 0 0 1 
-jmp_op.JMP_BGEZ~reg0 1 0 0 0 0 0 0 1 
-
-State Machine - |mimi|core:core|pipeline:pipeline|decode:decode_inst|exec_op.aluop
-Name exec_op.aluop.ALU_LUI~reg0 exec_op.aluop.ALU_NOR~reg0 exec_op.aluop.ALU_XOR~reg0 exec_op.aluop.ALU_OR~reg0 exec_op.aluop.ALU_AND~reg0 exec_op.aluop.ALU_SUB~reg0 exec_op.aluop.ALU_ADD~reg0 exec_op.aluop.ALU_SRA~reg0 exec_op.aluop.ALU_SRL~reg0 exec_op.aluop.ALU_SLL~reg0 exec_op.aluop.ALU_SLTU~reg0 exec_op.aluop.ALU_SLT~reg0 exec_op.aluop.ALU_NOP~reg0 
-exec_op.aluop.ALU_NOP~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-exec_op.aluop.ALU_SLT~reg0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-exec_op.aluop.ALU_SLTU~reg0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-exec_op.aluop.ALU_SLL~reg0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-exec_op.aluop.ALU_SRL~reg0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-exec_op.aluop.ALU_SRA~reg0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-exec_op.aluop.ALU_ADD~reg0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-exec_op.aluop.ALU_SUB~reg0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-exec_op.aluop.ALU_AND~reg0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-exec_op.aluop.ALU_OR~reg0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-exec_op.aluop.ALU_XOR~reg0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-exec_op.aluop.ALU_NOR~reg0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-exec_op.aluop.ALU_LUI~reg0 1 0 0 0 0 0 0 0 0 0 0 0 1 
