@@ -41,27 +41,19 @@ begin
 		end if;
 		--reading address 1
 		if unsigned(rdaddr1_var) = 0 then
-			--report "rdaddr1 zero address";
 			rddata1 <= (others => '0');
 		elsif rdaddr1_var = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
-			--report "rdaddr1 write address";
 			rddata1 <= wrdata;
 		else 
-			report "rdaddr1 register address";
 			rddata1 <= registers(to_integer(unsigned(rdaddr1_var)));
-			report to_string(registers(to_integer(unsigned(rdaddr1_var))));
 		end if;
 		--reading address 2
 		if unsigned(rdaddr2_var) = 0 then
-			--report "rdaddr2 zero address";
 			rddata2 <= (others => '0');
 		elsif rdaddr2_var = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
-			--report "rdaddr2 write address";
 			rddata2 <= wrdata;
 		else 
-			report "rdaddr2 register address";
 			rddata2 <= registers(to_integer(unsigned(rdaddr2_var)));
-			report to_string(registers(to_integer(unsigned(rdaddr2_var))));
 		end if;
 	end process;
 end rtl;
