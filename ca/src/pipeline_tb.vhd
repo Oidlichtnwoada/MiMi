@@ -42,6 +42,7 @@ begin
         reset <= '0';
         wait for RESET_FACTOR * CLK_PERIOD;
         reset <= '1';
+        wait for CLK_PERIOD/2;
         --creating header for output_simulated.csv
         write(current_write_line, string'("address,rd,wr,byteena,wrdata"));
         writeline(output_file, current_write_line);

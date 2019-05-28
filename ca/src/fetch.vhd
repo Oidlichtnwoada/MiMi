@@ -42,11 +42,15 @@ begin
 		if reset = '0' then 
 			sig_pcsrc <= '0';
 			sig_pc_in <= (others => '0');
-			pc <= (others => '0');
+			pc <= (others => '1');
 		elsif rising_edge(clk) and stall = '0' then
 			sig_pcsrc <= pcsrc;
 			sig_pc_in <= pc_in;
-			pc <= pc_nxt;
+			if unsigned(pc) = 2**PC_WIDTH-1 then
+				pc <= (others => '0');
+			else 
+				pc <= pc_nxt;
+			end if;
 		end if;
 	end process;
 
