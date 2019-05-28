@@ -27,7 +27,7 @@ architecture rtl of fetch is
 		);
 	end component imem_altera;
 	
-	signal sig_pcsrc : std_logic_vector;
+	signal sig_pcsrc : std_logic;
 	signal pc, pc_nxt, sig_pc_in : std_logic_vector(PC_WIDTH-1 downto 0);
 
 begin
@@ -35,7 +35,7 @@ begin
 	imem: imem_altera
 	port map (address => pc_nxt(PC_WIDTH-1 downto 2), clock => clk, q => instr);
 
-	pc_out <= pc_nxt
+	pc_out <= pc_nxt;
 
 	sync: process (all)
 	begin
