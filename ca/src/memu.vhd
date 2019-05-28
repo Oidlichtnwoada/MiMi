@@ -40,6 +40,9 @@ begin  -- rtl
 process(all)
 begin
 
+--default assignments
+
+
 --setting address to the memory module & re-setting the exceptions(otherwise<=0)
 M.address <= A;
 XL <= '0';

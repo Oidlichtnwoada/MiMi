@@ -30,8 +30,10 @@ begin
 			sig_rdaddr1_before <= (others => '0');
 			sig_rdaddr2_before <= (others => '0');
 		elsif rising_edge(clk) then
-			sig_rdaddr1_before <= rdaddr1;
-			sig_rdaddr2_before <= rdaddr2;
+			if stall = '0' then
+				sig_rdaddr1_before <= rdaddr1;
+				sig_rdaddr2_before <= rdaddr2;
+			end if;
 			if regwrite = '1' and stall = '0' then
 				registers(to_integer(unsigned(wraddr))) <= wrdata;
 			end if;
@@ -44,17 +46,17 @@ begin
 	process (all)
 	begin
 		--reading address 1
-		if unsigned(sig_rdaddr1) = 0 or reset = '0' then
+		if unsigned(sig_rdaddr1) = 0 then
 			rddata1 <= (others => '0');
-		elsif sig_rdaddr1 = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
+		elsif sig_rdaddr1 = wraddr and regwrite = '1' and stall = '0' then
 			rddata1 <= wrdata;
 		else 
 			rddata1 <= registers(to_integer(unsigned(sig_rdaddr1)));
 		end if;
 		--reading address 2
-		if unsigned(sig_rdaddr2) = 0 or reset = '0' then
+		if unsigned(sig_rdaddr2) = 0 then
 			rddata2 <= (others => '0');
-		elsif sig_rdaddr2 = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
+		elsif sig_rdaddr2 = wraddr and regwrite = '1' and stall = '0' then
 			rddata2 <= wrdata;
 		else 
 			rddata2 <= registers(to_integer(unsigned(sig_rdaddr2)));
