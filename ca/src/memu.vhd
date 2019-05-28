@@ -41,10 +41,12 @@ process(all)
 begin
 
 --default assignments
-
-
---setting address to the memory module & re-setting the exceptions(otherwise<=0)
 M.address <= A;
+M.rd <= '0';
+M.wr <= '0';
+M.byteena <= (others => '0');
+M.wrdata <= (others => '0');
+R <= (others => '0');
 XL <= '0';
 XS <= '0';
 
