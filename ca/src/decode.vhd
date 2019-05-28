@@ -41,9 +41,6 @@ architecture rtl of decode is
 
 	signal sig_pc_in : std_logic_vector(PC_WIDTH-1 downto 0);
 	signal sig_instr : std_logic_vector(INSTR_WIDTH-1 downto 0);
-	signal sig_wraddr : std_logic_vector(REG_BITS-1 downto 0);
-	signal sig_wrdata : std_logic_vector(DATA_WIDTH-1 downto 0);
-	signal sig_regwrite : std_logic;
 	signal sig_rdaddr1, sig_rdaddr2 : std_logic_vector(REG_BITS-1 downto 0);
 	signal sig_rddata1, sig_rddata2	: std_logic_vector(DATA_WIDTH-1 downto 0);
 
@@ -59,22 +56,16 @@ architecture rtl of decode is
 begin
 
 	regfile_inst : regfile
-	port map (clk => clk, reset => reset, stall => stall, rdaddr1 => sig_rdaddr1, rdaddr2 => sig_rdaddr2, rddata1 => sig_rddata1, rddata2 => sig_rddata2, wraddr => sig_wraddr, wrdata => sig_wrdata, regwrite => sig_regwrite);
+	port map (clk => clk, reset => reset, stall => stall, rdaddr1 => sig_rdaddr1, rdaddr2 => sig_rdaddr2, rddata1 => sig_rddata1, rddata2 => sig_rddata2, wraddr => wraddr, wrdata => wrdata, regwrite => regwrite);
 
 	sync: process (all)
 	begin
 	if reset = '0' then
 		sig_pc_in <= (others => '0');
 		sig_instr <= (others => '0');
-		sig_wraddr <= (others => '0');
-		sig_wrdata <= (others => '0');
-		sig_regwrite <= '0';
 	elsif rising_edge(clk) and stall = '0' then
 		sig_pc_in <= pc_in;
 		sig_instr <= instr;
-		sig_wraddr <= wraddr;
-		sig_wrdata <= wrdata;
-		sig_regwrite <= regwrite;
 	end if;	
 	end process;
 	
@@ -82,7 +73,7 @@ begin
 	begin
 		
 		pc_out <= sig_pc_in;
-		
+
 		--read from regfile
 		sig_rdaddr1 <= rs;
 		sig_rdaddr2 <= r_rt_or_i_rd;
@@ -99,7 +90,7 @@ begin
 		exec_op.readdata1 <= sig_rddata1;
 		exec_op.readdata2 <= sig_rddata2;
 
-		if unsigned(instr) > 0 then
+		if unsigned(sig_instr) > 0 then
 			case opcode is 
 				when "000000" =>
 					case func is

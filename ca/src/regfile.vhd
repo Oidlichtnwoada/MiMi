@@ -21,45 +21,43 @@ end regfile;
 architecture rtl of regfile is
 	type register_array is array (natural range REG_COUNT-1 downto 0) of std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal registers : register_array;
-	signal sig_rddata1, sig_rddata1_prev, sig_rddata2, sig_rddata2_prev : std_logic_vector(DATA_WIDTH-1 downto 0);
+	signal sig_rdaddr1, sig_rdaddr1_before, sig_rdaddr2, sig_rdaddr2_before : std_logic_vector(REG_BITS-1 downto 0);
 begin
 
 	process (all)
-	begin
-		--writing 
-		if rising_edge(clk) and regwrite = '1' and stall = '0' and reset = '1' then
-			registers(to_integer(unsigned(wraddr))) <= wrdata;
-		end if;
-		--reading address 1
-		if unsigned(rdaddr1) = 0 or reset = '0' then
-			sig_rddata1 <= (others => '0');
-		elsif rdaddr1 = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
-			sig_rddata1 <= wrdata;
-		else 
-			sig_rddata1 <= registers(to_integer(unsigned(rdaddr1)));
-		end if;
-		--reading address 2
-		if unsigned(rdaddr2) = 0  or reset = '0' then
-			sig_rddata2 <= (others => '0');
-		elsif rdaddr2 = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
-			sig_rddata2 <= wrdata;
-		else 
-			sig_rddata2 <= registers(to_integer(unsigned(rdaddr2)));
+	begin 
+		if reset = '0' then 
+			sig_rdaddr1_before <= (others => '0');
+			sig_rdaddr2_before <= (others => '0');
+		elsif rising_edge(clk) then
+			sig_rdaddr1_before <= rdaddr1;
+			sig_rdaddr2_before <= rdaddr2;
+			if regwrite = '1' and stall = '0' then
+				registers(to_integer(unsigned(wraddr))) <= wrdata;
+			end if;
 		end if;
 	end process;
 
+	sig_rdaddr1 <= sig_rdaddr1_before when stall = '1' else rdaddr1;
+	sig_rdaddr2 <= sig_rdaddr2_before when stall = '1' else rdaddr2;
+
 	process (all)
 	begin
-		if stall = '0' then 
-			rddata1 <= sig_rddata1;
-			rddata2 <= sig_rddata2;
-			sig_rddata1_prev <= sig_rddata1;
-			sig_rddata2_prev <= sig_rddata2;
+		--reading address 1
+		if unsigned(sig_rdaddr1) = 0 or reset = '0' then
+			rddata1 <= (others => '0');
+		elsif sig_rdaddr1 = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
+			rddata1 <= wrdata;
 		else 
-			rddata1 <= sig_rddata1_prev;
-			rddata2 <= sig_rddata2_prev;
-			sig_rddata1_prev <= rddata1;
-			sig_rddata2_prev <= rddata2;
+			rddata1 <= registers(to_integer(unsigned(sig_rdaddr1)));
+		end if;
+		--reading address 2
+		if unsigned(sig_rdaddr2) = 0 or reset = '0' then
+			rddata2 <= (others => '0');
+		elsif sig_rdaddr2 = wraddr and regwrite = '1' and stall = '0' and reset = '1' then
+			rddata2 <= wrdata;
+		else 
+			rddata2 <= registers(to_integer(unsigned(sig_rdaddr2)));
 		end if;
 	end process;
 
