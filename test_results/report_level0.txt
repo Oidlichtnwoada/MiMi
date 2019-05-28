@@ -2,21 +2,21 @@ Test Level 0
 ============
 Starting tests on alu
 Failed 0/62 tests.
-# End time: 13:32:17 on May 27,2019, Elapsed time: 0:00:01
+# End time: 13:20:27 on May 28,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on alu
 Starting tests on jmpu
 Failed 0/33 tests.
-# End time: 13:32:20 on May 27,2019, Elapsed time: 0:00:01
+# End time: 13:20:30 on May 28,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on jmpu
 Starting tests on memu
 Failed 0/63 tests.
-# End time: 13:32:24 on May 27,2019, Elapsed time: 0:00:01
+# End time: 13:20:33 on May 28,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on memu
 Starting tests on regfile
 Failed 0/29 tests.
-# End time: 13:32:27 on May 27,2019, Elapsed time: 0:00:01
+# End time: 13:20:36 on May 28,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on regfile
