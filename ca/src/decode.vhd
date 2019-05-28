@@ -64,26 +64,24 @@ begin
 	sync: process (all)
 	begin
 	if reset = '0' then
-		pc_out <= (others => '0');
 		sig_pc_in <= (others => '0');
 		sig_instr <= (others => '0');
 		sig_wraddr <= (others => '0');
 		sig_wrdata <= (others => '0');
 		sig_regwrite <= '0';
-	elsif rising_edge(clk) then
-		if stall = '0' then
-			pc_out <= pc_in;
-			sig_pc_in <= pc_in;
-			sig_instr <= instr;
-			sig_wraddr <= wraddr;
-			sig_wrdata <= wrdata;
-			sig_regwrite <= regwrite;
-		end if;
+	elsif rising_edge(clk) and stall = '0' then
+		sig_pc_in <= pc_in;
+		sig_instr <= instr;
+		sig_wraddr <= wraddr;
+		sig_wrdata <= wrdata;
+		sig_regwrite <= regwrite;
 	end if;	
 	end process;
 	
 	decode : process (all)
 	begin
+		
+		pc_out <= sig_pc_in;
 		
 		--read from regfile
 		sig_rdaddr1 <= rs;

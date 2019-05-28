@@ -16,7 +16,7 @@ architecture rtl of jmpu is
 
 begin  -- rtl
 
-	jump : process(op,N,Z)
+	jump : process(all)
 	begin
 	
 		case op is

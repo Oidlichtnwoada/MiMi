@@ -43,12 +43,10 @@ begin
 			sig_pcsrc <= '0';
 			sig_pc_in <= (others => '0');
 			pc <= (others => '0');
-		elsif rising_edge(clk) then
-			if stall = '0' then
-				sig_pcsrc <= pcsrc;
-				sig_pc_in <= pc_in;
-				pc <= pc_nxt;
-			end if;
+		elsif rising_edge(clk) and stall = '0' then
+			sig_pcsrc <= pcsrc;
+			sig_pc_in <= pc_in;
+			pc <= pc_nxt;
 		end if;
 	end process;
 

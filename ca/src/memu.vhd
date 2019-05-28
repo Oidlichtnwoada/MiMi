@@ -37,7 +37,7 @@ constant ADDRZERO : std_logic_vector(ADDR_WIDTH-1 downto 2) := (others => '0');
 
 begin  -- rtl
 
-process(op, A, W, D)
+process(all)
 begin
 
 --setting address to the memory module & re-setting the exceptions(otherwise<=0)

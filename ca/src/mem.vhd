@@ -79,75 +79,59 @@ signal sig_zero, sig_neg : std_logic;
 signal sig_new_pc_in : std_logic_vector(PC_WIDTH-1 downto 0);
 signal sig_wbop_in : wb_op_type;
 signal sig_mem_data : std_logic_vector(DATA_WIDTH-1 downto 0);
-signal sig_J : std_logic;
-signal sig_M : mem_out_type;
-signal sig_R : std_logic_vector(DATA_WIDTH-1 downto 0);
-signal sig_XL : std_logic;
-signal sig_XS : std_logic;
-signal sig_A : std_logic_vector(DATA_WIDTH-1 downto 0);
-signal sig_W : std_logic_vector(DATA_WIDTH-1 downto 0);
-
-
 
 begin  -- rtl
 
 sync : process(all)
 begin
-	if rising_edge(clk) and stall='0' then
-		if reset='0' then
-			sig_XL <= '0';
-			sig_XS <= '0';
-			sig_R <= (others=>'0');
-			sig_M.address <= (others=>'0');
-			sig_M.rd <= '0';
-			sig_M.wr <= '0';
-			sig_M.byteena <= (others=>'0');
-			sig_M.wrdata <= (others=>'0');
-			sig_pc_in <= (others=>'0');
-			sig_rd_in <= (others=>'0');
-			sig_aluresult_in <= (others=>'0');
-			sig_wbop_in <= WB_NOP;
-			sig_mem_op <= MEM_NOP;
-			sig_wrdata <= (others=>'0');
-			sig_J <= '0';
-		else
-			sig_XL <= XL;
-			sig_XS <= XS;
-			sig_R <= R;
-			sig_M <= M;
-			sig_pc_in <= pc_in;
-			sig_rd_in <= rd_in;
-			sig_aluresult_in <= aluresult_in;
-			sig_wbop_in <= wbop_in;
-			sig_mem_op <= mem_op;
-			sig_wrdata <= wrdata;
-			sig_J <= J;
-		end if;
+	if reset = '0' then
+		sig_mem_op <= MEM_NOP;
+		sig_jmp_op <= JMP_NOP;
+		sig_pc_in <= (others => '0');
+		sig_rd_in <= (others => '0');
+		sig_aluresult_in <= (others => '0');
+		sig_wrdata <= (others => '0');
+		sig_zero <= '0';
+		sig_neg <= '0';
+		sig_new_pc_in <= (others => '0');
+		sig_wbop_in <= WB_NOP;
+		sig_mem_data <= (others => '0');
+	elsif rising_edge(clk) and stall = '0' then
+		sig_mem_op <= mem_op;
+		sig_jmp_op <= jmp_op;
+		sig_pc_in <= pc_in;
+		sig_rd_in <= rd_in;
+		sig_aluresult_in <= aluresult_in;
+		sig_wrdata <= wrdata;
+		sig_zero <= zero;
+		sig_neg <= neg;
+		sig_new_pc_in <= new_pc_in;
+		sig_wbop_in <= wbop_in;
+		sig_mem_data <= mem_data;
+	end if;
+	if flush = '1' then
+		sig_mem_op <= MEM_OP;
 	end if;
 end process;
 
-inst : process(all)
+process(all)
 begin
-	exc_load <= sig_XL;
-	exc_store <= sig_XS;
-	memresult <= sig_R;
-	mem_out <= sig_M;
-	pcsrc <= sig_J;
-	new_pc_out <= sig_new_pc_in;
-
-	if flush='1' then
-		op_mem <= MEM_NOP;
-	elsif stall='0' then
-		pc_out <= sig_pc_in;
-		rd_out <= sig_rd_in;
-		aluresult_out <= sig_aluresult_in;
-		A <= sig_aluresult_in;
-		wbop_out <= sig_wbop_in;
-		op_mem <= sig_mem_op;
-		W <= sig_wrdata;
-		op_mem.memread <= sig_mem_op.memread;
-		op_mem.memwrite <= sig_mem_op.memwrite;
-	else
+	exc_load <= XL;
+	exc_store <= XS;
+	memresult <= R;
+	mem_out <= M;
+	pcsrc <= J;
+	new_pc_out <= new_pc_in;
+	pc_out <= sig_pc_in;
+	rd_out <= sig_rd_in;
+	aluresult_out <= sig_aluresult_in;
+	A <= sig_aluresult_in;
+	wbop_out <= sig_wbop_in;
+	op_mem <= sig_mem_op;
+	W <= sig_wrdata;
+	op_mem.memread <= sig_mem_op.memread;
+	op_mem.memwrite <= sig_mem_op.memwrite;
+	if stall = '1' then
 		op_mem.memread <= '0';
 		op_mem.memwrite <= '0';
 	end if;

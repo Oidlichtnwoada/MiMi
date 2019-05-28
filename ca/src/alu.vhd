@@ -34,7 +34,7 @@ architecture rtl of alu is
 begin  -- rtl
 
 	
-	result : process (A,B,op)
+	result : process (all)
 	begin
 	
 		case op is
@@ -78,7 +78,7 @@ begin  -- rtl
 	
 	end process;
 	
-	zero : process (A,B,op)
+	zero : process (all)
 	begin
 		
 		if(op = ALU_SUB) then
@@ -97,7 +97,7 @@ begin  -- rtl
 		
 	end process;
 	
-	overflow : process (A,B,op,R)
+	overflow : process (all)
 	begin
 	
 		case op is
