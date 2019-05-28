@@ -122,7 +122,7 @@ begin
 			sig_mem_op <= mem_op;
 			W <= wrdata;
 		else
-			sig_mem_op <= MEM_NOP;
+			--sig_mem_op <= MEM_NOP;
 			null;
 		end if;
 		if stall = '0' then
