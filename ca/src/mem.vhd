@@ -6,7 +6,7 @@ use work.core_pack.all;
 use work.op_pack.all;
 
 entity mem is
-	
+
 	port (
 		clk, reset    : in  std_logic;
 		stall         : in  std_logic;
@@ -70,68 +70,86 @@ signal XS : std_logic;
 
 --internal signals
 signal sig_mem_op : mem_op_type;
-signal sig_J_next : std_logic;
-signal sig_new_pc_out : std_logic_vector(PC_WIDTH-1 downto 0);
+signal sig_jmp_op : jmp_op_type;
+signal sig_pc_in : std_logic_vector(PC_WIDTH-1 downto 0);
+signal sig_rd_in : std_logic_vector(REG_BITS-1 downto 0);
+signal sig_aluresult_in : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal sig_wrdata : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal sig_zero, sig_neg : std_logic;
+signal sig_new_pc_in : std_logic_vector(PC_WIDTH-1 downto 0);
+signal sig_wbop_in : wb_op_type;
+signal sig_mem_data : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal sig_J : std_logic;
+signal sig_M : mem_out_type;
+signal sig_R : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal sig_XL : std_logic;
+signal sig_XS : std_logic;
+signal sig_A : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal sig_W : std_logic_vector(DATA_WIDTH-1 downto 0);
+
+
 
 begin  -- rtl
 
---mem_op to memu
-op_mem.memtype <= sig_mem_op.memtype;
-
-concurrent : process(all)
+sync : process(all)
 begin
-	exc_load <= XL;
-	exc_store <= XS;
-	memresult <= R;
-	mem_out <= M;
+	if rising_edge(clk) and stall='0' then
+		if reset='0' then
+			sig_XL <= '0';
+			sig_XS <= '0';
+			sig_R <= (others=>'0');
+			sig_M.address <= (others=>'0');
+			sig_M.rd <= '0';
+			sig_M.wr <= '0';
+			sig_M.byteena <= (others=>'0');
+			sig_M.wrdata <= (others=>'0');
+			sig_pc_in <= (others=>'0');
+			sig_rd_in <= (others=>'0');
+			sig_aluresult_in <= (others=>'0');
+			sig_wbop_in <= WB_NOP;
+			sig_mem_op <= MEM_NOP;
+			sig_wrdata <= (others=>'0');
+			sig_J <= '0';
+		else
+			sig_XL <= XL;
+			sig_XS <= XS;
+			sig_R <= R;
+			sig_M <= M;
+			sig_pc_in <= pc_in;
+			sig_rd_in <= rd_in;
+			sig_aluresult_in <= aluresult_in;
+			sig_wbop_in <= wbop_in;
+			sig_mem_op <= mem_op;
+			sig_wrdata <= wrdata;
+			sig_J <= J;
+		end if;
+	end if;
 end process;
 
 inst : process(all)
 begin
-	pcsrc <= sig_J_next;
-	new_pc_out <= sig_new_pc_out;
+	exc_load <= sig_XL;
+	exc_store <= sig_XS;
+	memresult <= sig_R;
+	mem_out <= sig_M;
+	pcsrc <= sig_J;
+	new_pc_out <= sig_new_pc_in;
 
-	if stall='1' then
-		--store values
-		sig_J_next <= pcsrc;
-		sig_new_pc_out <= new_pc_out;
+	if flush='1' then
+		op_mem <= MEM_NOP;
+	elsif stall='0' then
+		pc_out <= sig_pc_in;
+		rd_out <= sig_rd_in;
+		aluresult_out <= sig_aluresult_in;
+		A <= sig_aluresult_in;
+		wbop_out <= sig_wbop_in;
+		op_mem <= sig_mem_op;
+		W <= sig_wrdata;
+		op_mem.memread <= sig_mem_op.memread;
+		op_mem.memwrite <= sig_mem_op.memwrite;
 	else
-		pcsrc <= J;
-		sig_J_next <= J;
-		new_pc_out <= new_pc_in;
-		sig_new_pc_out <= new_pc_in;	
-	end if;
-
-	if reset='0' then
-		pcsrc <= '0';
-		new_pc_out <= (others=>'0');
-		pc_out <= (others=>'0');
-		rd_out <= (others=>'0');
-		aluresult_out <= (others=>'0');
-		wbop_out <= WB_NOP;
-		sig_mem_op <= MEM_NOP;
-	elsif rising_edge(clk) then
-		if flush='1' then
-			null;
-		elsif stall='0' then
-			pc_out <= pc_in;
-			rd_out <= rd_in;
-			aluresult_out <= aluresult_in;
-			A <= aluresult_in;
-			wbop_out <= wbop_in;
-			sig_mem_op <= mem_op;
-			W <= wrdata;
-		else
-			--sig_mem_op <= MEM_NOP;
-			null;
-		end if;
-		if stall = '0' then
-			op_mem.memread <= mem_op.memread;
-			op_mem.memwrite <= mem_op.memwrite;
-		else 
-			op_mem.memread <= '0';
-			op_mem.memwrite <= '0';
-		end if;
+		op_mem.memread <= '0';
+		op_mem.memwrite <= '0';
 	end if;
 end process;
 
@@ -142,17 +160,17 @@ jmpu_inst : jmpu
 		Z => neg, --in
 		J => J --out pcsrc
 	);
-	
+
 memu_inst : memu
 	port map(
 		op => op_mem, --in
 		A => A(ADDR_WIDTH-1 downto 0), --in aluresult
-		W => W, --in write_data 
+		W => W, --in write_data
 		D => mem_data, --in
 		M => M, --out mem_out
 		R => R, --out memresult
 		XL => XL, --out exc_load
 		XS => XS  --out exc_store
 	);
-	
+
 end rtl;
