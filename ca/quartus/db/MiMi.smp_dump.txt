@@ -10,6 +10,14 @@ sig_jmp_op.JMP_BGTZ 0 0 1 0 0 0 0 1
 sig_jmp_op.JMP_BLTZ 0 1 0 0 0 0 0 1 
 sig_jmp_op.JMP_BGEZ 1 0 0 0 0 0 0 1 
 
+State Machine - |mimi|core:core|pipeline:pipeline|mem:mem_inst|sig_mem_op.memtype
+Name sig_mem_op.memtype.MEM_BU sig_mem_op.memtype.MEM_B sig_mem_op.memtype.MEM_HU sig_mem_op.memtype.MEM_H sig_mem_op.memtype.MEM_W 
+sig_mem_op.memtype.MEM_W 0 0 0 0 0 
+sig_mem_op.memtype.MEM_H 0 0 0 1 1 
+sig_mem_op.memtype.MEM_HU 0 0 1 0 1 
+sig_mem_op.memtype.MEM_B 0 1 0 0 1 
+sig_mem_op.memtype.MEM_BU 1 0 0 0 1 
+
 State Machine - |mimi|core:core|pipeline:pipeline|exec:exec_inst|sig_forwardB
 Name sig_forwardB.FWD_WB sig_forwardB.FWD_ALU sig_forwardB.FWD_NONE 
 sig_forwardB.FWD_NONE 0 0 0 
