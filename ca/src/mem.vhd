@@ -122,7 +122,6 @@ end process;
 
 process (all)
 begin
-	report to_string(stall);
 	exc_load <= XL;
 	exc_store <= XS;
 	memresult <= R;
