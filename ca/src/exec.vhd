@@ -134,17 +134,16 @@ begin  -- rtl
 			
 				if (sig_op.useimm = '0') then --JR,JALR
 				
-					sig_new_pc <= std_logic_vector(resize(unsigned(sig_op.readdata1), sig_new_pc'length));
-					
-					if (sig_op.link = '1') then --JALR
-						sig_aluresult <= std_logic_vector(resize(unsigned(sig_pc_in), sig_aluresult'length));
-					end if;
+					sig_new_pc <= std_logic_vector(resize(unsigned(sig_op.readdata1), sig_new_pc'length));	
 					
 				else --J,JALR
 				
-					sig_aluresult	<= std_logic_vector(resize(unsigned(sig_pc_in),sig_aluresult'length));
 					sig_new_pc		<= std_logic_Vector(resize(signed(shift_left(signed(sig_op.imm),2)), sig_new_pc'length));
 				
+				end if;
+
+				if (sig_op.link = '1') then --JALR
+					sig_aluresult <= std_logic_vector(resize(unsigned(sig_pc_in) + 4, sig_aluresult'length));
 				end if;
 	
 			when ALU_LUI => --LUI
@@ -304,8 +303,8 @@ begin  -- rtl
 					
 					sig_new_pc <= std_logic_vector(resize(signed(sig_pc_in) + shift_left(signed(sig_op.imm),2),sig_new_pc'length));
 					
-					if op.link = '1' then
-						sig_aluresult <=  std_logic_vector(resize((unsigned(sig_pc_in)),sig_aluresult'length));
+					if sig_op.link = '1' then
+						sig_aluresult <=  std_logic_vector(resize(unsigned(sig_pc_in) + 4,sig_aluresult'length));
 					end if;
 					
 				end if;	
