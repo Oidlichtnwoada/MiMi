@@ -95,7 +95,6 @@ begin
 		sig_neg <= '0';
 		sig_new_pc_in <= (others => '0');
 		sig_wbop_in <= WB_NOP;
-		sig_mem_data <= (others => '0');
 	elsif rising_edge(clk) then
 		if stall = '0' then
 			sig_mem_op <= mem_op;
@@ -111,7 +110,6 @@ begin
 		else 
 			sig_mem_op.memread <= '0';
 			sig_mem_op.memwrite <= '0';
-			sig_mem_data <= mem_data;
 		end if;
 		if flush = '1' then
 			sig_mem_op <= MEM_OP;
@@ -137,7 +135,6 @@ begin
 	W <= sig_wrdata;
 	op_mem.memread <= sig_mem_op.memread;
 	op_mem.memwrite <= sig_mem_op.memwrite;
-	
 end process;
 
 jmpu_inst : jmpu
@@ -153,7 +150,7 @@ memu_inst : memu
 		op => op_mem, --in
 		A => A(ADDR_WIDTH-1 downto 0), --in aluresult
 		W => W, --in write_data
-		D => sig_mem_data, --in
+		D => mem_data, --in
 		M => M, --out mem_out
 		R => R, --out memresult
 		XL => XL, --out exc_load
