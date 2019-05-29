@@ -1,110 +1,62 @@
 Test Level 1
 ============
 Starting pipeline compilation
+** Warning: /tmp/tmp.kdz8SFYysq/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
 Finished pipeline compilation
 Starting tests on minimal
 Failed 0/10 tests.
-# End time: 10:20:35 on May 29,2019, Elapsed time: 0:00:02
+# End time: 14:48:36 on May 29,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on minimal
 Starting tests on arith
 Failed 0/88 tests.
-# End time: 10:20:38 on May 29,2019, Elapsed time: 0:00:02
+# End time: 14:48:39 on May 29,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on arith
 Starting tests on memory
 Failed 0/161 tests.
-# End time: 10:20:41 on May 29,2019, Elapsed time: 0:00:02
+# End time: 14:48:42 on May 29,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on memory
 Starting tests on jump
-Failed test: mem_out.wrdata wrong at test 14, expected 00000000000000000000000000000000
-Failed test: mem_out.wr asserted when expecting silence at test 15
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 19
-Failed test: mem_out.address wrong at test 19, expected 000000000000000001000
-Failed test: mem_out.wr asserted when expecting silence at test 20
-Failed test: mem_out.wr asserted when expecting silence at test 22
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 24
-Failed test: mem_out.address wrong at test 24, expected 000000000000000001100
-Failed test: mem_out.wr asserted when expecting silence at test 27
-Failed test: mem_out.wr asserted when expecting silence at test 32
-Failed test: mem_out.address wrong at test 33, expected 000000000000000010000
-Failed test: mem_out.address wrong at test 38, expected 000000000000000010100
-Failed test: mem_out.wrdata wrong at test 38, expected 00000000000000000000000000000000
-Failed test: mem_out.wr asserted when expecting silence at test 43
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 47
-Failed test: mem_out.address wrong at test 47, expected 000000000000000011000
-Failed test: mem_out.wr asserted when expecting silence at test 48
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 52
-Failed test: mem_out.address wrong at test 52, expected 000000000000000011100
-Failed test: mem_out.wr asserted when expecting silence at test 53
-Failed test: mem_out.wr asserted when expecting silence at test 54
-Failed test: mem_out.wr asserted when expecting silence at test 55
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 57
-Failed test: mem_out.address wrong at test 57, expected 000000000000000100000
-Failed test: mem_out.wr asserted when expecting silence at test 60
-Failed test: mem_out.wr asserted when expecting silence at test 65
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 66
-Failed test: mem_out.address wrong at test 66, expected 000000000000000011000
-Failed test: mem_out.wr asserted when expecting silence at test 70
-Failed test: mem_out.wrdata wrong at test 71, expected 00000000000000000000000000000000
-Failed test: mem_out.wr asserted when expecting silence at test 72
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 76
-Failed test: mem_out.address wrong at test 76, expected 000000000000000100000
-Failed test: mem_out.wr asserted when expecting silence at test 77
-Failed test: mem_out.wr asserted when expecting silence at test 78
-Failed test: mem_out.wr asserted when expecting silence at test 79
-Failed test: mem_out.wr asserted when expecting silence at test 84
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 85
-Failed test: mem_out.address wrong at test 85, expected 000000000000000011000
-Failed test: mem_out.wr asserted when expecting silence at test 89
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 90
-Failed test: mem_out.address wrong at test 90, expected 000000000000000011100
-Failed test: mem_out.wr asserted when expecting silence at test 91
-Failed test: mem_out.wr asserted when expecting silence at test 92
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 95
-Failed test: mem_out.address wrong at test 95, expected 000000000000000100000
-Failed test: mem_out.wr asserted when expecting silence at test 97
-Failed test: mem_out.wr asserted when expecting silence at test 99
-Failed test: mem_out.address wrong at test 104, expected 000000000000000011000
-Failed test: mem_out.wrdata wrong at test 104, expected 00000000000000000000000000000000
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 109
-Failed test: mem_out.address wrong at test 109, expected 000000000000000011100
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 114
-Failed test: mem_out.address wrong at test 114, expected 000000000000000100000
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 123
-Failed test: mem_out.address wrong at test 123, expected 000000000000000100100
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 128
-Failed test: mem_out.address wrong at test 128, expected 000000000000000101000
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 135
 Failed test: mem_out.address wrong at test 135, expected 000000000000000101100
+Failed test: mem_out.wr asserted when expecting silence at test 136
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 140
 Failed test: mem_out.address wrong at test 140, expected 000000000000000101000
+Failed test: mem_out.wr asserted when expecting silence at test 141
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 147
 Failed test: mem_out.address wrong at test 147, expected 000000000000000110000
+Failed test: mem_out.wr asserted when expecting silence at test 149
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 152
 Failed test: mem_out.address wrong at test 152, expected 000000000000000110100
+Failed test: mem_out.wr asserted when expecting silence at test 154
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 157
 Failed test: mem_out.address wrong at test 157, expected 000000000000001000100
+Failed test: mem_out.wr asserted when expecting silence at test 159
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 164
 Failed test: mem_out.address wrong at test 164, expected 000000000000000111000
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 169
 Failed test: mem_out.address wrong at test 169, expected 000000000000000111100
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 174
 Failed test: mem_out.address wrong at test 174, expected 000000000000001000100
+Failed test: mem_out.wr asserted when expecting silence at test 175
+Failed test: mem_out.wr asserted when expecting silence at test 180
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 181
 Failed test: mem_out.address wrong at test 181, expected 000000000000000110100
+Failed test: mem_out.wr asserted when expecting silence at test 185
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 186
 Failed test: mem_out.address wrong at test 186, expected 000000000000000111000
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 191
 Failed test: mem_out.address wrong at test 191, expected 000000000000001000100
+Failed test: mem_out.wr asserted when expecting silence at test 194
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 198
 Failed test: mem_out.address wrong at test 198, expected 000000000000000111100
-Failed test: mem_out.wr/mem_out.rd wrong for write at test 199
 Failed test: mem_out.address wrong at test 199, expected 000000000000001000000
 Failed test: mem_out.wr/mem_out.rd wrong for write at test 204
 Failed test: mem_out.address wrong at test 204, expected 000000000000001000000
-Failed 56/208 tests.
-# End time: 10:20:44 on May 29,2019, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 1296, Suppressed Warnings: 57
+Failed test: mem_out.wr asserted when expecting silence at test 208
+Failed 24/208 tests.
+# End time: 14:48:45 on May 29,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on jump
