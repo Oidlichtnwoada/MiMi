@@ -29,6 +29,7 @@ begin
 		if reset = '0' then 
 			sig_rdaddr1_before <= (others => '0');
 			sig_rdaddr2_before <= (others => '0');
+			registers <= (others => (others => '0'));
 		elsif rising_edge(clk) then
 			if stall = '0' then
 				sig_rdaddr1_before <= rdaddr1;

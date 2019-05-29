@@ -140,8 +140,8 @@ end process;
 jmpu_inst : jmpu
 	port map(
 		op => sig_jmp_op, --in
-		N => sig_zero, --in
-		Z => sig_neg, --in
+		N => sig_neg, --in
+		Z => sig_zero, --in
 		J => J --out pcsrc
 	);
 

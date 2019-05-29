@@ -302,7 +302,7 @@ begin  -- rtl
 					
 					sig_neg <= alu_R(31);
 					
-					sig_new_pc <= std_logic_vector(resize(((signed(sig_pc_in)-4)+signed(shift_left(signed(sig_op.imm),2))), sig_new_pc'length)); --we need the actual pc (pc - 4)
+					sig_new_pc <= std_logic_vector(resize(signed(sig_pc_in) + shift_left(signed(sig_op.imm),2),sig_new_pc'length));
 					
 					if op.link = '1' then
 						sig_aluresult <=  std_logic_vector(resize((unsigned(sig_pc_in)),sig_aluresult'length));
