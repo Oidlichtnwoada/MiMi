@@ -27,8 +27,7 @@ architecture rtl of fetch is
 		);
 	end component imem_altera;
 	
-	signal sig_pcsrc : std_logic;
-	signal pc, pc_nxt, sig_pc_in : std_logic_vector(PC_WIDTH-1 downto 0);
+	signal pc, pc_nxt : std_logic_vector(PC_WIDTH-1 downto 0);
 
 begin
 
@@ -40,12 +39,8 @@ begin
 	sync: process (all)
 	begin
 		if reset = '0' then 
-			sig_pcsrc <= '0';
-			sig_pc_in <= (others => '0');
 			pc <= (others => '1');
 		elsif rising_edge(clk) and stall = '0' then
-			sig_pcsrc <= pcsrc;
-			sig_pc_in <= pc_in;
 			if unsigned(pc) = 2**PC_WIDTH-1 then
 				pc <= (others => '0');
 			else 
@@ -57,8 +52,8 @@ begin
 	nxt: process (all)
 	begin
 		if stall = '0' and reset = '1' then
-			if sig_pcsrc = '1' then
-				pc_nxt <= sig_pc_in;
+			if pcsrc = '1' then
+				pc_nxt <= pc_in;
 			else 
 				pc_nxt <= std_logic_vector(unsigned(pc) + 4);
 			end if;
