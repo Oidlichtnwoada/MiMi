@@ -108,10 +108,10 @@ begin
 			sig_neg <= neg;
 			sig_new_pc_in <= new_pc_in;
 			sig_wbop_in <= wbop_in;
-			sig_mem_data <= mem_data;
 		else 
 			sig_mem_op.memread <= '0';
 			sig_mem_op.memwrite <= '0';
+			sig_mem_data <= mem_data;
 		end if;
 		if flush = '1' then
 			sig_mem_op <= MEM_OP;
