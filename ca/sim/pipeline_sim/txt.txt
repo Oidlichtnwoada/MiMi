@@ -1,0 +1,1921 @@
+vsim -do "vsim pipeline_tb -t 1ps -msgmode both; run 1 sec; do ./wave.do" 
+Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+# vsim pipeline_tb -t 1ps -msgmode both
+# vsim pipeline_tb -t 1ps -msgmode both 
+# Start time: 11:58:17 on May 29,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.core_pack
+# Loading work.op_pack
+# Loading work.pipeline_pkg
+# Loading work.tb_pkg(body)
+# Loading work.pipeline_tb(rtl)
+# Loading work.pipeline(rtl)
+# Loading work.fetch(rtl)
+# Loading work.imem_altera(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.decode(rtl)
+# Loading work.regfile(rtl)
+# Loading work.exec(rtl)
+# Loading work.alu(rtl)
+# Loading work.mem(rtl)
+# Loading work.jmpu(rtl)
+# Loading work.memu(rtl)
+# Loading work.wb(rtl)
+# Loading work.ocram_altera(syn)
+#  run 1 sec
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: hanne  Hostname: DESKTOP-N21VR4H  ProcessID: 2060
+#           Attempting to use alternate WLF file "./wlfthrzcwa".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfthrzcwa
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/exec_inst/alu_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /pipeline_tb/UUT/decode_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /pipeline_tb/UUT/decode_inst/regfile_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 219988 ps  Iteration: 3  Instance: /pipeline_tb/UUT/exec_inst/alu_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 233320 ps  Iteration: 3  Instance: /pipeline_tb/UUT/exec_inst/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 246652 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 246652 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 246652 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 246652 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 246652 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 246652 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 253318 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 259984 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 259984 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 259984 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 259984 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 259984 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 259984 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 266650 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 266650 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 266650 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 266650 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 266650 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 266650 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 266650 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 266650 ps  Iteration: 2  Instance: /pipeline_tb/ocram/altsyncram_component
+# ** Note: 00000000101000000000000000001000
+#    Time: 1286548 ps  Iteration: 6  Instance: /pipeline_tb/UUT/decode_inst
+# ** Note: 00000000101000000000000000001000
+#    Time: 1299880 ps  Iteration: 2  Instance: /pipeline_tb/UUT/decode_inst
+# ** Note: 00000000101000000000000000001000
+#    Time: 1299880 ps  Iteration: 5  Instance: /pipeline_tb/UUT/decode_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1339876 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1339876 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1339876 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1339876 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1339876 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1339876 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1353208 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1353208 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1353208 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1353208 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1353208 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1353208 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1353208 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1366540 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1366540 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1366540 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1366540 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1366540 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1366540 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1366540 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1379872 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1379872 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1379872 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1379872 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1379872 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1379872 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1379872 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1393204 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1393204 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1393204 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1393204 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1393204 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1393204 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1393204 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1406536 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1406536 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1406536 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1406536 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1406536 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1406536 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1406536 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1419868 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1419868 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1419868 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1419868 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1419868 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1419868 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1419868 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1433200 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1433200 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1433200 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1433200 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1433200 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1433200 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1433200 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1446532 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1446532 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1446532 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1446532 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1446532 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1446532 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1446532 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1459864 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1459864 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1459864 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1459864 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1459864 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1459864 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1459864 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1473196 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1473196 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1473196 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1473196 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1473196 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1473196 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1473196 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1486528 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1486528 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1486528 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1486528 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1486528 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1486528 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1486528 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1499860 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1499860 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1499860 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1499860 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1499860 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1499860 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1499860 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1513192 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1513192 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1513192 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1513192 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1513192 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1513192 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1513192 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1526524 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1526524 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1526524 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1526524 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1526524 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1526524 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1526524 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1539856 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1539856 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1539856 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1539856 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1539856 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1539856 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1539856 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1553188 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1553188 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1553188 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1553188 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1553188 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1553188 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1553188 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1566520 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1566520 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1566520 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1566520 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1566520 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1566520 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1566520 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1579852 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1579852 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1579852 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1579852 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1579852 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1579852 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1579852 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1593184 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1593184 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1593184 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1593184 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1593184 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1593184 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1593184 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1606516 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1606516 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1606516 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1606516 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1606516 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1606516 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1606516 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1619848 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1619848 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1619848 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1619848 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1619848 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1619848 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1619848 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1633180 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1633180 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1633180 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1633180 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1633180 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1633180 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1633180 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1646512 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1646512 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1646512 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1646512 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1646512 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1646512 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1646512 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1659844 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1659844 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1659844 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1659844 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1659844 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1659844 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1659844 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1673176 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1673176 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1673176 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1673176 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1673176 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1673176 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1673176 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1686508 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1686508 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1686508 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1686508 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1686508 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1686508 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1686508 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1699840 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1699840 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1699840 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1699840 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1699840 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1699840 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1699840 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1713172 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1713172 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1713172 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1713172 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1713172 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1713172 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1713172 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1726504 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1726504 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1726504 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1726504 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1726504 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1726504 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1726504 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1739836 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1739836 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1739836 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1739836 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1739836 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1739836 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1739836 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1753168 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1753168 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1753168 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1753168 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1753168 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1753168 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1753168 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1766500 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1766500 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1766500 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1766500 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1766500 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1766500 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1766500 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1779832 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1779832 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1779832 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1779832 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1779832 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1779832 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1779832 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1793164 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1793164 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1793164 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1793164 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1793164 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1793164 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1793164 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1806496 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1806496 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1806496 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1806496 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1806496 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1806496 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1806496 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1819828 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1819828 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1819828 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1819828 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1819828 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1819828 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1819828 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1833160 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1833160 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1833160 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1833160 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1833160 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1833160 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1833160 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1846492 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1846492 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1846492 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1846492 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1846492 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1846492 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1846492 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1859824 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1859824 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1859824 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1859824 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1859824 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1859824 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1859824 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1873156 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1873156 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1873156 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1873156 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1873156 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1873156 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1873156 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1886488 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1886488 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1886488 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1886488 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1886488 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1886488 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1886488 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1899820 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1899820 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1899820 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1899820 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1899820 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1899820 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1899820 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1913152 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1913152 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1913152 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1913152 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1913152 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1913152 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1913152 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1926484 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1926484 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1926484 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1926484 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1926484 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1926484 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1926484 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1939816 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1939816 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1939816 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1939816 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1939816 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1939816 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1939816 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1953148 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1953148 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1953148 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1953148 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1953148 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1953148 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1953148 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1966480 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1966480 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1966480 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1966480 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1966480 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1966480 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1966480 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1979812 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1979812 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1979812 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1979812 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1979812 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1979812 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1979812 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1993144 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1993144 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1993144 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1993144 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1993144 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1993144 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1993144 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2006476 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2006476 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2006476 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2006476 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2006476 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2006476 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2006476 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2019808 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2019808 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2019808 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2019808 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2019808 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2019808 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2019808 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2033140 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2033140 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2033140 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2033140 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2033140 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2033140 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2033140 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2046472 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2046472 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2046472 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2046472 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2046472 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2046472 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2046472 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2059804 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2059804 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2059804 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2059804 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2059804 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2059804 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2059804 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2073136 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2073136 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2073136 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2073136 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2073136 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2073136 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2073136 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2086468 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2086468 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2086468 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2086468 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2086468 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2086468 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2086468 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2099800 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2099800 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2099800 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2099800 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2099800 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2099800 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2099800 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2113132 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2113132 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2113132 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2113132 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2113132 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2113132 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2113132 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2126464 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2126464 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2126464 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2126464 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2126464 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2126464 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2126464 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2139796 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2139796 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2139796 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2139796 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2139796 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2139796 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2139796 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2153128 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2153128 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2153128 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2153128 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2153128 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2153128 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2153128 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2166460 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2166460 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2166460 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2166460 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2166460 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2166460 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2166460 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2179792 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2179792 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2179792 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2179792 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2179792 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2179792 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2179792 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2193124 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2193124 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2193124 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2193124 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2193124 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2193124 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2193124 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2206456 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2206456 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2206456 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2206456 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2206456 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2206456 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2206456 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2219788 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2219788 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2219788 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2219788 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2219788 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2219788 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2219788 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2233120 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2233120 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2233120 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2233120 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2233120 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2233120 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2233120 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2246452 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2246452 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2246452 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2246452 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2246452 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2246452 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2246452 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2259784 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2259784 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2259784 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2259784 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2259784 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2259784 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2259784 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2273116 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2273116 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2273116 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2273116 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2273116 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2273116 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2273116 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2286448 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2286448 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2286448 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2286448 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2286448 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2286448 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2286448 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2299780 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2299780 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2299780 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2299780 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2299780 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2299780 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2299780 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2313112 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2313112 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2313112 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2313112 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2313112 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2313112 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2313112 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2326444 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2326444 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2326444 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2326444 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2326444 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2326444 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2326444 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2339776 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2339776 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2339776 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2339776 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2339776 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2339776 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2339776 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2353108 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2353108 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2353108 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2353108 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2353108 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2353108 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2353108 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2366440 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2366440 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2366440 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2366440 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2366440 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2366440 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2366440 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2379772 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2379772 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2379772 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2379772 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2379772 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2379772 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2379772 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2393104 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2393104 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2393104 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2393104 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2393104 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2393104 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2393104 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2406436 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2406436 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2406436 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2406436 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2406436 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2406436 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2406436 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2419768 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2419768 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2419768 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2419768 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2419768 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2419768 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2419768 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2433100 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2433100 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2433100 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2433100 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2433100 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2433100 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2433100 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2446432 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2446432 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2446432 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2446432 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2446432 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2446432 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2446432 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2459764 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2459764 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2459764 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2459764 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2459764 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2459764 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2459764 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2473096 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2473096 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2473096 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2473096 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2473096 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2473096 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2473096 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2486428 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2486428 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2486428 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2486428 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2486428 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2486428 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2486428 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2499760 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2499760 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2499760 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2499760 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2499760 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2499760 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2499760 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2513092 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2513092 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2513092 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2513092 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2513092 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2513092 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2513092 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2526424 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2526424 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2526424 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2526424 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2526424 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2526424 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2526424 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2539756 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2539756 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2539756 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2539756 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2539756 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2539756 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2539756 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2553088 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2553088 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2553088 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2553088 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2553088 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2553088 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2553088 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2566420 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2566420 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2566420 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2566420 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2566420 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2566420 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2566420 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2579752 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2579752 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2579752 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2579752 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2579752 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2579752 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2579752 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2593084 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2593084 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2593084 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2593084 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2593084 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2593084 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2593084 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2606416 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2606416 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2606416 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2606416 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2606416 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2606416 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2606416 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2619748 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2619748 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2619748 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2619748 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2619748 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2619748 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2619748 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2633080 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2633080 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2633080 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2633080 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2633080 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2633080 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2633080 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2646412 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2646412 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2646412 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2646412 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2646412 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2646412 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2646412 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2659744 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2659744 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2659744 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2659744 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2659744 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2659744 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2659744 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2673076 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2673076 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2673076 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2673076 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2673076 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2673076 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2673076 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2686408 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2686408 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2686408 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2686408 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2686408 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2686408 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2686408 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2699740 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2699740 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2699740 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2699740 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2699740 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2699740 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2699740 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2713072 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2713072 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2713072 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2713072 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2713072 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2713072 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2713072 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2726404 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2726404 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2726404 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2726404 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2726404 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2726404 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2726404 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2739736 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2739736 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2739736 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2739736 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2739736 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2739736 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2739736 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2753068 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2753068 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2753068 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2753068 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2753068 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2753068 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2753068 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2766400 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2766400 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2766400 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2766400 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2766400 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2766400 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2766400 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2779732 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2779732 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2779732 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2779732 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2779732 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2779732 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2779732 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2793064 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2793064 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2793064 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2793064 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2793064 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2793064 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2793064 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2806396 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2806396 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2806396 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2806396 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2806396 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2806396 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2806396 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2819728 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2819728 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2819728 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2819728 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2819728 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2819728 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2819728 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2833060 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2833060 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2833060 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2833060 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2833060 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2833060 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2833060 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2846392 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2846392 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2846392 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2846392 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2846392 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2846392 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2846392 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2859724 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2859724 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2859724 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2859724 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2859724 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2859724 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2859724 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2873056 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2873056 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2873056 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2873056 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2873056 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2873056 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2873056 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2886388 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2886388 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2886388 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2886388 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2886388 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2886388 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2886388 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2899720 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2899720 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2899720 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2899720 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2899720 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2899720 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2899720 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2913052 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2913052 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2913052 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2913052 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2913052 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2913052 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2913052 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2926384 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2926384 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2926384 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2926384 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2926384 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2926384 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2926384 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2939716 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2939716 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2939716 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2939716 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2939716 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2939716 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2939716 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2953048 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2953048 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2953048 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2953048 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2953048 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2953048 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2953048 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2966380 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2966380 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2966380 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2966380 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2966380 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2966380 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2966380 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2979712 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2979712 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2979712 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2979712 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2979712 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2979712 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2979712 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 2993044 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2993044 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2993044 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2993044 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2993044 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2993044 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2993044 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 3006376 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3006376 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3006376 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3006376 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3006376 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3006376 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3006376 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 3019708 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3019708 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3019708 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3019708 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3019708 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3019708 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3019708 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 3033040 ps  Iteration: 1  Instance: /pipeline_tb/UUT/fetch_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3033040 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3033040 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3033040 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3033040 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3033040 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3033040 ps  Iteration: 2  Instance: /pipeline_tb/UUT/fetch_inst/imem/altsyncram_component
+#  do ./wave.do
+# End time: 11:58:18 on May 29,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 938
