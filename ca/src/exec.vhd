@@ -94,21 +94,24 @@ begin  -- rtl
 			sig_cop0_rddata	<= (others => '0');	
 			sig_mem_aluresult <= (others => '0'); 	
 			sig_wb_result <= (others => '0');
-		elsif rising_edge(clk) and stall = '0' then
-			sig_pc_in <= pc_in;			
-			sig_op	<= op;	
-			sig_memop_in <= memop_in;	
-			sig_jmpop_in <= jmpop_in;			
-			sig_wbop_in	<= wbop_in;		
-			sig_forwardA <= forwardA;		
-			sig_forwardB <= forwardB;			
-			sig_cop0_rddata	<= cop0_rddata;	
-			sig_mem_aluresult <= mem_aluresult; 	
-			sig_wb_result <= wb_result;
+		elsif rising_edge(clk) then
+			if stall = '0' then
+				sig_pc_in <= pc_in;			
+				sig_op	<= op;	
+				sig_memop_in <= memop_in;	
+				sig_jmpop_in <= jmpop_in;			
+				sig_wbop_in	<= wbop_in;		
+				sig_forwardA <= forwardA;		
+				sig_forwardB <= forwardB;			
+				sig_cop0_rddata	<= cop0_rddata;	
+				sig_mem_aluresult <= mem_aluresult; 	
+				sig_wb_result <= wb_result;
+			end if;
+			if flush = '1' then
+				sig_op <= EXEC_NOP;
+			end if;
 		end if;
-		if flush = '1' then
-			sig_op <= EXEC_NOP;
-		end if;
+		
 	end process;
 	
 	ecec: process(all)

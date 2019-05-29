@@ -113,10 +113,11 @@ begin
 			sig_mem_op.memread <= '0';
 			sig_mem_op.memwrite <= '0';
 		end if;
+		if flush = '1' then
+			sig_mem_op <= MEM_OP;
+		end if;
 	end if;
-	if flush = '1' then
-		sig_mem_op <= MEM_OP;
-	end if;
+	
 end process;
 
 process (all)

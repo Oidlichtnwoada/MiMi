@@ -35,14 +35,16 @@ begin
 		sig_rd_in <= (others => '0');
 		sig_aluresult <= (others => '0');
 		sig_memresult <= (others => '0');
-	elsif rising_edge(clk) and stall = '0' then
-		sig_op <= op;
-		sig_rd_in <= rd_in;
-		sig_aluresult <= aluresult;
-		sig_memresult <= memresult;
-	end if;
-	if flush = '1' then
-		sig_op <= WB_NOP;
+	elsif rising_edge(clk) then
+		if stall = '0' then
+			sig_op <= op;
+			sig_rd_in <= rd_in;
+			sig_aluresult <= aluresult;
+			sig_memresult <= memresult;
+		end if;
+		if flush = '1' then
+			sig_op <= WB_NOP;
+		end if;
 	end if;
 end process;
 
