@@ -61,7 +61,7 @@ begin
 			wait for CLK_PERIOD/2;
 
 			--read the output pins and write to output_simulated.csv
-			write(current_write_line, to_string(R));
+			write(current_write_line, to_string(R) & "," & to_string(Z) & "," & to_string(V));
 			writeline(output_file, current_write_line);
 			
 			wait for CLK_PERIOD/2;
