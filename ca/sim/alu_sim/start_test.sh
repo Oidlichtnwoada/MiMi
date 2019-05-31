@@ -4,5 +4,5 @@ make compile
 make sim
 # compare the result
 python ../../../python/csvcomparator.py
-# clean up after yoursefl
+# cleaning up
 make clean
