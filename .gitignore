@@ -12,6 +12,7 @@
 !*.txt
 !*.do
 !*.sh
+!*.gz
 !*.pdf
 !*.csv
 !*.png
