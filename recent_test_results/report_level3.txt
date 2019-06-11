@@ -1,0 +1,357 @@
+Test Level 3
+============
+Starting pipeline compilation
+** Warning: /tmp/tmp.SqxIfhuJFo/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
+** Warning: /home/ddcabot/ddca/summer2019/mimi/nightly/level3/../src/ram/dp_ram_1c1r1w_beh.vhd(29): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type ram_entry, not aggregate type ram_type.
+Starting tests on minimal
+Failed 0/10 tests.
+Finished tests on minimal
+# End time: 12:09:26 on Jun 11,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0, Suppressed Warnings: 57
+Starting tests on arith
+Failed 0/88 tests.
+Finished tests on arith
+# End time: 12:09:30 on Jun 11,2019, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0, Suppressed Warnings: 57
+Starting tests on memory
+Failed 0/161 tests.
+Finished tests on memory
+# End time: 12:09:33 on Jun 11,2019, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0, Suppressed Warnings: 57
+Starting tests on jump
+Failed 0/208 tests.
+Finished tests on jump
+# End time: 12:09:36 on Jun 11,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0, Suppressed Warnings: 57
+Starting tests on fwd
+Failed test: mem_out.wrdata wrong at test 46, expected 00000000000000000001001000110100
+Failed test: mem_out.wrdata wrong at test 47, expected 00000000000000000001001000110100
+Failed 2/117 tests.
+Finished tests on fwd
+# End time: 12:09:39 on Jun 11,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0, Suppressed Warnings: 57
+Starting tests on ctrl
+Failed test: mem_out.wrdata wrong at test 21, expected 00000000000000000000000000000001
+Failed test: mem_out.wrdata wrong at test 22, expected 00000000000000000000000000000001
+Failed test: mem_out.wrdata wrong at test 29, expected 00000000000000000000000000000001
+Failed test: mem_out.wrdata wrong at test 30, expected 00000000000000000000000000000001
+Failed test: mem_out.wrdata wrong at test 38, expected 00000000000000000000000000000001
+Failed test: mem_out.wrdata wrong at test 39, expected 00000000000000000000000000000001
+Failed 6/39 tests.
+Finished tests on ctrl
+# End time: 12:09:42 on Jun 11,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0, Suppressed Warnings: 57
+Starting test helloworld
+Failed test
+Result:
+(null)
+Expected:
+Hello, MiMi
+
+# End time: 12:09:46 on Jun 11,2019, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109
+Finished test helloworld
+Starting test md5
+Failed test
+Result:
+(null)
+Expected:
+md5 self-test completed successfully.
+
+Finished test md5
+# End time: 12:09:49 on Jun 11,2019, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109
+Starting test decexc
+Failed test
+Result:
+(null)
+Expected:
+<<<
+X#A
+000001E8
+000001EC
+00000028
+X#A
+000001F8
+000001FC
+00000028
+X#A
+00000208
+0000020C
+00000028
+X#A
+00000218
+0000021C
+00000028
+X#A
+00000228
+0000022C
+00000028
+X#A
+00000238
+0000023C
+00000028
+X#A
+00000248
+0000024C
+00000028
+X#A
+00000258
+0000025C
+00000028
+X#A
+00000268
+0000026C
+00000028
+X#A
+00000278
+0000027C
+00000028
+X#A
+00000288
+0000028C
+00000028
+X#A
+00000298
+0000029C
+00000028
+X#A
+000002A8
+000002AC
+00000028
+X#A
+000002B8
+000002BC
+00000028
+X#A
+000002C8
+000002CC
+00000028
+X#A
+000002D8
+000002DC
+00000028
+X#A
+000002DC
+000002E0
+00000028
+X#A
+000002F0
+000002F8
+80000028
+X#A
+00000344
+00000348
+80000028
+>>>
+
+Finished test decexc
+# End time: 12:09:55 on Jun 11,2019, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109
+Starting test aluexc
+Failed test
+Result:
+(null)
+Expected:
+<<<
+X#C
+000001F0
+000001F4
+00000030
+X#C
+00000204
+00000208
+00000030
+X#C
+00000220
+00000224
+00000030
+X#C
+00000238
+0000023C
+00000030
+X#C
+00000254
+00000258
+00000030
+X#C
+0000026C
+00000270
+00000030
+X#C
+00000284
+00000288
+00000030
+X#C
+00000288
+0000028C
+00000030
+X#C
+000002A4
+000002AC
+80000030
+X#C
+00000310
+00000314
+80000030
+>>>
+
+# End time: 12:10:00 on Jun 11,2019, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109
+Finished test aluexc
+Starting test memexc
+Failed test
+Result:
+(null)
+Expected:
+<<<
+X#4
+000001E8
+000001EC
+00000010
+X#4
+000001F8
+000001FC
+00000010
+X#4
+00000208
+0000020C
+00000010
+X#4
+00000218
+0000021C
+00000010
+X#4
+00000228
+0000022C
+00000010
+X#5
+00000238
+0000023C
+00000014
+X#5
+00000248
+0000024C
+00000014
+X#5
+00000258
+0000025C
+00000014
+X#4
+00000268
+0000026C
+00000010
+X#4
+00000278
+0000027C
+00000010
+X#4
+00000288
+0000028C
+00000010
+X#4
+00000298
+0000029C
+00000010
+X#5
+000002A8
+000002AC
+00000014
+X#5
+000002B8
+000002BC
+00000014
+X#5
+000002C8
+000002CC
+00000014
+X#4
+000002DC
+000002E0
+00000010
+X#5
+000002E0
+000002E4
+00000014
+X#5
+000002E4
+000002E8
+00000014
+X#4
+000002F8
+00000300
+80000010
+X#4
+0000034C
+00000350
+80000010
+>>>
+
+Finished test memexc
+# End time: 12:10:05 on Jun 11,2019, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109
+Starting test intrs
+Failed test
+Result:
+(null)
+Expected:
+I#0
+00000400
+I#1
+00000800
+I#0
+00001400
+I#2
+00001000
+I#0
+00001C00
+I#0
+00001C00
+I#1
+00001800
+I#2
+00001000
+I#1
+00000800
+I#2
+00001000
+I#0
+00000400
+I#1
+00000800
+I#2
+00001000
+I#0
+00000400
+I#1
+00000800
+I#2
+00001000
+I#0
+00000400
+I#1
+00000800
+I#2
+00001000
+I#0
+00000400
+I#1
+00000800
+I#2
+00001000
+I#0
+00000400
+I#1
+00000800
+I#2
+00001000
+I#0
+00000400
+I#1
+00000800
+I#2
+00001000
+
+Finished test intrs
+# End time: 12:10:11 on Jun 11,2019, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109
