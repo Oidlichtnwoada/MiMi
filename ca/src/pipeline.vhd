@@ -81,6 +81,7 @@ architecture rtl of pipeline is
 			flush         : in  std_logic;
 			mem_op        : in  mem_op_type;
 			jmp_op        : in  jmp_op_type;
+			jmp_op_out    : out jmp_op_type;
 			pc_in         : in  std_logic_vector(PC_WIDTH-1 downto 0);
 			rd_in         : in  std_logic_vector(REG_BITS-1 downto 0);
 			aluresult_in  : in  std_logic_vector(DATA_WIDTH-1 downto 0);
@@ -193,7 +194,7 @@ begin
 
 	mem_inst: mem
 	port map(clk => clk, reset => reset, stall => stall, flush => flush,
-				mem_op => exec_mem_mem_op, jmp_op => exec_mem_jmp_op, pc_in => exec_mem_pc, rd_in => exec_mem_rd,
+				mem_op => exec_mem_mem_op, jmp_op => exec_mem_jmp_op, jmp_op_out => open, pc_in => exec_mem_pc, rd_in => exec_mem_rd,
 				aluresult_in => exec_mem_aluresult, wrdata => exec_mem_wrdata, zero => exec_mem_zero,
 				neg => exec_mem_neg, new_pc_in => exec_mem_new_pc, pc_out => open, pcsrc => mem_fetch_pcsrc,
 				rd_out => mem_wb_rd, aluresult_out => mem_wb_aluresult, memresult => mem_wb_memresult,
