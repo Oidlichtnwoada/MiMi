@@ -52,7 +52,7 @@ begin
 
 	nxt: process (all)
 	begin
-		if stall = '0' and reset = '1' then
+		if stall = '0' and reset = '1' and flush = '0' then
 			if pcsrc = '1' then
 				pc_nxt <= pc_in;
 			else 
