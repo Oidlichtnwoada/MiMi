@@ -13,6 +13,7 @@ entity mem is
 		flush         : in  std_logic;
 		mem_op        : in  mem_op_type;
 		jmp_op        : in  jmp_op_type;
+		jmp_op_out	  : out jmp_op_type;
 		pc_in         : in  std_logic_vector(PC_WIDTH-1 downto 0);
 		rd_in         : in  std_logic_vector(REG_BITS-1 downto 0);
 		aluresult_in  : in  std_logic_vector(DATA_WIDTH-1 downto 0);
@@ -135,6 +136,8 @@ begin
 	W <= sig_wrdata;
 	op_mem.memread <= sig_mem_op.memread;
 	op_mem.memwrite <= sig_mem_op.memwrite;
+	--JMP_OP_OUT for CTRL unit
+	jmp_op_out <= sig_jmp_op;
 end process;
 
 jmpu_inst : jmpu
