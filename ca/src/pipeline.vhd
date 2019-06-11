@@ -189,7 +189,7 @@ begin
 				memop_in => decode_exec_mem_op, memop_out => exec_mem_mem_op, jmpop_in => decode_exec_jmp_op,
 				jmpop_out => exec_mem_jmp_op, wbop_in => decode_exec_wb_op, wbop_out => exec_mem_wb_op,
 				forwardA => forwardA, forwardB => forwardB, cop0_rddata => (others => '0'),
-				mem_aluresult => mem_wb_aluresult, wb_result => (others => '0'), exc_ovf => open);
+				mem_aluresult => mem_wb_aluresult, wb_result => wb_decode_wrdata, exc_ovf => open);
 
 	mem_inst: mem
 	port map(clk => clk, reset => reset, stall => stall, flush => flush,
