@@ -19,6 +19,7 @@ architecture rtl of pipeline is
 		port (
 			clk, reset : in	 std_logic;
 			stall      : in  std_logic;
+			flush            : in  std_logic;
 			pcsrc	  	 : in	 std_logic;
 			pc_in	   	 : in	 std_logic_vector(PC_WIDTH-1 downto 0);
 			pc_out	   : out std_logic_vector(PC_WIDTH-1 downto 0);
@@ -81,6 +82,7 @@ architecture rtl of pipeline is
 			flush         : in  std_logic;
 			mem_op        : in  mem_op_type;
 			jmp_op        : in  jmp_op_type;
+			jmp_op_out    : out jmp_op_type;
 			pc_in         : in  std_logic_vector(PC_WIDTH-1 downto 0);
 			rd_in         : in  std_logic_vector(REG_BITS-1 downto 0);
 			aluresult_in  : in  std_logic_vector(DATA_WIDTH-1 downto 0);
@@ -124,6 +126,14 @@ architecture rtl of pipeline is
 			forwardA, forwardB		: out  fwd_type
 		);
 	end component;
+	
+	component ctrl is
+		port(
+			jmp_op         : in jmp_op_type;
+			decode_flush   : out std_logic;
+			fetch_flush    : out std_logic
+		);
+	end component;
 
 	signal flush : std_logic;
 	signal stall : std_logic;
@@ -160,6 +170,9 @@ architecture rtl of pipeline is
 	signal mem_wb_wb_op : wb_op_type;
 	--
 	signal forwardA, forwardB : fwd_type;
+	--
+	signal jmp_op_ctrl : jmp_op_type;
+	signal decode_flush, fetch_flush : std_logic;
 
 begin
 
@@ -171,11 +184,11 @@ begin
 	 			mem_regwrite => mem_wb_wb_op.regwrite, wb_regwrite => wb_decode_regwrite, forwardA => forwardA, forwardB => forwardB);
 
 	fetch_inst: fetch
-	port map(clk => clk, reset => reset, stall => stall, pcsrc => mem_fetch_pcsrc,
+	port map(clk => clk, reset => reset, stall => stall, flush => fetch_flush, pcsrc => mem_fetch_pcsrc,
 				pc_in => mem_fetch_new_pc, pc_out => fetch_decode_pc, instr => fetch_decode_instr);
 
 	decode_inst: decode
-	port map(clk => clk, reset => reset, stall => stall, flush => flush, pc_in => fetch_decode_pc,
+	port map(clk => clk, reset => reset, stall => stall, flush => decode_flush, pc_in => fetch_decode_pc,
 				instr => fetch_decode_instr, wraddr => wb_decode_wraddr, wrdata => wb_decode_wrdata,
 				regwrite => wb_decode_regwrite, pc_out => decode_exec_pc, exec_op => decode_exec_exec_op,
 				cop0_op => open, jmp_op => decode_exec_jmp_op, mem_op => decode_exec_mem_op,
@@ -193,7 +206,7 @@ begin
 
 	mem_inst: mem
 	port map(clk => clk, reset => reset, stall => stall, flush => flush,
-				mem_op => exec_mem_mem_op, jmp_op => exec_mem_jmp_op, pc_in => exec_mem_pc, rd_in => exec_mem_rd,
+				mem_op => exec_mem_mem_op, jmp_op => exec_mem_jmp_op, jmp_op_out => jmp_op_ctrl, pc_in => exec_mem_pc, rd_in => exec_mem_rd,
 				aluresult_in => exec_mem_aluresult, wrdata => exec_mem_wrdata, zero => exec_mem_zero,
 				neg => exec_mem_neg, new_pc_in => exec_mem_new_pc, pc_out => open, pcsrc => mem_fetch_pcsrc,
 				rd_out => mem_wb_rd, aluresult_out => mem_wb_aluresult, memresult => mem_wb_memresult,
@@ -204,5 +217,8 @@ begin
 	port map(clk => clk, reset => reset, stall => stall, flush => flush, op => mem_wb_wb_op,
 				rd_in => mem_wb_rd, aluresult => mem_wb_aluresult, memresult => mem_wb_memresult,
 				rd_out => wb_decode_wraddr, result => wb_decode_wrdata, regwrite => wb_decode_regwrite);
+	
+	ctrl_inst: ctrl
+	port map(jmp_op => jmp_op_ctrl, decode_flush => decode_flush, fetch_flush =>fetch_flush);
 
 end rtl;

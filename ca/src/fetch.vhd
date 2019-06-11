@@ -9,6 +9,7 @@ entity fetch is
 	port (
 		clk, reset : in	 std_logic;
 		stall      : in  std_logic;
+		flush      : in  std_logic;
 		pcsrc	   : in	 std_logic;
 		pc_in	   : in	 std_logic_vector(PC_WIDTH-1 downto 0);
 		pc_out	   : out std_logic_vector(PC_WIDTH-1 downto 0);

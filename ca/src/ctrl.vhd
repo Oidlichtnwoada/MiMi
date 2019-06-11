@@ -6,14 +6,21 @@ use work.core_pack.all;
 use work.op_pack.all;
 
 entity ctrl is
-	--port (
-		-- define input and output ports as needed
---);
+	port (
+		jmp_op         : in jmp_op_type;
+		decode_flush   : out std_logic;
+		fetch_flush   : out std_logic;
+);
 
 end ctrl;
 
 architecture rtl of ctrl is
 
 begin  -- rtl
+
+process (all)
+begin
+
+end;
 
 end rtl;
