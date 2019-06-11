@@ -8,6 +8,7 @@ use work.op_pack.all;
 entity ctrl is
 	port (
 		jmp_op         : in jmp_op_type;
+		J              : in std_logic;
 		decode_flush   : out std_logic;
 		fetch_flush   : out std_logic;
 );
@@ -20,7 +21,16 @@ begin  -- rtl
 
 process (all)
 begin
-
-end;
+ if JMP_op=JMP_BEQ or jmp_op=JMP_BNE or jmp_op=JMP_BLEZ or jmp_op=JMP_BGTZ or jmp_op=JMP_BLTZ or jmp_op=JMP_BGEZ then
+	if J='1' then
+		decode_flush <= '1';
+		fetch_flush <= '1';
+	else
+		decode_flush <= '0';
+		fetch_flush <= '0';
+	end if;
+ end if;
+	
+end process;
 
 end rtl;

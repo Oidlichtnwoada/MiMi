@@ -130,6 +130,7 @@ architecture rtl of pipeline is
 	component ctrl is
 		port(
 			jmp_op         : in jmp_op_type;
+			J              : in std_logic;
 			decode_flush   : out std_logic;
 			fetch_flush    : out std_logic
 		);
@@ -173,6 +174,7 @@ architecture rtl of pipeline is
 	--
 	signal jmp_op_ctrl : jmp_op_type;
 	signal decode_flush, fetch_flush : std_logic;
+	
 
 begin
 
@@ -219,6 +221,6 @@ begin
 				rd_out => wb_decode_wraddr, result => wb_decode_wrdata, regwrite => wb_decode_regwrite);
 	
 	ctrl_inst: ctrl
-	port map(jmp_op => jmp_op_ctrl, decode_flush => decode_flush, fetch_flush =>fetch_flush);
+	port map(jmp_op => jmp_op_ctrl, J => mem_fetch_pcsrc, decode_flush => decode_flush, fetch_flush => fetch_flush);
 
 end rtl;
