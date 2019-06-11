@@ -117,6 +117,14 @@ architecture rtl of pipeline is
 		);
 	end component;
 
+	component fwd is
+		port (
+			exec_rs, exec_rt, mem_rd, wb_rd : in std_logic_vector(REG_BITS-1 downto 0);
+			mem_regwrite, wb_regwrite : in std_logic;
+			forwardA, forwardB		: out  fwd_type
+		);
+	end component;
+
 	signal flush : std_logic;
 	signal stall : std_logic;
 	signal mem_fetch_pcsrc : std_logic;
@@ -150,11 +158,17 @@ architecture rtl of pipeline is
 	signal mem_wb_aluresult : std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal mem_wb_memresult : std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal mem_wb_wb_op : wb_op_type;
+	--
+	signal forwardA, forwardB : fwd_type;
 
 begin
 
 	flush <= '0';
 	stall <= mem_in.busy;
+
+	fwd_inst : fwd
+	port map(exec_rs => exec_mem_rs, exec_rt => exec_mem_rt, mem_rd => mem_wb_rd, wb_rd => wb_decode_wraddr,
+	 			mem_regwrite => mem_wb_wb_op.regwrite, wb_regwrite => wb_decode_regwrite, forwardA => forwardA, forwardB => forwardB);
 
 	fetch_inst: fetch
 	port map(clk => clk, reset => reset, stall => stall, pcsrc => mem_fetch_pcsrc,
@@ -174,7 +188,7 @@ begin
 				zero => exec_mem_zero, neg => exec_mem_neg, new_pc => exec_mem_new_pc,
 				memop_in => decode_exec_mem_op, memop_out => exec_mem_mem_op, jmpop_in => decode_exec_jmp_op,
 				jmpop_out => exec_mem_jmp_op, wbop_in => decode_exec_wb_op, wbop_out => exec_mem_wb_op,
-				forwardA => FWD_NONE, forwardB => FWD_NONE, cop0_rddata => (others => '0'),
+				forwardA => forwardA, forwardB => forwardB, cop0_rddata => (others => '0'),
 				mem_aluresult => mem_wb_aluresult, wb_result => (others => '0'), exc_ovf => open);
 
 	mem_inst: mem
