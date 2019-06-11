@@ -9,6 +9,7 @@ VHDL_FILES = \
 	../../src/alu.vhd\
 	../../src/jmpu.vhd\
 	../../src/memu.vhd\
+	../../src/fwd.vhd\
 	../../src/decode.vhd\
 	../../src/fetch.vhd\
 	../../src/exec.vhd\
