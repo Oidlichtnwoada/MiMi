@@ -10,7 +10,7 @@ entity ctrl is
 		jmp_op         : in jmp_op_type;
 		J              : in std_logic;
 		decode_flush   : out std_logic;
-		fetch_flush   : out std_logic;
+		fetch_flush    : out std_logic
 );
 
 end ctrl;
