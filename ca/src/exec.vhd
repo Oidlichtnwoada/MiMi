@@ -53,8 +53,6 @@ architecture rtl of exec is
 	signal sig_jmpop_in			: jmp_op_type;
 	signal sig_wbop_in			: wb_op_type;
 	signal sig_cop0_rddata		: std_logic_vector(DATA_WIDTH-1 downto 0);
-	signal sig_mem_aluresult	: std_logic_vector(DATA_WIDTH-1 downto 0);
-	signal sig_wb_result		: std_logic_vector(DATA_WIDTH-1 downto 0);
 
 	component alu is
 		port (
@@ -79,7 +77,7 @@ begin  -- rtl
 		V	=> alu_V
 	);
 
-	sync:process (all)
+	sync: process (all)
 	begin
 		if reset = '0' then
 			sig_pc_in <= (others => '0');
@@ -88,8 +86,6 @@ begin  -- rtl
 			sig_jmpop_in <= JMP_NOP;
 			sig_wbop_in	<= WB_NOP;
 			sig_cop0_rddata	<= (others => '0');
-			sig_mem_aluresult <= (others => '0');
-			sig_wb_result <= (others => '0');
 		elsif rising_edge(clk) then
 			if stall = '0' then
 				sig_pc_in <= pc_in;
@@ -98,27 +94,24 @@ begin  -- rtl
 				sig_jmpop_in <= jmpop_in;
 				sig_wbop_in	<= wbop_in;
 				sig_cop0_rddata	<= cop0_rddata;
-				sig_mem_aluresult <= mem_aluresult;
-				sig_wb_result <= wb_result;
 			end if;
 			if flush = '1' then
 				sig_op <= EXEC_NOP;
 			end if;
 		end if;
-
 	end process;
 
-	ecec: process(all)
+	exec: process(all)
 	begin
 
 		sig_aluresult	<= alu_R;
 		sig_wrdata		<= (others=>'0');
 		sig_zero			<= alu_Z;
-		sig_neg			<= '0';
+		sig_neg				<= '0';
 		sig_new_pc		<= (others=>'0');
 		sig_exc_ovf		<= '0';
 
-		alu_op		<= sig_op.aluop;
+		alu_op	<= sig_op.aluop;
 		alu_A		<= (others => '0');
 		alu_B		<= (others => '0');
 
@@ -302,8 +295,22 @@ begin  -- rtl
 					end if;
 
 				end if;
-
 		end case;
+
+		--forwarding
+		if forwardA = FWD_ALU then
+			alu_A <= mem_aluresult;
+		end if;
+		if forwardA = FWD_WB then
+			alu_A <= wb_result;
+		end if;
+		if forwardB = FWD_ALU then
+			alu_B <= mem_aluresult;
+		end if;
+		if forwardB = FWD_WB then
+			alu_B <= wb_result;
+		end if;
+
 	end process;
 
 	pc_out <= sig_pc_in;
