@@ -30,7 +30,12 @@ entity exec is
 		cop0_rddata		: in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		mem_aluresult	: in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		wb_result		: in  std_logic_vector(DATA_WIDTH-1 downto 0);
-		exc_ovf			: out std_logic);
+		exc_ovf			: out std_logic;
+		rdaddr1_in : in std_logic_vector(REG_BITS-1 downto 0);
+		rdaddr2_in : in std_logic_vector(REG_BITS-1 downto 0);
+		rdaddr1_out : out std_logic_vector(REG_BITS-1 downto 0);
+		rdaddr2_out : out std_logic_vector(REG_BITS-1 downto 0)
+	);
 
 end exec;
 
@@ -47,12 +52,12 @@ architecture rtl of exec is
 	signal alu_A, alu_B, alu_R	: std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal alu_Z, alu_V			: std_logic;
 
-	signal sig_pc_in			: std_logic_vector(PC_WIDTH-1 downto 0);
-	signal sig_op				: exec_op_type;
-	signal sig_memop_in			: mem_op_type;
-	signal sig_jmpop_in			: jmp_op_type;
-	signal sig_wbop_in			: wb_op_type;
-	signal sig_cop0_rddata		: std_logic_vector(DATA_WIDTH-1 downto 0);
+	signal sig_pc_in					: std_logic_vector(PC_WIDTH-1 downto 0);
+	signal sig_op, sig_op_before_fwd	: exec_op_type;
+	signal sig_memop_in					: mem_op_type;
+	signal sig_jmpop_in					: jmp_op_type;
+	signal sig_wbop_in					: wb_op_type;
+	signal sig_cop0_rddata				: std_logic_vector(DATA_WIDTH-1 downto 0);
 
 	component alu is
 		port (
@@ -81,22 +86,27 @@ begin  -- rtl
 	begin
 		if reset = '0' then
 			sig_pc_in <= (others => '0');
-			sig_op	<= EXEC_NOP;
+			sig_op_before_fwd	<= EXEC_NOP;
 			sig_memop_in <= MEM_NOP;
 			sig_jmpop_in <= JMP_NOP;
 			sig_wbop_in	<= WB_NOP;
 			sig_cop0_rddata	<= (others => '0');
+			rdaddr1_out <= (others => '0');
+			rdaddr2_out <= (others => '0');
 		elsif rising_edge(clk) then
 			if stall = '0' then
 				sig_pc_in <= pc_in;
-				sig_op	<= op;
+				sig_op_before_fwd	<= op;
 				sig_memop_in <= memop_in;
 				sig_jmpop_in <= jmpop_in;
 				sig_wbop_in	<= wbop_in;
 				sig_cop0_rddata	<= cop0_rddata;
+				rdaddr1_out <= rdaddr1_in;
+				rdaddr2_out <= rdaddr2_in;
+				
 			end if;
 			if flush = '1' then
-				sig_op <= EXEC_NOP;
+				sig_op_before_fwd <= EXEC_NOP;
 			end if;
 		end if;
 	end process;
@@ -114,6 +124,38 @@ begin  -- rtl
 		alu_op	<= sig_op.aluop;
 		alu_A		<= (others => '0');
 		alu_B		<= (others => '0');
+		
+		sig_op.aluop <= sig_op_before_fwd.aluop;
+		sig_op.imm  <= sig_op_before_fwd.imm;
+		sig_op.rs <= sig_op_before_fwd.rs;
+		sig_op.rt <= sig_op_before_fwd.rt;
+		sig_op.rd <= sig_op_before_fwd.rd;
+		sig_op.useimm <= sig_op_before_fwd.useimm;
+		sig_op.useamt <= sig_op_before_fwd.useamt;
+		sig_op.link <= sig_op_before_fwd.link;
+		sig_op.branch <= sig_op_before_fwd.branch;
+		sig_op.regdst <= sig_op_before_fwd.regdst;
+		sig_op.cop0 <= sig_op_before_fwd.cop0;
+		sig_op.ovf <= sig_op_before_fwd.ovf;
+		
+		--readdata1  : std_logic_vector(DATA_WIDTH-1 downto 0);
+		--readdata2  : std_logic_vector(DATA_WIDTH-1 downto 0);
+		
+		--forwarding
+		if forwardA = FWD_ALU then
+			sig_op.readdata1 <= mem_aluresult;
+		elsif forwardA = FWD_WB then
+			sig_op.readdata1 <= wb_result;
+		else
+			sig_op.readdata1 <= sig_op_before_fwd.readdata1;
+		end if;
+		if forwardB = FWD_ALU then
+			sig_op.readdata2 <= mem_aluresult;
+		elsif forwardB = FWD_WB then
+			sig_op.readdata2 <= wb_result;
+		else
+			sig_op.readdata2 <= sig_op_before_fwd.readdata2;
+		end if;
 
 		case sig_op.aluop is
 
@@ -298,25 +340,26 @@ begin  -- rtl
 		end case;
 
 		--forwarding
-		if forwardA = FWD_ALU then
-			alu_A <= mem_aluresult;
-		end if;
-		if forwardA = FWD_WB then
-			alu_A <= wb_result;
-		end if;
-		if forwardB = FWD_ALU then
-			alu_B <= mem_aluresult;
-		end if;
-		if forwardB = FWD_WB then
-			alu_B <= wb_result;
-		end if;
+		--if forwardA = FWD_ALU then
+		--	alu_A <= mem_aluresult;
+		--end if;
+		--if forwardA = FWD_WB then
+		--	alu_A <= wb_result;
+		--end if;
+		--if forwardB = FWD_ALU then
+		--	alu_B <= mem_aluresult;
+		--end if;
+		--if forwardB = FWD_WB then
+		--	alu_B <= wb_result;
+		--end if;
+		
 
 	end process;
 
 	pc_out <= sig_pc_in;
 	rd <= sig_op.rd;
 	rs <= sig_op.rs;
-	rt <= sig_op.rt;
+	rt <= sig_op.rt;-- when sig_op.useimm = '1' else sig_op.rd;
 	aluresult <= sig_aluresult;
 	wrdata <= sig_wrdata;
 	zero <= sig_zero;

@@ -43,7 +43,9 @@ architecture rtl of pipeline is
 			jmp_op     : out jmp_op_type;
 			mem_op     : out mem_op_type;
 			wb_op      : out wb_op_type;
-			exc_dec    : out std_logic
+			exc_dec    : out std_logic;
+			rdaddr1_out : out std_logic_vector(REG_BITS-1 downto 0);
+			rdaddr2_out : out std_logic_vector(REG_BITS-1 downto 0)
 		);
 	end component;
 
@@ -71,7 +73,11 @@ architecture rtl of pipeline is
 			cop0_rddata      : in  std_logic_vector(DATA_WIDTH-1 downto 0);
 			mem_aluresult    : in  std_logic_vector(DATA_WIDTH-1 downto 0);
 			wb_result        : in  std_logic_vector(DATA_WIDTH-1 downto 0);
-			exc_ovf          : out std_logic
+			exc_ovf          : out std_logic;
+			rdaddr1_in : in std_logic_vector(REG_BITS-1 downto 0);
+			rdaddr2_in : in std_logic_vector(REG_BITS-1 downto 0);
+			rdaddr1_out : out std_logic_vector(REG_BITS-1 downto 0);
+			rdaddr2_out : out std_logic_vector(REG_BITS-1 downto 0)
 		);
 	end component;
 
@@ -120,9 +126,11 @@ architecture rtl of pipeline is
 
 	component fwd is
 		port (
-			exec_rs, exec_rt, mem_rd, wb_rd : in std_logic_vector(REG_BITS-1 downto 0);
+			mem_rd, wb_rd : in std_logic_vector(REG_BITS-1 downto 0);
 			mem_regwrite, wb_regwrite : in std_logic;
-			forwardA, forwardB		: out  fwd_type
+			forwardA, forwardB		: out  fwd_type;
+			execrdaddr1 : in std_logic_vector(REG_BITS-1 downto 0);
+			execrdaddr2 : in std_logic_vector(REG_BITS-1 downto 0)
 		);
 	end component;
 	
@@ -169,8 +177,10 @@ architecture rtl of pipeline is
 	signal mem_wb_wb_op : wb_op_type;
 	--
 	signal forwardA, forwardB : fwd_type;
+	signal decode_exec_rdaddr1, decode_exec_rdaddr2, exec_fwd_rdaddr1, exec_fwd_rdaddr2 : std_logic_vector(REG_BITS-1 downto 0);
 	--
 	signal decode_flush, fetch_flush : std_logic;
+	--
 	
 
 begin
@@ -179,7 +189,7 @@ begin
 	stall <= mem_in.busy;
 
 	fwd_inst : fwd
-	port map(exec_rs => exec_mem_rs, exec_rt => exec_mem_rt, mem_rd => mem_wb_rd, wb_rd => wb_decode_wraddr,
+	port map(execrdaddr1 => exec_fwd_rdaddr1, execrdaddr2 => exec_fwd_rdaddr2, mem_rd => mem_wb_rd, wb_rd => wb_decode_wraddr,
 	 			mem_regwrite => mem_wb_wb_op.regwrite, wb_regwrite => wb_decode_regwrite, forwardA => forwardA, forwardB => forwardB);
 
 	fetch_inst: fetch
@@ -191,7 +201,7 @@ begin
 				instr => fetch_decode_instr, wraddr => wb_decode_wraddr, wrdata => wb_decode_wrdata,
 				regwrite => wb_decode_regwrite, pc_out => decode_exec_pc, exec_op => decode_exec_exec_op,
 				cop0_op => open, jmp_op => decode_exec_jmp_op, mem_op => decode_exec_mem_op,
-				wb_op => decode_exec_wb_op, exc_dec => open);
+				wb_op => decode_exec_wb_op, exc_dec => open, rdaddr1_out => decode_exec_rdaddr1, rdaddr2_out => decode_exec_rdaddr2);
 
 	exec_inst: exec
 	port map(clk => clk, reset => reset, stall => stall, flush => flush, pc_in => decode_exec_pc,
@@ -201,7 +211,9 @@ begin
 				memop_in => decode_exec_mem_op, memop_out => exec_mem_mem_op, jmpop_in => decode_exec_jmp_op,
 				jmpop_out => exec_mem_jmp_op, wbop_in => decode_exec_wb_op, wbop_out => exec_mem_wb_op,
 				forwardA => forwardA, forwardB => forwardB, cop0_rddata => (others => '0'),
-				mem_aluresult => mem_wb_aluresult, wb_result => wb_decode_wrdata, exc_ovf => open);
+				mem_aluresult => mem_wb_aluresult, wb_result => wb_decode_wrdata, exc_ovf => open,
+				rdaddr1_in => decode_exec_rdaddr1, rdaddr2_in => decode_exec_rdaddr2,
+				rdaddr1_out => exec_fwd_rdaddr1, rdaddr2_out => exec_fwd_rdaddr2);
 
 	mem_inst: mem
 	port map(clk => clk, reset => reset, stall => stall, flush => flush,
