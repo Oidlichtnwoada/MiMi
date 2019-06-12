@@ -57,7 +57,7 @@ begin
 		if flush = '0' then
 			-- if not flush, output instr from imem
 			instr <= sig_instr;
-		else;
+		else
 			-- if flush, output NOP instr
 			instr <= (others => '0');
 		end if;
