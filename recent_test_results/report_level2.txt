@@ -1,64 +1,45 @@
 Test Level 2
 ============
 Starting pipeline compilation
-** Warning: /tmp/tmp.LoQH5Hlo3K/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
+** Warning: /tmp/tmp.jv9jbRNzSG/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
 ** Warning: /home/ddcabot/ddca/summer2019/mimi/nightly/level2/../src/ram/dp_ram_1c1r1w_beh.vhd(29): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type ram_entry, not aggregate type ram_type.
 Finished pipeline compilation
 Starting tests on minimal
 Failed 0/10 tests.
 Finished tests on minimal
-# End time: 12:08:55 on Jun 11,2019, Elapsed time: 0:00:02
+# End time: 17:36:56 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on arith
 Failed 0/88 tests.
 Finished tests on arith
-# End time: 12:08:58 on Jun 11,2019, Elapsed time: 0:00:02
+# End time: 17:36:59 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on memory
 Failed 0/161 tests.
 Finished tests on memory
-# End time: 12:09:01 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:37:02 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on jump
 Failed 0/208 tests.
 Finished tests on jump
-# End time: 12:09:04 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:37:06 on Jun 12,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on fwd
-Failed test: mem_out.wrdata wrong at test 46, expected 00000000000000000001001000110100
-Failed test: mem_out.wrdata wrong at test 47, expected 00000000000000000001001000110100
-Failed 2/117 tests.
+Failed 0/117 tests.
 Finished tests on fwd
-# End time: 12:09:07 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:37:09 on Jun 12,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on ctrl
-Failed test: mem_out.wrdata wrong at test 21, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 22, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 29, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 30, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 38, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 39, expected 00000000000000000000000000000001
-Failed 6/39 tests.
+Failed 0/39 tests.
 Finished tests on ctrl
-# End time: 12:09:11 on Jun 11,2019, Elapsed time: 0:00:02
+# End time: 17:37:12 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting test helloworld
-Failed test
-Result:
-(null)
-Expected:
-Hello, MiMi
-
+Passed test
 Finished test helloworld
-# End time: 12:09:14 on Jun 11,2019, Elapsed time: 0:00:02
+# End time: 17:37:16 on Jun 12,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0, Suppressed Warnings: 109
 Starting test md5
-Failed test
-Result:
-(null)
-Expected:
-md5 self-test completed successfully.
-
-# End time: 12:09:18 on Jun 11,2019, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 0, Suppressed Warnings: 109
 Finished test md5
+# End time: 17:37:20 on Jun 12,2019, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109

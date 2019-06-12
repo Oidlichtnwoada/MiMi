@@ -1,25 +1,25 @@
 Test Level 1
 ============
 Starting pipeline compilation
-** Warning: /tmp/tmp.R69Ds5O3ri/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
+** Warning: /tmp/tmp.hxNjPQhM02/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
 Finished pipeline compilation
 Starting tests on minimal
 Failed 0/10 tests.
-# End time: 12:08:37 on Jun 11,2019, Elapsed time: 0:00:02
+# End time: 17:36:38 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on minimal
 Starting tests on arith
 Failed 0/88 tests.
-# End time: 12:08:40 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:36:41 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on arith
 Starting tests on memory
 Failed 0/161 tests.
-# End time: 12:08:43 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:36:44 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on memory
 Starting tests on jump
 Failed 0/208 tests.
-# End time: 12:08:46 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:36:47 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Finished tests on jump

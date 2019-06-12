@@ -2,22 +2,22 @@ Test Level 0
 ============
 Starting tests on alu
 Failed 0/62 tests.
-# End time: 12:08:21 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:36:23 on Jun 12,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 Finished tests on alu
 Starting tests on jmpu
 Failed 0/33 tests.
-# End time: 12:08:25 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:36:26 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on jmpu
 Starting tests on memu
 Failed 0/63 tests.
-# End time: 12:08:28 on Jun 11,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
 Finished tests on memu
+# End time: 17:36:29 on Jun 12,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
 Starting tests on regfile
-** Warning: /tmp/tmp.VqYh4PasNa/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
+** Warning: /tmp/tmp.vYFHBzpUBF/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
 Failed 0/29 tests.
-# End time: 12:08:31 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:36:32 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 Finished tests on regfile

@@ -1,70 +1,53 @@
 Test Level 3
 ============
 Starting pipeline compilation
-** Warning: /tmp/tmp.SqxIfhuJFo/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
+** Warning: /tmp/tmp.Z6DAuOWKAo/src/regfile.vhd(32): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type STD_LOGIC_VECTOR, not aggregate type register_array.
 ** Warning: /home/ddcabot/ddca/summer2019/mimi/nightly/level3/../src/ram/dp_ram_1c1r1w_beh.vhd(29): (vcom-1320) Type of expression "(OTHERS => '0')" is ambiguous; using element type ram_entry, not aggregate type ram_type.
 Starting tests on minimal
 Failed 0/10 tests.
-Finished tests on minimal
-# End time: 12:09:26 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:37:28 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
+Finished tests on minimal
 Starting tests on arith
 Failed 0/88 tests.
 Finished tests on arith
-# End time: 12:09:30 on Jun 11,2019, Elapsed time: 0:00:02
+# End time: 17:37:31 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on memory
 Failed 0/161 tests.
 Finished tests on memory
-# End time: 12:09:33 on Jun 11,2019, Elapsed time: 0:00:02
+# End time: 17:37:34 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on jump
 Failed 0/208 tests.
 Finished tests on jump
-# End time: 12:09:36 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:37:37 on Jun 12,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on fwd
-Failed test: mem_out.wrdata wrong at test 46, expected 00000000000000000001001000110100
-Failed test: mem_out.wrdata wrong at test 47, expected 00000000000000000001001000110100
-Failed 2/117 tests.
+Failed 0/117 tests.
 Finished tests on fwd
-# End time: 12:09:39 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:37:41 on Jun 12,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting tests on ctrl
-Failed test: mem_out.wrdata wrong at test 21, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 22, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 29, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 30, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 38, expected 00000000000000000000000000000001
-Failed test: mem_out.wrdata wrong at test 39, expected 00000000000000000000000000000001
-Failed 6/39 tests.
+Failed 0/39 tests.
 Finished tests on ctrl
-# End time: 12:09:42 on Jun 11,2019, Elapsed time: 0:00:01
+# End time: 17:37:44 on Jun 12,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0, Suppressed Warnings: 57
 Starting test helloworld
-Failed test
-Result:
-(null)
-Expected:
-Hello, MiMi
-
-# End time: 12:09:46 on Jun 11,2019, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 0, Suppressed Warnings: 109
+Passed test
 Finished test helloworld
+# End time: 17:37:47 on Jun 12,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109
 Starting test md5
-Failed test
-Result:
-(null)
-Expected:
-md5 self-test completed successfully.
-
 Finished test md5
-# End time: 12:09:49 on Jun 11,2019, Elapsed time: 0:00:02
+# End time: 17:37:51 on Jun 12,2019, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0, Suppressed Warnings: 109
 Starting test decexc
 Failed test
 Result:
-(null)
+<<<
+>>>
+
 Expected:
 <<<
 X#A
@@ -146,12 +129,14 @@ X#A
 >>>
 
 Finished test decexc
-# End time: 12:09:55 on Jun 11,2019, Elapsed time: 0:00:04
+# End time: 17:37:58 on Jun 12,2019, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 0, Suppressed Warnings: 109
 Starting test aluexc
 Failed test
 Result:
-(null)
+<<<
+>>>
+
 Expected:
 <<<
 X#C
@@ -196,13 +181,15 @@ X#C
 80000030
 >>>
 
-# End time: 12:10:00 on Jun 11,2019, Elapsed time: 0:00:03
-# Errors: 0, Warnings: 0, Suppressed Warnings: 109
 Finished test aluexc
+# End time: 17:38:03 on Jun 12,2019, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0, Suppressed Warnings: 109
 Starting test memexc
 Failed test
 Result:
-(null)
+<<<
+>>>
+
 Expected:
 <<<
 X#4
@@ -288,7 +275,7 @@ X#4
 >>>
 
 Finished test memexc
-# End time: 12:10:05 on Jun 11,2019, Elapsed time: 0:00:04
+# End time: 17:38:09 on Jun 12,2019, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0, Suppressed Warnings: 109
 Starting test intrs
 Failed test
@@ -353,5 +340,5 @@ I#2
 00001000
 
 Finished test intrs
-# End time: 12:10:11 on Jun 11,2019, Elapsed time: 0:00:04
+# End time: 17:38:17 on Jun 12,2019, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 0, Suppressed Warnings: 109
