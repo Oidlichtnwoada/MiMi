@@ -21,7 +21,10 @@ entity decode is
 		jmp_op     : out jmp_op_type;
 		mem_op     : out mem_op_type;
 		wb_op      : out wb_op_type;
-		exc_dec    : out std_logic
+		exc_dec    : out std_logic;
+		rdaddr1_out : out std_logic_vector(REG_BITS-1 downto 0);
+		rdaddr2_out : out std_logic_vector(REG_BITS-1 downto 0)
+		
 	);
 end decode;
 
@@ -77,6 +80,9 @@ begin
 		--read from regfile
 		sig_rdaddr1 <= rs;
 		sig_rdaddr2 <= r_rt_or_i_rd;
+		
+		rdaddr1_out <= sig_rdaddr1;
+		rdaddr2_out <= sig_rdaddr2;
 		
 		--setting default values 
 		exec_op <= EXEC_NOP;

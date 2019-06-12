@@ -15,6 +15,7 @@ VHDL_FILES = \
 	../../src/exec.vhd\
 	../../src/mem.vhd\
 	../../src/wb.vhd\
+	../../src/ctrl.vhd\
 	../../src/pipeline.vhd\
 	../../src/ocram_altera.vhd\
 	../../src/pipeline_pkg.vhd
