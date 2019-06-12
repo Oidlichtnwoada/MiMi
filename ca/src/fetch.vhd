@@ -62,7 +62,7 @@ begin
 			instr <= (others => '0');
 		end if;
 		
-		if stall = '0' and reset = '1' and then
+		if stall = '0' and reset = '1' then
 			if pcsrc = '1' then
 				pc_nxt <= pc_in;
 			else 
