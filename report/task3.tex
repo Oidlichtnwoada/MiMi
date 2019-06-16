@@ -5,26 +5,26 @@
     \toprule
                          & LC Combinationals & LC Registers & Memory Bits \\
     \midrule
-    Fetch Stage          &                   &              &             \\
-    Decode Stage         &                   &              &             \\
-    -- Register File     &                   &              &             \\
-    Execute Stage        &                   &              &             \\
-    -- ALU               &                   &              &             \\
-    Memory Stage         &                   &              &             \\
-    -- Jump Unit         &                   &              &             \\
-    -- Memory Unit       &                   &              &             \\
-    Write-Back Stage     &                   &              &             \\
-    Forwarding Unit      &                   &              &             \\
-    Control Unit         &                   &              &             \\
+    Fetch Stage          & 90                & 14           & 131072      \\
+    Decode Stage         & 1486 (1312)       & 1070(46)     & 0           \\
+    -- Register File     & 174               & 1024         & 0           \\
+    Execute Stage        & 1125 (624)        & 153          & 0           \\
+    -- ALU               & 501               & 0            & 0           \\
+    Memory Stage         & 395 (232)         & 101          & 0           \\
+    -- Jump Unit         & 4                 & 0            & 0           \\
+    -- Memory Unit       & 159               & 0            & 0           \\
+    Write-Back Stage     & 49                & 71           & 0           \\
+    Forwarding Unit      & 16                & 0            & 0           \\
+    Control Unit         & 0                 & 0            & 0           \\
     \cmidrule{1-4}
-    Sum                  &                   &              &             \\
+    Sum                  & 3161              & 1409         & 131072      \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \begin{qa}
   \question{What is the maximum frequency of your design?}
-  \answer{}
+  \answer{ 100.41 MHz at 0C, 93.12 MHz at 85C in the slow Models and 182.98 MHz in the fast 0C Model}
   \question{Where is the critical path of your design?}
   \answer{}
 \end{qa}

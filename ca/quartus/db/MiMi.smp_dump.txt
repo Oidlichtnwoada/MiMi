@@ -18,18 +18,6 @@ sig_mem_op.memtype.MEM_HU 0 0 1 0 1
 sig_mem_op.memtype.MEM_B 0 1 0 0 1 
 sig_mem_op.memtype.MEM_BU 1 0 0 0 1 
 
-State Machine - |mimi|core:core|pipeline:pipeline|exec:exec_inst|sig_forwardB
-Name sig_forwardB.FWD_WB sig_forwardB.FWD_ALU sig_forwardB.FWD_NONE 
-sig_forwardB.FWD_NONE 0 0 0 
-sig_forwardB.FWD_ALU 0 1 1 
-sig_forwardB.FWD_WB 1 0 1 
-
-State Machine - |mimi|core:core|pipeline:pipeline|exec:exec_inst|sig_forwardA
-Name sig_forwardA.FWD_WB sig_forwardA.FWD_ALU sig_forwardA.FWD_NONE 
-sig_forwardA.FWD_NONE 0 0 0 
-sig_forwardA.FWD_ALU 0 1 1 
-sig_forwardA.FWD_WB 1 0 1 
-
 State Machine - |mimi|core:core|pipeline:pipeline|exec:exec_inst|sig_jmpop_in
 Name sig_jmpop_in.JMP_BGEZ sig_jmpop_in.JMP_BLTZ sig_jmpop_in.JMP_BGTZ sig_jmpop_in.JMP_BLEZ sig_jmpop_in.JMP_BNE sig_jmpop_in.JMP_BEQ sig_jmpop_in.JMP_JMP sig_jmpop_in.JMP_NOP 
 sig_jmpop_in.JMP_NOP 0 0 0 0 0 0 0 0 
@@ -49,18 +37,18 @@ sig_memop_in.memtype.MEM_HU 0 0 1 0 1
 sig_memop_in.memtype.MEM_B 0 1 0 0 1 
 sig_memop_in.memtype.MEM_BU 1 0 0 0 1 
 
-State Machine - |mimi|core:core|pipeline:pipeline|exec:exec_inst|sig_op.aluop
-Name sig_op.aluop.ALU_LUI sig_op.aluop.ALU_NOR sig_op.aluop.ALU_XOR sig_op.aluop.ALU_OR sig_op.aluop.ALU_AND sig_op.aluop.ALU_SUB sig_op.aluop.ALU_ADD sig_op.aluop.ALU_SRA sig_op.aluop.ALU_SRL sig_op.aluop.ALU_SLL sig_op.aluop.ALU_SLTU sig_op.aluop.ALU_SLT sig_op.aluop.ALU_NOP 
-sig_op.aluop.ALU_NOP 0 0 0 0 0 0 0 0 0 0 0 0 0 
-sig_op.aluop.ALU_SLT 0 0 0 0 0 0 0 0 0 0 0 1 1 
-sig_op.aluop.ALU_SLTU 0 0 0 0 0 0 0 0 0 0 1 0 1 
-sig_op.aluop.ALU_SLL 0 0 0 0 0 0 0 0 0 1 0 0 1 
-sig_op.aluop.ALU_SRL 0 0 0 0 0 0 0 0 1 0 0 0 1 
-sig_op.aluop.ALU_SRA 0 0 0 0 0 0 0 1 0 0 0 0 1 
-sig_op.aluop.ALU_ADD 0 0 0 0 0 0 1 0 0 0 0 0 1 
-sig_op.aluop.ALU_SUB 0 0 0 0 0 1 0 0 0 0 0 0 1 
-sig_op.aluop.ALU_AND 0 0 0 0 1 0 0 0 0 0 0 0 1 
-sig_op.aluop.ALU_OR 0 0 0 1 0 0 0 0 0 0 0 0 1 
-sig_op.aluop.ALU_XOR 0 0 1 0 0 0 0 0 0 0 0 0 1 
-sig_op.aluop.ALU_NOR 0 1 0 0 0 0 0 0 0 0 0 0 1 
-sig_op.aluop.ALU_LUI 1 0 0 0 0 0 0 0 0 0 0 0 1 
+State Machine - |mimi|core:core|pipeline:pipeline|exec:exec_inst|sig_op_before_fwd.aluop
+Name sig_op_before_fwd.aluop.ALU_LUI sig_op_before_fwd.aluop.ALU_NOR sig_op_before_fwd.aluop.ALU_XOR sig_op_before_fwd.aluop.ALU_OR sig_op_before_fwd.aluop.ALU_AND sig_op_before_fwd.aluop.ALU_SUB sig_op_before_fwd.aluop.ALU_ADD sig_op_before_fwd.aluop.ALU_SRA sig_op_before_fwd.aluop.ALU_SRL sig_op_before_fwd.aluop.ALU_SLL sig_op_before_fwd.aluop.ALU_SLTU sig_op_before_fwd.aluop.ALU_SLT sig_op_before_fwd.aluop.ALU_NOP 
+sig_op_before_fwd.aluop.ALU_NOP 0 0 0 0 0 0 0 0 0 0 0 0 0 
+sig_op_before_fwd.aluop.ALU_SLT 0 0 0 0 0 0 0 0 0 0 0 1 1 
+sig_op_before_fwd.aluop.ALU_SLTU 0 0 0 0 0 0 0 0 0 0 1 0 1 
+sig_op_before_fwd.aluop.ALU_SLL 0 0 0 0 0 0 0 0 0 1 0 0 1 
+sig_op_before_fwd.aluop.ALU_SRL 0 0 0 0 0 0 0 0 1 0 0 0 1 
+sig_op_before_fwd.aluop.ALU_SRA 0 0 0 0 0 0 0 1 0 0 0 0 1 
+sig_op_before_fwd.aluop.ALU_ADD 0 0 0 0 0 0 1 0 0 0 0 0 1 
+sig_op_before_fwd.aluop.ALU_SUB 0 0 0 0 0 1 0 0 0 0 0 0 1 
+sig_op_before_fwd.aluop.ALU_AND 0 0 0 0 1 0 0 0 0 0 0 0 1 
+sig_op_before_fwd.aluop.ALU_OR 0 0 0 1 0 0 0 0 0 0 0 0 1 
+sig_op_before_fwd.aluop.ALU_XOR 0 0 1 0 0 0 0 0 0 0 0 0 1 
+sig_op_before_fwd.aluop.ALU_NOR 0 1 0 0 0 0 0 0 0 0 0 0 1 
+sig_op_before_fwd.aluop.ALU_LUI 1 0 0 0 0 0 0 0 0 0 0 0 1 
