@@ -160,8 +160,6 @@ architecture rtl of pipeline is
 	--
 	signal exec_mem_pc : std_logic_vector(PC_WIDTH-1 downto 0);
 	signal exec_mem_rd : std_logic_vector(REG_BITS-1 downto 0);
-	signal exec_mem_rs : std_logic_vector(REG_BITS-1 downto 0);
-	signal exec_mem_rt : std_logic_vector(REG_BITS-1 downto 0);
 	signal exec_mem_aluresult : std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal exec_mem_wrdata : std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal exec_mem_zero : std_logic;
@@ -205,8 +203,8 @@ begin
 
 	exec_inst: exec
 	port map(clk => clk, reset => reset, stall => stall, flush => flush, pc_in => decode_exec_pc,
-				op => decode_exec_exec_op, pc_out => exec_mem_pc, rd => exec_mem_rd, rs => exec_mem_rs,
-				rt => exec_mem_rt, aluresult => exec_mem_aluresult, wrdata => exec_mem_wrdata,
+				op => decode_exec_exec_op, pc_out => exec_mem_pc, rd => exec_mem_rd, rs => open,
+				rt => open, aluresult => exec_mem_aluresult, wrdata => exec_mem_wrdata,
 				zero => exec_mem_zero, neg => exec_mem_neg, new_pc => exec_mem_new_pc,
 				memop_in => decode_exec_mem_op, memop_out => exec_mem_mem_op, jmpop_in => decode_exec_jmp_op,
 				jmpop_out => exec_mem_jmp_op, wbop_in => decode_exec_wb_op, wbop_out => exec_mem_wb_op,
