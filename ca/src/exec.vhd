@@ -9,32 +9,32 @@ entity exec is
 
 	port (
 		clk, reset		: in  std_logic;
-		stall			: in  std_logic;
-		flush			: in  std_logic;
-		pc_in			: in  std_logic_vector(PC_WIDTH-1 downto 0);
-		op				: in  exec_op_type;
+		stall				: in  std_logic;
+		flush				: in  std_logic;
+		pc_in				: in  std_logic_vector(PC_WIDTH-1 downto 0);
+		op					: in  exec_op_type;
 		pc_out			: out std_logic_vector(PC_WIDTH-1 downto 0);
 		rd, rs, rt		: out std_logic_vector(REG_BITS-1 downto 0);
 		aluresult		: out std_logic_vector(DATA_WIDTH-1 downto 0);
 		wrdata			: out std_logic_vector(DATA_WIDTH-1 downto 0);
 		zero, neg		: out std_logic;
 		new_pc			: out std_logic_vector(PC_WIDTH-1 downto 0);
-		memop_in		: in  mem_op_type;
+		memop_in			: in  mem_op_type;
 		memop_out		: out mem_op_type;
-		jmpop_in		: in  jmp_op_type;
+		jmpop_in			: in  jmp_op_type;
 		jmpop_out		: out jmp_op_type;
 		wbop_in			: in  wb_op_type;
-		wbop_out		: out wb_op_type;
-		forwardA		: in  fwd_type;
-		forwardB		: in  fwd_type;
+		wbop_out			: out wb_op_type;
+		forwardA			: in  fwd_type;
+		forwardB			: in  fwd_type;
 		cop0_rddata		: in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		mem_aluresult	: in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		wb_result		: in  std_logic_vector(DATA_WIDTH-1 downto 0);
 		exc_ovf			: out std_logic;
-		rdaddr1_in : in std_logic_vector(REG_BITS-1 downto 0);
-		rdaddr2_in : in std_logic_vector(REG_BITS-1 downto 0);
-		rdaddr1_out : out std_logic_vector(REG_BITS-1 downto 0);
-		rdaddr2_out : out std_logic_vector(REG_BITS-1 downto 0)
+		rdaddr1_in		: in std_logic_vector(REG_BITS-1 downto 0);
+		rdaddr2_in 		: in std_logic_vector(REG_BITS-1 downto 0);
+		rdaddr1_out		: out std_logic_vector(REG_BITS-1 downto 0);
+		rdaddr2_out 	: out std_logic_vector(REG_BITS-1 downto 0)
 	);
 
 end exec;
@@ -137,9 +137,6 @@ begin  -- rtl
 		sig_op.regdst <= sig_op_before_fwd.regdst;
 		sig_op.cop0 <= sig_op_before_fwd.cop0;
 		sig_op.ovf <= sig_op_before_fwd.ovf;
-		
-		--readdata1  : std_logic_vector(DATA_WIDTH-1 downto 0);
-		--readdata2  : std_logic_vector(DATA_WIDTH-1 downto 0);
 		
 		--forwarding
 		if forwardA = FWD_ALU then
