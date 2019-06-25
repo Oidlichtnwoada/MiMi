@@ -31,8 +31,8 @@ begin  -- rtl
 
 	core : entity work.core
 		generic map (
-			clk_freq  => 75000000,
-			baud_rate => 115200)
+			clk_freq  => 50_000_000,
+			baud_rate => 115_200)
 		port map (
 			clk	  => clk,
 			reset => reset,

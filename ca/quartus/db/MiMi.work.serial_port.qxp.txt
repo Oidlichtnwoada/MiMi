@@ -19,9 +19,9 @@ refer to the applicable agreement for further details.
 +------------------+---------------------------------------------------------+
 ; Entity           ; serial_port                                             ;
 ; Case Sensitive   ;                                                         ;
-; QXP Source       ; ../src/serial_port/serial_port_75Mhz.qxp                ;
+; QXP Source       ; ../src/serial_port_50Mhz.qxp                            ;
 ; Software Version ; Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
-; Date             ; Thu May 09 12:02:37 2019                                ;
+; Date             ; Wed May 08 21:47:57 2019                                ;
 ; Contents         ; Netlist Only                                            ;
 ; Family           ; EP4CE115F29C7                                           ;
 ; Device           ; CYCLONEIVE6F780C7                                       ;

@@ -71,7 +71,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to intr_pin[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to intr_pin[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to intr_pin[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to intr_pin
-set_global_assignment -name QXP_FILE ../src/serial_port/serial_port_75Mhz.qxp
+set_global_assignment -name QXP_FILE ../src/serial_port_50Mhz.qxp
 set_global_assignment -name VHDL_FILE ../src/serial_port_pkg.vhd
 set_global_assignment -name VHDL_FILE ../src/wb_pkg.vhd
 set_global_assignment -name VHDL_FILE ../src/wb.vhd

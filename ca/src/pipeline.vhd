@@ -6,7 +6,7 @@ use work.op_pack.all;
 
 entity pipeline is
 	port (
-		clk, reset : in	 std_logic;
+		clk, reset : in  std_logic;
 		mem_in     : in  mem_in_type;
 		mem_out    : out mem_out_type;
 		intr       : in  std_logic_vector(INTR_COUNT-1 downto 0)
