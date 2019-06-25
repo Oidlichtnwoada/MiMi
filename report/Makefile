@@ -7,16 +7,16 @@ RUBBER_INSTALLED := $(shell command -v rubber 2>/dev/null)
 
 WD := $(shell pwd)
 
-all: template.pdf
+all: report.pdf
 
-template.pdf: template.tex
+report.pdf: report.tex
 ifdef RUBBER_INSTALLED
-	rubber -d template.tex
+	rubber -d report.tex
 else
-	pdflatex template.tex
+	pdflatex report.tex
 	#bibtex 
-	pdflatex template.tex
-	pdflatex template.tex
+	pdflatex report.tex
+	pdflatex report.tex
 	@echo "=============================="
 	@echo "= consider installing rubber ="
 	@echo "=============================="
